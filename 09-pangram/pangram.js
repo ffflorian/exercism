@@ -1,5 +1,4 @@
 module.exports = function (sentence) {
-
     'use strict';
 
     sentence = sentence.trim().toLowerCase();
@@ -10,5 +9,5 @@ module.exports = function (sentence) {
                 sentence.indexOf(char) === -1
             ).length < 1;
         }
-    }
+    };
 };

@@ -1,4 +1,6 @@
 module.exports = function () {
+    'use strict';
+
     return {
         toRna (DNA) {
             const map = {
@@ -9,5 +11,5 @@ module.exports = function () {
             };
             return DNA.split('').map((obj) => map[obj]).join('');
         }
-    }
+    };
 };

@@ -1,5 +1,4 @@
 module.exports = function () {
-
     'use strict';
 
     return {
@@ -15,5 +14,5 @@ module.exports = function () {
             }
             return 'Whatever.';
         }
-    }
+    };
 };

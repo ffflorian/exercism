@@ -1,4 +1,6 @@
 module.exports = function () {
+    'use strict';
+
     return {
         compute (strand1, strand2) {
             if (strand1.length === strand2.length) {
@@ -13,5 +15,5 @@ module.exports = function () {
                 throw new Error('DNA strands must be of equal length.');
             }
         }
-    }
+    };
 };

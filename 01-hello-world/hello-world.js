@@ -4,10 +4,12 @@
 // Make sure to look at hello-world.spec.js--that should give you some hints about what is
 // expected here.
 
-var HelloWorld = function() {};
+var HelloWorld = function () {
+    // empty
+};
 
 HelloWorld.prototype.hello = function (input) {
-    if (typeof input === 'string' && input != '') {
+    if (typeof input === 'string' && input !== '') {
         return `Hello, ${input}!`;
     } else {
         return 'Hello, World!';
