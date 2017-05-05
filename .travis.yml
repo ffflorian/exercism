@@ -1,0 +1,24 @@
+# http://docs.travis-ci.com/user/workers/container-based-infrastructure/
+sudo: false
+
+# http://docs.travis-ci.com/user/languages/javascript-with-nodejs/
+language: node_js
+node_js:
+  - "6"
+
+cache:
+  directories:
+    - $HOME/.npm
+    - $HOME/.cargo
+    - javascript/node_modules
+
+before_install:
+  - curl https://sh.rustup.rs -sSf | sh -s -- -y
+  - source "$HOME/.cargo/env"
+
+install:
+  - (cd javascript && npm install)
+
+# http://docs.travis-ci.com/user/pull-requests/
+script:
+  - chmod +x test_all.sh && ./test_all.sh
