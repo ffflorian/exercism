@@ -4,7 +4,7 @@ sudo: false
 # http://docs.travis-ci.com/user/languages/javascript-with-nodejs/
 language: node_js
 node_js:
-  - "6"
+  - "8"
 
 addons:
   apt:
@@ -22,8 +22,8 @@ before_install:
   - source "$HOME/.cargo/env"
 
 install:
-  - (cd javascript && npm install)
+  - (cd javascript && yarn)
 
 # http://docs.travis-ci.com/user/pull-requests/
 script:
-  - chmod +x test_all.sh && ./test_all.sh
+  - ./test_all.sh
