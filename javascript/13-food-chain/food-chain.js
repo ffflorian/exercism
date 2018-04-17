@@ -48,7 +48,7 @@ module.exports = function () {
     return {
         verse (index) {
             if (typeof index !== 'number') {
-                throw new Error('Invalid argument');
+                throw new 'Invalid argument';
             }
             let verse = `I know an old lady who swallowed a ${verses[index - 1].type}.\n${verses[index - 1].message}`;
             for (let i = index - 1; i >= 0; i--) {
@@ -62,7 +62,7 @@ module.exports = function () {
         },
         verses (begin, end) {
             if (typeof begin !== 'number' || typeof end !== 'number') {
-                throw new Error('Invalid argument');
+                throw 'Invalid argument';
             }
             let song = '';
 

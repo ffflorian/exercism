@@ -9,7 +9,7 @@ module.exports = function () {
         },
         add (name, grade) {
             if (typeof name !== 'string' || typeof grade !== 'number') {
-                throw new Error('Invalid argument');
+                throw 'Invalid argument';
             }
             let entry = _roster[grade];
             if (typeof entry === 'undefined') {
@@ -21,7 +21,7 @@ module.exports = function () {
         },
         grade (grade) {
             if (typeof grade !== 'number') {
-                throw new Error('Invalid argument');
+                throw 'Invalid argument';
             }
             const entry = _roster[grade];
             if (typeof entry === 'undefined') {

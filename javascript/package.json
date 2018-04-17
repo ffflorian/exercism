@@ -2,8 +2,8 @@
   "author": "@ffflorian",
   "description": "My exercism.io solutions",
   "devDependencies": {
-    "eslint": "4.13.1",
-    "jasmine-node": "1.14.5"
+    "eslint": "4.19.1",
+    "jasmine": "3.1.0"
   },
   "homepage": "https://github.com/ffflorian/exercism#readme",
   "license": "MIT",
@@ -12,7 +12,7 @@
   "private": true,
   "repository": "https://github.com/ffflorian/exercism.git",
   "scripts": {
-    "test": "find . -type d -regex '^\\./[0-9]+-.*' -print0 | xargs -r0 jasmine-node"
+    "test": "jasmine --config=jasmine.json"
   },
   "version": "1.0.0"
 }
