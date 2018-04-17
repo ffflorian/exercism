@@ -18,6 +18,6 @@ test_all() {
   done
 }
 
-(cd javascript && npm i && npm test)
+(cd javascript && yarn && yarn test)
 (cd rust && test_all "Cargo.toml" "cargo test")
 (cd python && test_all "*_test.py" "python3 *_test.py")
