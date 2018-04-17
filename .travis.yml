@@ -9,6 +9,9 @@ addons:
     packages:
       - python3
 
+notifications:
+  email: false
+
 cache:
   directories:
     - $HOME/.npm
