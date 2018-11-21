@@ -1,5 +1,5 @@
 {
-  "author": "@ffflorian",
+  "author": "Florian Keller <github@floriankeller.de>",
   "description": "My exercism.io solutions",
   "devDependencies": {
     "eslint": "5.9.0",
@@ -8,7 +8,7 @@
   "homepage": "https://github.com/ffflorian/exercism#readme",
   "license": "MIT",
   "main": "index.js",
-  "name": "exercism-solutions",
+  "name": "@ffflorian/exercism",
   "private": true,
   "repository": "https://github.com/ffflorian/exercism.git",
   "scripts": {
