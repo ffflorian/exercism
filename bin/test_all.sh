@@ -1,4 +1,4 @@
-#!/usr/bin/env sh
+#!/usr/bin/env bash
 
 set -e
 
@@ -11,7 +11,7 @@ test_all() {
       ( cd "${DIR}"
         if [ -r "${1}" ]; then
           echo "#### Testing \\033[00;01m${DIR}\\033[00;00m ..."
-          ${2}
+          bash -c "${2}"
           echo
         fi
       )
