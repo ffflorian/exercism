@@ -28,4 +28,4 @@ install:
   - (cd javascript && yarn)
 
 script:
-  - ./test_all.sh
+  - ./bin/test_all.sh

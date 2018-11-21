@@ -3,6 +3,7 @@
 set -e
 
 cd "${0%/*}"
+cd ".."
 
 test_all() {
   for DIR in *; do
