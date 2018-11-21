@@ -1,10 +1,15 @@
-# npm
+# javascript
 logs
 *.log
 npm-debug.log*
 node_modules/
 package-lock.json
-.idea
-*.iml
+
+# python
 __pycache__
 target
+
+# other
+.idea
+*.iml
+.exercism
