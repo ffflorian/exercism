@@ -5,7 +5,8 @@ workflow "Build, lint and test" {
 
 action "JS: Change dir" {
   uses = "docker://node:10"
-  runs = "cd javascript"
+  args = "javascript"
+  runs = "cd"
 }
 
 action "JS: Install" {
