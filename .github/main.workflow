@@ -1,22 +1,22 @@
 workflow "Build, lint and test" {
   on = "push"
-  resolves = ["docker://node:10-1"]
+  resolves = ["JS: Test"]
 }
 
-action "Change dir" {
+action "JS: Change dir" {
   uses = "docker://node:10"
   runs = "cd javascript"
 }
 
-action "docker://node:10" {
+action "JS: Install" {
   uses = "docker://node:10"
-  needs = ["Change dir"]
   runs = "yarn"
+  needs = ["JS: Change dir"]
 }
 
-action "docker://node:10-1" {
+action "JS: Test" {
   uses = "docker://node:10"
-  needs = ["docker://node:10"]
   runs = "yarn"
   args = "test"
+  needs = ["JS: Install"]
 }
