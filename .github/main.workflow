@@ -3,21 +3,14 @@ workflow "Build, lint and test" {
   resolves = ["JS: Test"]
 }
 
-action "JS: Change dir" {
-  uses = "docker://node:10"
-  args = "javascript"
-  runs = "cd"
-}
-
 action "JS: Install" {
   uses = "docker://node:10"
-  runs = "yarn"
-  needs = ["JS: Change dir"]
+  args = "cd javascript && yarn"
 }
 
 action "JS: Test" {
   uses = "docker://node:10"
   runs = "yarn"
-  args = "test"
+  args = "cd javascript && yarn test"
   needs = ["JS: Install"]
 }
