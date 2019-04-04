@@ -3,7 +3,7 @@
   "description": "My exercism.io solutions",
   "devDependencies": {
     "eslint": "5.16.0",
-    "jasmine": "3.3.1"
+    "jasmine": "3.4.0"
   },
   "homepage": "https://github.com/ffflorian/exercism#readme",
   "license": "MIT",
