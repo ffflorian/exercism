@@ -1,27 +1,27 @@
-var score = require('./scrabble-score');
+const score = require('./scrabble-score');
 
-describe('Scrabble', function() {
-  it('scores an empty word as zero',function() {
+describe('Scrabble', () => {
+  it('scores an empty word as zero',() => {
     expect(score('')).toEqual(0);
   });
 
-  it('scores a null as zero',function() {
+  it('scores a null as zero',() => {
     expect(score(null)).toEqual(0);
   });
 
-  it('scores a very short word',function() {
+  it('scores a very short word',() => {
     expect(score('a')).toEqual(1);
   });
 
-  it('scores the word by the number of letters',function() {
+  it('scores the word by the number of letters',() => {
     expect(score('street')).toEqual(6);
   });
 
-  it('scores more complicated words with more',function() {
+  it('scores more complicated words with more',() => {
     expect(score('quirky')).toEqual(22);
   });
 
-  it('scores case insensitive words',function() {
+  it('scores case insensitive words',() => {
     expect(score('OXYPHENBUTAZONE')).toEqual(41);
   });
 });

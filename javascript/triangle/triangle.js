@@ -1,17 +1,19 @@
-module.exports = function (a, b, c) {
-    'use strict';
+module.exports = class Triangle {
+  constructor(sideA, sideB, sideC) {
+    this.sideA = sideA;
+    this.sideB = sideB;
+    this.sideC = sideC;
+  }
 
-    return {
-        kind () {
-            if ((a * b * c <= 0) || (c > a + b || a > b + c || b > a + c)) {
-                throw new Error('Degenerate triangle');
-            } else if (a === b && b === c) {
-                return 'equilateral';
-            } else if (a !== b && b !== c && c !== a) {
-                return 'scalene';
-            } else {
-                return 'isosceles';
-            }
-        }
-    };
+  kind() {
+    if ((this.sideA * this.sideB * this.sideC <= 0) || (this.sideC > this.sideA + this.sideB || this.sideA > this.sideB + this.sideC || this.sideB > this.sideA + this.sideC)) {
+      throw new Error('Invalid triangle');
+    } else if (this.sideA === this.sideB && this.sideB === this.sideC) {
+      return 'equilateral';
+    } else if (this.sideA !== this.sideB && this.sideB !== this.sideC && this.sideC !== this.sideA) {
+      return 'scalene';
+    } else {
+      return 'isosceles';
+    }
+  }
 };

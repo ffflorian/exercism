@@ -1,13 +1,11 @@
-module.exports = function (sentence) {
-    'use strict';
+module.exports = class Pangram {
+  constructor(sentence){
+    this.sentence = sentence.trim().toLowerCase();
+  }
 
-    sentence = sentence.trim().toLowerCase();
-
-    return {
-        isPangram () {
-            return 'abcdefghijklmnopqrstuvwxyz'.split('').filter((char) =>
-                sentence.indexOf(char) === -1
-            ).length < 1;
-        }
-    };
+  isPangram() {
+    return 'abcdefghijklmnopqrstuvwxyz'.split('').filter((char) =>
+      this.sentence.indexOf(char) === -1
+    ).length < 1;
+  }
 };

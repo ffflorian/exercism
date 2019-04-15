@@ -1,15 +1,11 @@
-module.exports = function () {
-    'use strict';
-
-    return {
-        toRna (DNA) {
-            const map = {
-                G: 'C',
-                C: 'G',
-                T: 'A',
-                A: 'U'
-            };
-            return DNA.split('').map((obj) => map[obj]).join('');
-        }
+module.exports = class DnaTranscriber {
+  toRna(DNA) {
+    const map = {
+      A: 'U',
+      C: 'G',
+      G: 'C',
+      T: 'A',
     };
+    return DNA.split('').map((obj) => map[obj]).join('');
+  }
 };

@@ -1,9 +1,9 @@
-module.exports = function (beginTime) {
-    'use strict';
+module.exports = class GigaSecond {
+  constructor(beginTime) {
+    this.beginTime = beginTime;
+  }
 
-    return {
-        date () {
-            return new Date(beginTime.getTime() + 1e12);
-        }
-    };
+  date() {
+    return new Date(this.beginTime.getTime() + 1e12);
+  }
 };

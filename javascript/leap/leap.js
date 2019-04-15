@@ -1,9 +1,9 @@
-module.exports = function (year) {
-    'use strict';
+module.exports = class Year {
+  constructor(year) {
+    this.year = year;
+  }
 
-    return {
-        isLeap () {
-            return (year % 4 === 0 && (year % 100 !== 0 || year % 400 === 0));
-        }
-    };
+  isLeap() {
+    return (this.year % 4 === 0 && (this.year % 100 !== 0 || this.year % 400 === 0));
+  }
 };
