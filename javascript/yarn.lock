@@ -18,10 +18,10 @@
     esutils "^2.0.2"
     js-tokens "^4.0.0"
 
-"@ffflorian/eslint-config@0.0.5":
-  version "0.0.5"
-  resolved "https://registry.npmjs.org/@ffflorian/eslint-config/-/eslint-config-0.0.5.tgz#d8a9871a00281bd0331180fb028358519fd18101"
-  integrity sha512-0MduuXEDREfMNdRTgglZ8h/NAzT2ltRC7PDw4Y6QAjmaiuT53ru0/cCg8fFagBP4gZt07727qw+plqBazRShYQ==
+"@ffflorian/eslint-config@0.0.6":
+  version "0.0.6"
+  resolved "https://registry.npmjs.org/@ffflorian/eslint-config/-/eslint-config-0.0.6.tgz#65c9f8ffcd5b1160adec88ef1585ffd0f2085ce8"
+  integrity sha512-pd0ND9pcxDIbF75esKm876kRVmBk9OEoSwfax6zJs414fAZSTa6TiWq/+WlF803IJBL1YYt+VvAXytNyt71Svg==
   dependencies:
     eslint-config-prettier "4.1.0"
 
