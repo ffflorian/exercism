@@ -1,18 +1,19 @@
-module.exports = (word) => {
-  const sortString = (string) => {
+module.exports = class Anagram {
+  constructor(word) {
+    this.word = word;
+  }
+
+  sortString(string) {
     return string.toLowerCase().split('').sort().join('');
   };
 
-  return {
-    matches (...matches) {
-      matches = Array.prototype.concat.apply([], matches);
-      return matches.reduce((result, matchTest) => {
-        if (word.toLowerCase() !== matchTest.toLowerCase()
-                    && sortString(word) === sortString(matchTest)) {
-          result.push(matchTest);
-        }
-        return result;
-      }, []);
-    },
-  };
+  matches(...matches) {
+    matches = Array.prototype.concat.apply([], matches);
+    return matches.reduce((result, matchTest) => {
+      if (this.word.toLowerCase() !== matchTest.toLowerCase() && this.sortString(this.word) === this.sortString(matchTest)) {
+        result.push(matchTest);
+      }
+      return result;
+    }, []);
+  }
 };

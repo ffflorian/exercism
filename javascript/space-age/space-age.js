@@ -1,4 +1,4 @@
-module.exports = (seconds) => {
+module.exports = function(seconds) {
   const yearOnEarth = 31557600;
 
   const planets = {
@@ -12,13 +12,14 @@ module.exports = (seconds) => {
     Venus: 0.61519726,
   };
 
-  return {seconds, ...(() => {
-    return Object.keys(planets).reduce((list, planet) =>
-      Object.assign(list, {
+  return {
+    seconds,
+    ...(Object.keys(planets).reduce((list, planet) => {
+      return {...list,
         [`on${planet}`]: () => {
           return parseFloat((seconds / yearOnEarth / planets[planet]).toFixed(2));
         },
-      }),
-    {});
-  })()};
+      };
+    }, {})),
+  };
 };

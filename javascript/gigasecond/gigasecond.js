@@ -1,7 +1,9 @@
-module.exports = (beginTime) => {
-  return {
-    date () {
-      return new Date(beginTime.getTime() + 1e12);
-    },
-  };
+module.exports = class GigaSecond {
+  constructor(beginTime) {
+    this.beginTime = beginTime;
+  }
+
+  date() {
+    return new Date(this.beginTime.getTime() + 1e12);
+  }
 };

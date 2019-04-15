@@ -4,7 +4,7 @@
 // Make sure to look at hello-world.spec.js--that should give you some hints about what is
 // expected here.
 
-const HelloWorld = () => {
+const HelloWorld = function() {
   // empty
 };
 

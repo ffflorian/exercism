@@ -1,7 +1,7 @@
 
 
 module.exports = class Clock {
-  constructor (hours = 0, minutes = 0) {
+  constructor(hours = 0, minutes = 0) {
     Clock.checkNumbers(hours, minutes)
     hours = (hours + Math.floor(minutes / 60)) % 24;
     minutes = minutes % 60;
@@ -9,7 +9,7 @@ module.exports = class Clock {
     this.minutes = (minutes < 0) ? 60 + minutes : minutes;
   }
 
-  static at (hours, minutes) {
+  static at(hours, minutes) {
     return new Clock(hours, minutes);
   }
 
@@ -21,28 +21,28 @@ module.exports = class Clock {
     });
   }
 
-  static pad (n) {
+  static pad(n) {
     return (n < 10) ? (`0${n}`) : n;
   }
 
-  equals (clock) {
+  equals(clock) {
     if (!(clock instanceof Clock)) {
       throw new TypeError('Not a valid clock');
     }
     return this.toString() == clock.toString();
   }
 
-  minus (minutes = 0) {
+  minus(minutes = 0) {
     Clock.checkNumbers(minutes);
     return Clock.at(this.hours, (this.minutes - minutes));
   }
 
-  plus (minutes = 0) {
+  plus(minutes = 0) {
     Clock.checkNumbers(minutes);
     return Clock.at(this.hours, (this.minutes + minutes));
   }
 
-  toString () {
+  toString() {
     return `${Clock.pad(this.hours)}:${Clock.pad(this.minutes)}`;
   }
 };

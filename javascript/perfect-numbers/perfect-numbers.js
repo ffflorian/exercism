@@ -1,7 +1,7 @@
 
 
 module.exports = class PerfectNumbers {
-  classify (number) {
+  classify(number) {
     if (number < 1) {
       return 'Classification is only possible for natural numbers.';
     }

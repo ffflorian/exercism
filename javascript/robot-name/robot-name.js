@@ -1,9 +1,11 @@
-
-
 const _usedNames = {};
 
-module.exports = () => {
-  const generateName = () => {
+module.exports = class RobotName {
+  constructor() {
+    this.name = this.generateName();
+  }
+
+  generateName() {
     const str = () => String.fromCharCode(Math.floor(Math.random() * 25) + 65);
     const num = Math.floor(Math.random() * 899) + 100;
     const name = str() + str() + num;
@@ -11,16 +13,10 @@ module.exports = () => {
       _usedNames[name] = true;
       return name;
     }
-    return generateName();
-
+    return this.generateName();
   };
 
-  const _name = generateName();
-
-  return {
-    name: _name,
-    reset () {
-      this.name = generateName();
-    },
-  };
+  reset() {
+    this.name = this.generateName();
+  }
 };
