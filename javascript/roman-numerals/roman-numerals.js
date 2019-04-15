@@ -1,5 +1,3 @@
-'use strict';
-
 const map = [
   1000, 'M',
   900, 'CM',
@@ -13,7 +11,7 @@ const map = [
   9, 'IX',
   5, 'V',
   4, 'IV',
-  1, 'I'
+  1, 'I',
 ];
 
 module.exports = number => {
@@ -21,10 +19,10 @@ module.exports = number => {
     throw new Error('Invalid number');
   }
   let value = '';
-  for (let i = 0; number > 0 && i < map.length; i += 2) {
-    while (number >= map[i]) {
-      value += map[i + 1];
-      number -= map[i];
+  for (let index = 0; number > 0 && index < map.length; index += 2) {
+    while (number >= map[index]) {
+      value += map[index + 1];
+      number -= map[index];
     }
   }
   return value;

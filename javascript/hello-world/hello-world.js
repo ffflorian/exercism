@@ -4,16 +4,16 @@
 // Make sure to look at hello-world.spec.js--that should give you some hints about what is
 // expected here.
 
-var HelloWorld = function () {
-    // empty
+const HelloWorld = () => {
+  // empty
 };
 
-HelloWorld.prototype.hello = function (input) {
-    if (typeof input === 'string' && input !== '') {
-        return `Hello, ${input}!`;
-    } else {
-        return 'Hello, World!';
-    }
+HelloWorld.prototype.hello = (input) => {
+  if (typeof input === 'string' && input !== '') {
+    return `Hello, ${input}!`;
+  }
+  return 'Hello, World!';
+
 };
 
 module.exports = HelloWorld;

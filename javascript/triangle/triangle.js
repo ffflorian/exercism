@@ -1,17 +1,15 @@
-module.exports = function (a, b, c) {
-    'use strict';
-
-    return {
-        kind () {
-            if ((a * b * c <= 0) || (c > a + b || a > b + c || b > a + c)) {
-                throw new Error('Degenerate triangle');
-            } else if (a === b && b === c) {
-                return 'equilateral';
-            } else if (a !== b && b !== c && c !== a) {
-                return 'scalene';
-            } else {
-                return 'isosceles';
-            }
-        }
-    };
+module.exports = (sideA, sideB, sideC) => {
+  return {
+    kind () {
+      if ((sideA * sideB * sideC <= 0) || (sideC > sideA + sideB || sideA > sideB + sideC || sideB > sideA + sideC)) {
+        throw new Error('Invalid triangle');
+      } else if (sideA === sideB && sideB === sideC) {
+        return 'equilateral';
+      } else if (sideA !== sideB && sideB !== sideC && sideC !== sideA) {
+        return 'scalene';
+      } else {
+        return 'isosceles';
+      }
+    },
+  };
 };

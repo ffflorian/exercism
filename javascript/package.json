@@ -2,7 +2,10 @@
   "author": "Florian Keller <github@floriankeller.de>",
   "description": "My exercism.io solutions",
   "devDependencies": {
+    "@ffflorian/eslint-config": "0.0.5",
     "eslint": "5.16.0",
+    "eslint-config-prettier": "4.1.0",
+    "eslint-plugin-prettier": "3.0.1",
     "jasmine": "3.4.0"
   },
   "homepage": "https://github.com/ffflorian/exercism#readme",
@@ -12,6 +15,8 @@
   "private": true,
   "repository": "https://github.com/ffflorian/exercism.git",
   "scripts": {
+    "fix": "yarn lint --fix",
+    "lint": "eslint --ignore-path .eslintignore \"**/!(*.spec).js\"",
     "test": "jasmine --config=jasmine.json"
   },
   "version": "1.0.0"

@@ -5,14 +5,17 @@ action "Don't skip CI" {
 
 workflow "Test JavaScript" {
   on = "push"
-  resolves = "Test JavaScript challenges"
+  resolves = [
+    "Test JavaScript challenges",
+    "Lint JavaScript solutions"
+  ]
 }
 
 action "Install JavaScript dependencies" {
   uses = "./.github/actions/js-test"
   needs = "Don't skip CI"
   env = {
-    DESTINATION_DIR = "javascript"
+    "DESTINATION_DIR" = "javascript"
   }
   args = "yarn"
 }
@@ -21,9 +24,18 @@ action "Test JavaScript challenges" {
   uses = "./.github/actions/js-test"
   needs = "Install JavaScript dependencies"
   env = {
-    DESTINATION_DIR = "javascript"
+    "DESTINATION_DIR" = "javascript"
   }
   args = ["yarn", "test"]
+}
+
+action "Lint JavaScript solutions" {
+  uses = "./.github/actions/js-test"
+  needs = "Install JavaScript dependencies"
+  env = {
+    "DESTINATION_DIR" = "javascript"
+  }
+  args = ["yarn", "lint"]
 }
 
 workflow "Test Rust" {
@@ -35,11 +47,10 @@ action "Test Rust challenges" {
   uses = "./.github/actions/rust-test"
   needs = "Don't skip CI"
   env = {
-    DESTINATION_DIR = "rust"
+    "DESTINATION_DIR" = "rust"
   }
   args = ["Cargo.toml", "cargo", "test"]
 }
-
 
 workflow "Test Python" {
   on = "push"
@@ -50,7 +61,7 @@ action "Test Python challenges" {
   uses = "./.github/actions/python-test"
   needs = "Don't skip CI"
   env = {
-    DESTINATION_DIR = "python"
+    "DESTINATION_DIR" = "python"
   }
   args = ["*_test.py", "python3", "*_test.py"]
 }
