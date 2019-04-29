@@ -18,12 +18,12 @@
     esutils "^2.0.2"
     js-tokens "^4.0.0"
 
-"@ffflorian/eslint-config@0.0.6":
-  version "0.0.6"
-  resolved "https://registry.npmjs.org/@ffflorian/eslint-config/-/eslint-config-0.0.6.tgz#65c9f8ffcd5b1160adec88ef1585ffd0f2085ce8"
-  integrity sha512-pd0ND9pcxDIbF75esKm876kRVmBk9OEoSwfax6zJs414fAZSTa6TiWq/+WlF803IJBL1YYt+VvAXytNyt71Svg==
+"@ffflorian/eslint-config@0.0.7":
+  version "0.0.7"
+  resolved "https://registry.yarnpkg.com/@ffflorian/eslint-config/-/eslint-config-0.0.7.tgz#27252634697eacf2a1c249038bb4a1106a352041"
+  integrity sha512-d1IhJg98+mI/rmiE1bK4LaFRUqOGPn3RPfAMulosx4XxOOPAByTAZBbbfkr82BVokr1XURc+f9wNpht75ybC/w==
   dependencies:
-    eslint-config-prettier "4.1.0"
+    eslint-config-prettier "4.2.0"
 
 acorn-jsx@^5.0.0:
   version "5.0.1"
@@ -179,13 +179,6 @@ escape-string-regexp@^1.0.5:
   version "1.0.5"
   resolved "https://registry.npmjs.org/escape-string-regexp/-/escape-string-regexp-1.0.5.tgz#1b61c0562190a8dff6ae3bb2cf0200ca130b86d4"
   integrity sha1-G2HAViGQqN/2rjuyzwIAyhMLhtQ=
-
-eslint-config-prettier@4.1.0:
-  version "4.1.0"
-  resolved "https://registry.npmjs.org/eslint-config-prettier/-/eslint-config-prettier-4.1.0.tgz#181364895899fff9fd3605fecb5c4f20e7d5f395"
-  integrity sha512-zILwX9/Ocz4SV2vX7ox85AsrAgXV3f2o2gpIicdMIOra48WYqgUnWNH/cR/iHtmD2Vb3dLSC3LiEJnS05Gkw7w==
-  dependencies:
-    get-stdin "^6.0.0"
 
 eslint-config-prettier@4.2.0:
   version "4.2.0"
