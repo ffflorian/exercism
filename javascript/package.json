@@ -2,7 +2,7 @@
   "author": "Florian Keller <github@floriankeller.de>",
   "description": "My exercism.io solutions",
   "devDependencies": {
-    "@ffflorian/eslint-config": "0.0.7",
+    "@ffflorian/eslint-config": "0.1.0",
     "eslint": "5.16.0",
     "eslint-config-prettier": "4.2.0",
     "eslint-plugin-prettier": "3.0.1",
