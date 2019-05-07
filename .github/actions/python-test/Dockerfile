@@ -1,8 +1,8 @@
 FROM python:3-slim
 
 LABEL version="1.0.0"
-LABEL repository="https://github.com/ffflorian/exercistm/tree/master/.github/actions/python-test"
-LABEL homepage="https://github.com/ffflorian/exercistm/tree/master/.github/actions/python-test"
+LABEL repository="https://github.com/ffflorian/exercism/tree/master/.github/actions/python-test"
+LABEL homepage="https://github.com/ffflorian/exercism/tree/master/.github/actions/python-test"
 LABEL maintainer="ffflorian"
 
 LABEL com.github.actions.name="GitHub Action for local Python tests"
