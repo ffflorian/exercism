@@ -1,5 +1,5 @@
 action "Don't skip CI" {
-  uses = "ffflorian/actions/skip-ci-check@master"
+  uses = "ffflorian/actions/skip-ci-check@v1.0.0"
 }
 
 workflow "Test JavaScript" {
