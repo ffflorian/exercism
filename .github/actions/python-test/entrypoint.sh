@@ -1,4 +1,3 @@
 #!/usr/bin/env bash
 
-cd "${DESTINATION_DIR}"
-sh -c "../bin/test_all.sh $*"
+cd python && sh -c "../bin/test_all.sh '*_test.py' 'python3 *_test.py'"

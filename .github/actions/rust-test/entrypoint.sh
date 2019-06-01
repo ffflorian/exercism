@@ -1,4 +1,3 @@
 #!/usr/bin/env bash
 
-cd "${DESTINATION_DIR}"
-sh -c "../bin/test_all.sh $*"
+cd rust && sh -c "../bin/test_all.sh 'Cargo.toml' 'cargo test'"

@@ -2,17 +2,21 @@
 
 set -e
 
-TEST_FILENAME="${1}"
+TEST_FILENAMES="${1}"
 RUN_COMMAND="${2} ${3}"
 
 for DIR in *; do
   if [ -d "${DIR}" ]; then
-    ( cd "${DIR}"
-      if [ -r "${TEST_FILENAME}" ]; then
-        echo "#### Testing \"${DIR}\" ..."
-        bash -c "${RUN_COMMAND}"
-        echo
-      fi
+    (
+      cd "${DIR}" || exit 1
+      for TEST_FILENAME in ${TEST_FILENAMES}; do
+        if [ ! -r "${TEST_FILENAME}" ]; then
+          exit 1
+        fi
+      done
+      echo "#### Testing \"${DIR}\" ..."
+      bash -c "${RUN_COMMAND}"
+      echo
     )
   fi
 done

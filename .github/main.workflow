@@ -13,27 +13,18 @@ workflow "Test JavaScript" {
 action "Install JavaScript dependencies" {
   uses = "./.github/actions/js-test"
   needs = "Don't skip CI"
-  env = {
-    "DESTINATION_DIR" = "javascript"
-  }
   args = "yarn"
 }
 
 action "Test JavaScript challenges" {
   uses = "./.github/actions/js-test"
   needs = "Install JavaScript dependencies"
-  env = {
-    "DESTINATION_DIR" = "javascript"
-  }
   args = ["yarn", "test"]
 }
 
 action "Lint JavaScript solutions" {
   uses = "./.github/actions/js-test"
   needs = "Install JavaScript dependencies"
-  env = {
-    "DESTINATION_DIR" = "javascript"
-  }
   args = ["yarn", "lint"]
 }
 
@@ -45,10 +36,6 @@ workflow "Test Rust" {
 action "Test Rust challenges" {
   uses = "./.github/actions/rust-test"
   needs = "Don't skip CI"
-  env = {
-    "DESTINATION_DIR" = "rust"
-  }
-  args = ["Cargo.toml", "cargo", "test"]
 }
 
 workflow "Test Python" {
@@ -59,8 +46,14 @@ workflow "Test Python" {
 action "Test Python challenges" {
   uses = "./.github/actions/python-test"
   needs = "Don't skip CI"
-  env = {
-    "DESTINATION_DIR" = "python"
-  }
-  args = ["*_test.py", "python3", "*_test.py"]
+}
+
+workflow "Test Go" {
+  on = "push"
+  resolves = "Test Go challenges"
+}
+
+action "Test Go challenges" {
+  uses = "./.github/actions/go-test"
+  needs = "Don't skip CI"
 }
