@@ -18,10 +18,10 @@
     esutils "^2.0.2"
     js-tokens "^4.0.0"
 
-"@ffflorian/eslint-config@0.1.2":
-  version "0.1.2"
-  resolved "https://registry.yarnpkg.com/@ffflorian/eslint-config/-/eslint-config-0.1.2.tgz#61abcc564308477c8d87ded0e461a8e52fc2ebad"
-  integrity sha512-axlKeooEl6PszOkdPQj72OVorPyQw1fljXfA44ShzuwS7oRAfRqi6hZ5Rum0gFwDCJalMVmvv4AK/toP0Cx71Q==
+"@ffflorian/eslint-config@0.2.0":
+  version "0.2.0"
+  resolved "https://registry.yarnpkg.com/@ffflorian/eslint-config/-/eslint-config-0.2.0.tgz#27cabd227fe6df68c24df883fd1ca20d837af181"
+  integrity sha512-kXUADZSqOQ0L1veBI7FBsbqdiG5TrFoRz4+UedmMTFLn2Ls/7DF8om0FlTOfN09Exb7M0p2pLXb5fBpkJDQIxA==
 
 acorn-jsx@^5.0.0:
   version "5.0.1"
