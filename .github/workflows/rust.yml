@@ -1,4 +1,4 @@
-name: Push
+name: Test Rust projects
 
 on:
   push:
