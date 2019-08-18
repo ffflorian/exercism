@@ -1,12 +1,12 @@
-name: Test Rust projects
+name: Test Python projects
 
 on:
   push:
     paths:
-      - rust/*
+      - /python/*
   pull_request:
     paths:
-      - rust/*
+      - /python/*
 
 jobs:
   build:
@@ -14,10 +14,8 @@ jobs:
     steps:
       - uses: actions/checkout@v1
       - run: |
-          curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
-          source "$HOME/.cargo/env"
-          cd rust
-          ../bin/test_all.sh Cargo.toml 'cargo test'
+          cd python
+          ../bin/test_all.sh *_test.py 'python3 *_test.py'
         if: |
           contains(github.event.commits[0].message, '[skip ci]') == false &&
           contains(github.event.commits[0].message, '[ci skip]') == false

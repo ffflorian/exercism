@@ -1,21 +1,26 @@
-name: Test Python projects
+name: Test JavaScript projects
 
 on:
   push:
     paths:
-      - python/*
+      - /javascript/*
   pull_request:
     paths:
-      - python/*
+      - /javascript/*
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 10.x
       - run: |
-          cd python
-          ../bin/test_all.sh *_test.py 'python3 *_test.py'
+          cd javascript
+          yarn
+          yarn lint
+          yarn test
         if: |
           contains(github.event.commits[0].message, '[skip ci]') == false &&
           contains(github.event.commits[0].message, '[ci skip]') == false
