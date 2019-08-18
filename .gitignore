@@ -1,15 +1,18 @@
 # javascript
-logs
-*.log
-npm-debug.log*
-node_modules/
-package-lock.json
+javascript/**/logs
+javascript/**/*.log
+javascript/**/npm-debug.log*
+javascript/**/node_modules/
+javascript/**/package-lock.json
 
 # python
-__pycache__
+python/**/__pycache__
+python/**/target
+
+# rust
 target
+rust/**/.gitignore
+rust/**/Cargo.lock
 
 # other
-.idea
-*.iml
 .exercism
