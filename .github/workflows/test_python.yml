@@ -3,10 +3,10 @@ name: Test Python projects
 on:
   push:
     paths:
-      - /python/*
+      - python/*
   pull_request:
     paths:
-      - /python/*
+      - python/*
 
 jobs:
   build:

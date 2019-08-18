@@ -3,10 +3,10 @@ name: Test Rust projects
 on:
   push:
     paths:
-      - /rust/*
+      - rust/*
   pull_request:
     paths:
-      - /rust/*
+      - rust/*
 
 jobs:
   build:
