@@ -4,9 +4,6 @@ on:
   push:
     paths:
       - rust/*
-  pull_request:
-    paths:
-      - rust/*
 
 jobs:
   build:

@@ -4,9 +4,6 @@ on:
   push:
     paths:
       - javascript/*
-  pull_request:
-    paths:
-      - javascript/*
 
 jobs:
   build:
