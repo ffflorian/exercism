@@ -13,9 +13,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
+      - uses: docker://rust:1.37.0
       - run: |
-          curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
-          source "$HOME/.cargo/env"
           cd rust
           ../bin/test_all.sh Cargo.toml 'cargo test'
         if: |
