@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
-      - uses: docker://rust:1.37.0
+      - uses: docker://rust:slim
       - run: |
           cd rust
           ../bin/test_all.sh Cargo.toml 'cargo test'

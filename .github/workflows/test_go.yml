@@ -10,6 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
+      - uses: golang:latest
       - run: |
           curl https://raw.githubusercontent.com/canha/golang-tools-install-script/b12e1ec/goinstall.sh | bash
           cd go
