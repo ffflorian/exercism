@@ -11,7 +11,7 @@ jobs:
     steps:
       - uses: actions/checkout@v1
       - run: |
-          curl https://raw.githubusercontent.com/canha/golang-tools-install-script/b12e1ec61f0da71e3bdc87a2253d47539e6f379e/goinstall.sh | bash
+          curl https://raw.githubusercontent.com/canha/golang-tools-install-script/b12e1ec/goinstall.sh | bash
           cd go
           ../bin/test_all.sh *_test.go 'go test'
         if: |
