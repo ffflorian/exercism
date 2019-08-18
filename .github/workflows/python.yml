@@ -1,0 +1,18 @@
+name: Push
+
+on:
+  push:
+    paths:
+      - python/*
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - run: |
+          cd python
+          ../bin/test_all.sh *_test.py 'python3 *_test.py'
+        if: |
+          contains(github.event.commits[0].message, '[skip ci]') == false &&
+          contains(github.event.commits[0].message, '[ci skip]') == false

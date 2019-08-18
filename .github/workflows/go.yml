@@ -1,0 +1,19 @@
+name: Push
+
+on:
+  push:
+    paths:
+      - go/*
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - run: |
+          curl https://raw.githubusercontent.com/canha/golang-tools-install-script/b12e1ec61f0da71e3bdc87a2253d47539e6f379e/goinstall.sh | bash
+          cd go
+          ../bin/test_all.sh *_test.go 'go test'
+        if: |
+          contains(github.event.commits[0].message, '[skip ci]') == false &&
+          contains(github.event.commits[0].message, '[ci skip]') == false

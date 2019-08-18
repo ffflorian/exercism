@@ -1,0 +1,23 @@
+name: Push
+
+on:
+  push:
+    paths:
+      - javascript/*
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 10.x
+      - run: |
+          cd javascript
+          yarn
+          yarn lint
+          yarn test
+        if: |
+          contains(github.event.commits[0].message, '[skip ci]') == false &&
+          contains(github.event.commits[0].message, '[ci skip]') == false
