@@ -4,13 +4,18 @@ on:
   push:
     paths:
       - python/*
+  pull_request:
+    paths:
+      - python/*
 
 jobs:
-  build:
+  test:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v1
-      - run: |
+      - name: Checkout repository
+        uses: actions/checkout@v1
+      - name: Test Python projects
+        run: |
           cd python
           ../bin/test_all.sh *_test.py 'python3 *_test.py'
         if: |

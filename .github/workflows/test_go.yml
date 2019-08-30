@@ -4,14 +4,18 @@ on:
   push:
     paths:
       - go/*
+  pull_request:
+    paths:
+      - go/*
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v1
-      - run: |
-          curl https://raw.githubusercontent.com/canha/golang-tools-install-script/b12e1ec/goinstall.sh | bash
+      - name: Checkout repository
+        uses: actions/checkout@v1
+      - name: Test Go projects
+        run: |
           cd go
           ../bin/test_all.sh *_test.go 'go test'
         if: |
