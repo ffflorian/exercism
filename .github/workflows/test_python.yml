@@ -4,6 +4,9 @@ on:
   push:
     paths:
       - python/*
+  pull_requests:
+    paths:
+      - python/*
 
 jobs:
   test:
