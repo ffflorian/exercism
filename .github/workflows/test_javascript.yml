@@ -4,7 +4,7 @@ on:
   push:
     paths:
       - javascript/*
-  pull_requests:
+  pull_request:
     paths:
       - javascript/*
 
