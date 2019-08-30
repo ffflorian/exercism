@@ -6,12 +6,13 @@ on:
       - rust/*
 
 jobs:
-  build:
+  test:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v1
-      - uses: docker://rust:slim
-      - run: |
+      - name: Checkout repository
+        uses: actions/checkout@v1
+      - name: Test Rust projects
+        run: |
           cd rust
           ../bin/test_all.sh Cargo.toml 'cargo test'
         if: |
