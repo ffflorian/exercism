@@ -3,7 +3,7 @@
   "description": "My exercism.io solutions",
   "devDependencies": {
     "@ffflorian/eslint-config": "0.2.0",
-    "eslint": "6.3.0",
+    "eslint": "6.4.0",
     "eslint-config-prettier": "6.3.0",
     "eslint-plugin-prettier": "3.1.1",
     "jasmine": "3.4.0",
