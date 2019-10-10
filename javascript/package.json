@@ -10,7 +10,7 @@
     "prettier": "1.18.2"
   },
   "homepage": "https://github.com/ffflorian/exercism#readme",
-  "license": "MIT",
+  "license": "GPL-3.0",
   "main": "index.js",
   "name": "@ffflorian/exercism",
   "private": true,
