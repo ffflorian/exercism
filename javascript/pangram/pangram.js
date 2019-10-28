@@ -4,8 +4,8 @@ module.exports = class Pangram {
   }
 
   isPangram() {
-    return 'abcdefghijklmnopqrstuvwxyz'.split('').filter((char) =>
-      this.sentence.indexOf(char) === -1
+    return 'abcdefghijklmnopqrstuvwxyz'.split('').filter(char =>
+      this.sentence.indexOf(char) === -1,
     ).length < 1;
   }
 };

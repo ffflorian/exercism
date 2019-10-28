@@ -8,7 +8,7 @@ const HelloWorld = function() {
   // empty
 };
 
-HelloWorld.prototype.hello = (input) => {
+HelloWorld.prototype.hello = input => {
   if (typeof input === 'string' && input !== '') {
     return `Hello, ${input}!`;
   }

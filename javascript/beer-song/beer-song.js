@@ -6,7 +6,7 @@ const bottle = (num, extended) => {
   return `bottle${num !== 1 ? 's' : ''} of beer${extended === true ? ' on the wall' : ''}`;
 };
 
-const take = (num) => {
+const take = num => {
   return (num === 0 ? 'Go to the store and buy some more' : `Take ${(num === 1 ? 'it' : 'one')} down and pass it around`);
 };
 

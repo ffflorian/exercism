@@ -6,6 +6,6 @@ module.exports = class DnaTranscriber {
       G: 'C',
       T: 'A',
     };
-    return DNA.split('').map((obj) => map[obj]).join('');
+    return DNA.split('').map(obj => map[obj]).join('');
   }
 };
