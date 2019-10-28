@@ -14,7 +14,7 @@ module.exports = class Clock {
   }
 
   static checkNumbers(...objects) {
-    objects.forEach((obj) => {
+    objects.forEach(obj => {
       if (typeof obj !== 'number') {
         throw new TypeError('Invalid number');
       }
