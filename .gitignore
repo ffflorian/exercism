@@ -7,12 +7,12 @@ javascript/**/package-lock.json
 
 # python
 python/**/__pycache__
-python/**/target
 
 # rust
 target
 rust/**/.gitignore
 rust/**/Cargo.lock
+rust/**/*.rs.bk
 
-# other
+# Exercism metadata
 .exercism
