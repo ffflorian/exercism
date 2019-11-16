@@ -7,6 +7,7 @@ on:
 
 jobs:
   test_rust:
+    name: Test Rust
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
