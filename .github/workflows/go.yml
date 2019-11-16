@@ -3,7 +3,7 @@ name: Test all projects
 on:
   push:
     paths:
-      - 'go/*'
+      - 'go/**'
 
 jobs:
   test_go:
@@ -14,7 +14,7 @@ jobs:
       - name: Test Go projects
         run: |
           cd go
-          ../bin/test_all.sh *_test.go 'go test'
+          ../bin/test_all.sh "*_test.go" "go test"
         if: |
           contains(github.event.commits[0].message, '[skip ci]') == false &&
           contains(github.event.commits[0].message, '[ci skip]') == false

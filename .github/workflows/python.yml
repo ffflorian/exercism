@@ -3,7 +3,7 @@ name: Test all projects
 on:
   push:
     paths:
-      - 'python/*'
+      - 'python/**'
 
 jobs:
   test_python:
@@ -14,7 +14,7 @@ jobs:
       - name: Test Python projects
         run: |
           cd python
-          ../bin/test_all.sh *_test.py 'python3 *_test.py'
+          ../bin/test_all.sh "*_test.py" "python3 *_test.py"
         if: |
           contains(github.event.commits[0].message, '[skip ci]') == false &&
           contains(github.event.commits[0].message, '[ci skip]') == false
