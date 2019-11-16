@@ -1,0 +1,20 @@
+name: Test all projects
+
+on:
+  push:
+    paths:
+      - 'go/*'
+
+jobs:
+  test_go:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v1
+      - name: Test Go projects
+        run: |
+          cd go
+          ../bin/test_all.sh *_test.go 'go test'
+        if: |
+          contains(github.event.commits[0].message, '[skip ci]') == false &&
+          contains(github.event.commits[0].message, '[ci skip]') == false
