@@ -1,25 +1,27 @@
-const DnaTranscriber = require('./rna-transcription');
-const dnaTranscriber = new DnaTranscriber();
+import { toRna } from './rna-transcription'
 
-describe('toRna()', () => {
-  it('transcribes cytosine to guanine', () => {
-    expect(dnaTranscriber.toRna('C')).toEqual('G');
+describe('Transcription', () => {
+  test('empty rna sequence', () => {
+    expect(toRna('')).toEqual('');
   });
 
-  it('transcribes guanine to cytosine', () => {
-    expect(dnaTranscriber.toRna('G')).toEqual('C');
+  test('transcribes cytosine to guanine', () => {
+    expect(toRna('C')).toEqual('G');
   });
 
-  it('transcribes adenine to uracil', () => {
-    expect(dnaTranscriber.toRna('A')).toEqual('U');
+  test('transcribes guanine to cytosine', () => {
+    expect(toRna('G')).toEqual('C');
   });
 
-  it('transcribes thymine to adenine', () => {
-    expect(dnaTranscriber.toRna('T')).toEqual('A');
+  test('transcribes thymine to adenine', () => {
+    expect(toRna('T')).toEqual('A');
   });
 
-  it('transcribes all dna nucleotides to their rna complements', () => {
-    expect(dnaTranscriber.toRna('ACGTGGTCTTAA'))
-      .toEqual('UGCACCAGAAUU');
+  test('transcribes adenine to uracil', () => {
+    expect(toRna('A')).toEqual('U');
   });
-});
+
+  test('transcribes all dna nucleotides to their rna complements', () => {
+    expect(toRna('ACGTGGTCTTAA')).toEqual('UGCACCAGAAUU');
+  });
+})

@@ -1,5 +1,1 @@
-module.exports = class TwoFer {
-  twoFer(who) {
-    return `One for ${who || 'you'}, one for me.`;
-  }
-};
+export const twoFer = who => `One for ${who || 'you'}, one for me.`;

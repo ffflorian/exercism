@@ -1,10 +1,10 @@
 # Beer Song
 
-Write a program which produces the lyrics to that beloved classic, that field-trip favorite: 99 Bottles of Beer on the Wall.
+Recite the lyrics to that beloved classic, that field-trip favorite: 99 Bottles of Beer on the Wall.
 
 Note that not all verses are identical.
 
-```plain
+```text
 99 bottles of beer on the wall, 99 bottles of beer.
 Take one down and pass it around, 98 bottles of beer on the wall.
 
@@ -322,26 +322,37 @@ experiment make the code better? Worse? Did you learn anything from it?
 
 ## Setup
 
-Go through the setup instructions for JavaScript to
-install the necessary dependencies:
+Go through the setup instructions for Javascript to install the necessary
+dependencies:
 
-http://exercism.io/languages/javascript
+[https://exercism.io/tracks/javascript/installation](https://exercism.io/tracks/javascript/installation)
 
-## Making the Test Suite Pass
+## Requirements
+
+Install assignment dependencies:
+
+```bash
+$ npm install
+```
+
+## Making the test suite pass
 
 Execute the tests with:
 
-    jasmine-node .
+```bash
+$ npm test
+```
 
-In many test suites all but the first test have been skipped.
+In the test suites all tests but the first have been skipped.
 
-Once you get a test passing, you can unskip the next one by
-changing `xit` to `it`.
+Once you get a test passing, you can enable the next one by changing `xtest` to
+`test`.
 
 ## Source
 
 Learn to Program by Chris Pine [http://pine.fm/LearnToProgram/?Chapter=06](http://pine.fm/LearnToProgram/?Chapter=06)
 
-## Submitting Incomplete Problems
-It's possible to submit an incomplete solution so you can see how others have completed the exercise.
+## Submitting Incomplete Solutions
 
+It's possible to submit an incomplete solution so you can see how others have
+completed the exercise.

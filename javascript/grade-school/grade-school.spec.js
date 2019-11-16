@@ -1,69 +1,79 @@
-const School = require('./grade-school');
+import { GradeSchool } from './grade-school';
 
 describe('School', () => {
   let school;
 
   beforeEach(() => {
-    school = new School();
+    school = new GradeSchool();
   });
 
-  it('a new school has an empty roster', () => {
+  test('a new school has an empty roster', () => {
     expect(school.roster()).toEqual({});
   });
 
-  it('adding a student adds them to the roster for the given grade', () => {
+  test('adding a student adds them to the roster for the given grade', () => {
     school.add('Aimee', 2);
-    const expectedDb = { 2 : [ 'Aimee' ] };
+
+    const expectedDb = { 2: ['Aimee'] };
     expect(school.roster()).toEqual(expectedDb);
   });
 
-  it('adding more students to the same grade adds them to the roster', () => {
+  test('adding more students to the same grade adds them to the roster', () => {
     school.add('Blair', 2);
     school.add('James', 2);
     school.add('Paul', 2);
-    const expectedDb = { 2 : [ 'Blair', 'James', 'Paul' ] };
+
+    const expectedDb = { 2: ['Blair', 'James', 'Paul'] };
     expect(school.roster()).toEqual(expectedDb);
   });
 
-  it('adding students to different grades adds them to the roster', () => {
+  test('adding students to different grades adds them to the roster', () => {
     school.add('Chelsea', 3);
     school.add('Logan', 7);
-    const expectedDb = { 3 : [ 'Chelsea' ], 7 : [ 'Logan' ] };
+
+    const expectedDb = { 3: ['Chelsea'], 7: ['Logan'] };
     expect(school.roster()).toEqual(expectedDb);
   });
 
-  it('grade returns the students in that grade in alphabetical order', () => {
+  test('grade returns the students in that grade in alphabetical order', () => {
     school.add('Franklin', 5);
     school.add('Bradley', 5);
     school.add('Jeff', 1);
-    const expectedStudents = [ 'Bradley', 'Franklin' ];
+
+    const expectedStudents = ['Bradley', 'Franklin'];
     expect(school.grade(5)).toEqual(expectedStudents);
   });
 
-  it('grade returns an empty array if there are no students in that grade', () => {
+  test('grade returns an empty array if there are no students in that grade', () => {
     expect(school.grade(1)).toEqual([]);
   });
 
-  it('the students names in each grade in the roster are sorted', () => {
+  test('the students names in each grade in the roster are sorted', () => {
     school.add('Jennifer', 4);
     school.add('Kareem', 6);
     school.add('Christopher', 4);
     school.add('Kyle', 3);
-    const sorted = {
-      3 : [ 'Kyle' ],
-      4 : [ 'Christopher', 'Jennifer' ],
-      6 : [ 'Kareem' ],
+
+    const expectedSortedStudents = {
+      3: ['Kyle'],
+      4: ['Christopher', 'Jennifer'],
+      6: ['Kareem'],
     };
-    expect(school.roster()).toEqual(sorted);
+    expect(school.roster()).toEqual(expectedSortedStudents);
   });
 
-  it('doesn\'t accept wrong arguments', () => {
-    expect(() => { school.add('Aimee', '2'); }).toThrow('Invalid argument');
-    expect(() => { school.add(0, 2); }).toThrow('Invalid argument');
-    expect(() => { school.add(null, 2); }).toThrow('Invalid argument');
-    expect(() => { school.add(); }).toThrow('Invalid argument');
-    expect(() => { school.grade('Aimee'); }).toThrow('Invalid argument');
-    expect(() => { school.grade(null); }).toThrow('Invalid argument');
+  test('roster cannot be modified outside of module', () => {
+    school.add('Aimee', 2);
+    const roster = school.roster();
+    roster[2].push('Oops.');
+    const expectedDb = { 2: ['Aimee'] };
+    expect(school.roster()).toEqual(expectedDb);
   });
 
+  test('roster cannot be modified outside of module using grade()', () => {
+    school.add('Aimee', 2);
+    school.grade(2).push('Oops.');
+    const expectedDb = { 2: ['Aimee'] };
+    expect(school.roster()).toEqual(expectedDb);
+  });
 });

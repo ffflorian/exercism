@@ -8,7 +8,7 @@ const values = [
   [['Q', 'Z'], 10],
 ];
 
-module.exports = word => {
+export function score(word) {
   if (!word || /^\s*$/.test(word)) {
     return 0;
   }
@@ -24,4 +24,4 @@ module.exports = word => {
       });
       return result + points;
     }, 0);
-};
+}

@@ -1,28 +1,40 @@
-const Acronyms = require('./acronym');
+import { parse } from './acronym';
 
 describe('Acronyms are produced from', () => {
-  it('title cased phrases', () => {
-    expect(Acronyms.parse('Portable Network Graphics')).toEqual('PNG');
+  test('title cased phrases', () => {
+    expect(parse('Portable Network Graphics')).toEqual('PNG');
   });
 
-  it('other title cased phrases', () => {
-    expect(Acronyms.parse('Ruby on Rails')).toEqual('ROR');
+  test('other title cased phrases', () => {
+    expect(parse('Ruby on Rails')).toEqual('ROR');
   });
 
-  it('inconsistently cased phrases', () => {
-    expect(Acronyms.parse('HyperText Markup Language')).toEqual('HTML');
+  test('phrases with punctuation', () => {
+    expect(parse('First In, First Out')).toEqual('FIFO');
   });
 
-  it('phrases with punctuation', () => {
-    expect(Acronyms.parse('First In, First Out')).toEqual('FIFO');
+  test('phrases with all uppercase words', () => {
+    expect(parse('GNU Image Manipulation Program')).toEqual('GIMP');
   });
 
-  it('other phrases with punctuation', () => {
-    expect(Acronyms.parse('PHP: Hypertext Preprocessor')).toEqual('PHP');
+  test('phrases with punctuation without whitespace', () => {
+    expect(parse('Complementary metal-oxide semiconductor')).toEqual('CMOS');
   });
 
-  it('phrases with punctuation and sentence casing', () => {
-    expect(Acronyms.parse('Complementary metal-oxide semiconductor')).toEqual('CMOS');
+  test('long phrases', () => {
+    expect(parse('Rolling On The Floor Laughing So Hard That My Dogs Came Over And Licked Me'))
+      .toEqual('ROTFLSHTMDCOALM');
+  });
+
+  test('phrases with consecutive delimiters', () => {
+    expect(parse('Something - I made up from thin air')).toEqual('SIMUFTA');
+  });
+
+  test('phrases with apostrophes', () => {
+    expect(parse("Halley's Comet")).toEqual('HC');
+  });
+
+  test('phrases with underscore emphasis', () => {
+    expect(parse('The Road _Not_ Taken')).toEqual('TRNT');
   });
 });
-

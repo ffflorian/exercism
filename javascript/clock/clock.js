@@ -1,12 +1,10 @@
-
-
-module.exports = class Clock {
+export class Clock {
   constructor(hours = 0, minutes = 0) {
-    Clock.checkNumbers(hours, minutes)
+    Clock.checkNumbers(hours, minutes);
     hours = (hours + Math.floor(minutes / 60)) % 24;
     minutes = minutes % 60;
-    this.hours = (hours < 0) ? 24 + hours : hours;
-    this.minutes = (minutes < 0) ? 60 + minutes : minutes;
+    this.hours = hours < 0 ? 24 + hours : hours;
+    this.minutes = minutes < 0 ? 60 + minutes : minutes;
   }
 
   static at(hours, minutes) {
@@ -22,7 +20,7 @@ module.exports = class Clock {
   }
 
   static pad(n) {
-    return (n < 10) ? (`0${n}`) : n;
+    return n < 10 ? `0${n}` : n;
   }
 
   equals(clock) {
@@ -34,15 +32,15 @@ module.exports = class Clock {
 
   minus(minutes = 0) {
     Clock.checkNumbers(minutes);
-    return Clock.at(this.hours, (this.minutes - minutes));
+    return Clock.at(this.hours, this.minutes - minutes);
   }
 
   plus(minutes = 0) {
     Clock.checkNumbers(minutes);
-    return Clock.at(this.hours, (this.minutes + minutes));
+    return Clock.at(this.hours, this.minutes + minutes);
   }
 
   toString() {
     return `${Clock.pad(this.hours)}:${Clock.pad(this.minutes)}`;
   }
-};
+}

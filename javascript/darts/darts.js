@@ -1,30 +1,25 @@
-//@ts-check
-
 const outerCircle = 10;
 const middleCircle = 5;
-const middleCirclePoints = 5;
 const innerCircle = 1;
 
-const testCircles = (values, min, max) => values.some(value => value > min && value <= max);
-
-function solve(x, y) {
+export function solve(x, y) {
   if (typeof x !== 'number' || typeof y !== 'number') {
     return null;
   }
 
-  if (x > outerCircle || y > outerCircle) {
-    return 0;
+  const radius = Math.sqrt(x ** 2 + y ** 2);
+
+  if (radius <= innerCircle) {
+    return 10;
   }
 
-  if (testCircles([x, y], middleCircle, outerCircle)) {
+  if (radius <= middleCircle) {
+    return 5;
+  }
+
+  if (radius <= outerCircle) {
     return 1;
   }
 
-  if (testCircles([x, y], innerCircle, middleCircle)) {
-    return middleCirclePoints;
-  }
-
-  return 10;
+  return 0;
 }
-
-module.exports = {solve};

@@ -1,1 +1,1 @@
-module.exports = str => str.split('').reverse().join('');
+export const reverseString = str => str.split('').reverse().join('');

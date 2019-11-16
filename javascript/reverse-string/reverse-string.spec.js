@@ -1,31 +1,31 @@
-const reverseString = require('./reverse-string');
+import { reverseString } from './reverse-string';
 
 describe('ReverseString', () => {
-  it('empty string', () => {
+  test('empty string', () => {
     const expected = '';
     const actual = reverseString('');
     expect(actual).toEqual(expected);
   });
 
-  it('a word', () => {
+  test('a word', () => {
     const expected = 'tobor';
     const actual = reverseString('robot');
     expect(actual).toEqual(expected);
   });
 
-  it('a capitalized word', () => {
+  test('a capitalized word', () => {
     const expected = 'nemaR';
     const actual = reverseString('Ramen');
     expect(actual).toEqual(expected);
   });
 
-  it('a sentence with punctuation', () => {
+  test('a sentence with punctuation', () => {
     const expected = '!yrgnuh ma I';
     const actual = reverseString('I am hungry!');
     expect(actual).toEqual(expected);
   });
 
-  it('a palindrome', () => {
+  test('a palindrome', () => {
     const expected = 'racecar';
     const actual = reverseString('racecar');
     expect(actual).toEqual(expected);

@@ -1,11 +1,4 @@
-module.exports = class Pangram {
-  constructor(sentence){
-    this.sentence = sentence.trim().toLowerCase();
-  }
-
-  isPangram() {
-    return 'abcdefghijklmnopqrstuvwxyz'.split('').filter(char =>
-      this.sentence.indexOf(char) === -1,
-    ).length < 1;
-  }
-};
+export function isPangram(sentence) {
+  sentence = sentence.trim().toLowerCase();
+  return 'abcdefghijklmnopqrstuvwxyz'.split('').filter(char => sentence.indexOf(char) === -1).length < 1;
+}

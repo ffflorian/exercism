@@ -2,23 +2,38 @@
   "author": "Florian Keller <github@floriankeller.de>",
   "description": "My exercism.io solutions",
   "devDependencies": {
+    "@babel/cli": "7.7.0",
+    "@babel/core": "7.7.0",
+    "@babel/preset-env": "7.7.0",
     "@ffflorian/eslint-config": "0.2.0",
+    "@ffflorian/prettier-config": "0.0.5",
+    "babel-eslint": "10.0.2",
+    "babel-jest": "24.9.0",
+    "babel-preset-env": "1.7.0",
+    "babel-register": "6.26.0",
     "eslint": "6.6.0",
     "eslint-config-prettier": "6.5.0",
+    "eslint-plugin-import": "2.18.2",
     "eslint-plugin-prettier": "3.1.1",
-    "jasmine": "3.5.0",
+    "jest": "24.9.0",
     "prettier": "1.19.1"
   },
   "homepage": "https://github.com/ffflorian/exercism#readme",
+  "jest": {
+    "modulePathIgnorePatterns": [
+      "package.json"
+    ]
+  },
   "license": "GPL-3.0",
   "main": "index.js",
   "name": "@ffflorian/exercism",
   "private": true,
+  "prettier": "@ffflorian/prettier-config",
   "repository": "https://github.com/ffflorian/exercism.git",
   "scripts": {
     "fix": "yarn lint --fix",
     "lint": "eslint --ignore-path .eslintignore \"**/!(*.spec).js\"",
-    "test": "jasmine --config=jasmine.json"
+    "test": "jest --no-cache ./**/*.spec.js"
   },
   "version": "1.0.0"
 }

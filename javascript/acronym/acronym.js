@@ -1,8 +1,6 @@
-module.exports = {
-  parse(text) {
-    return text
-      .split(/[a-z](?=[A-Z])|[- ]/)
-      .reduce((result, word) => (result += word.charAt(0)), '')
-      .toUpperCase();
-  },
-};
+export function parse(text) {
+  return text
+    .split(/[a-z](?=[A-Z])|[-_ ]/)
+    .reduce((result, word) => (result += word.charAt(0)), '')
+    .toUpperCase();
+}

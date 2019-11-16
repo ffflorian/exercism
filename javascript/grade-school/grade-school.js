@@ -1,11 +1,15 @@
-module.exports = class School {
+export class GradeSchool {
   constructor() {
     this._roster = {};
   }
 
+  roster() {
+    return JSON.parse(JSON.stringify(this._roster));
+  }
+
   add(name, grade) {
     if (typeof name !== 'string' || typeof grade !== 'number') {
-      throw 'Invalid argument';
+      throw new Error('Invalid argument');
     }
     let entry = this._roster[grade];
     if (typeof entry === 'undefined') {
@@ -18,16 +22,12 @@ module.exports = class School {
 
   grade(grade) {
     if (typeof grade !== 'number') {
-      throw 'Invalid argument';
+      throw new Error('Invalid argument');
     }
     const entry = this._roster[grade];
     if (typeof entry === 'undefined') {
       return [];
     }
-    return entry.sort();
+    return [...entry.sort()];
   }
-
-  roster() {
-    return this._roster;
-  }
-};
+}

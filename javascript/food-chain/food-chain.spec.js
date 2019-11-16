@@ -1,152 +1,171 @@
-const FoodChain = require('./food-chain');
+import { Song } from './food-chain';
 
 describe('Food Chain', () => {
-  const song = new FoodChain();
+  let song;
 
-  it('fly', () => {
-    const expected = 'I know an old lady who swallowed a fly.\nI don\'t know why she swallowed the fly. Perhaps she\'ll die.\n';
+  beforeEach(() => {
+    song = new Song();
+  });
+
+  test('fly', () => {
+    const expected = `I know an old lady who swallowed a fly.
+I don't know why she swallowed the fly. Perhaps she'll die.
+`;
 
     expect(song.verse(1)).toEqual(expected);
   });
 
-  it('spider', () => {
-    const expected = 'I know an old lady who swallowed a spider.\nIt wriggled and jiggled and tickled inside her.\n' +
-      'She swallowed the spider to catch the fly.\n' + 'I don\'t know why she swallowed the fly. Perhaps she\'ll die.\n';
+  test('spider', () => {
+    const expected = `I know an old lady who swallowed a spider.
+It wriggled and jiggled and tickled inside her.
+She swallowed the spider to catch the fly.
+I don't know why she swallowed the fly. Perhaps she'll die.
+`;
 
     expect(song.verse(2)).toEqual(expected);
   });
 
-  it('bird', () => {
-    const expected = 'I know an old lady who swallowed a bird.\n' +
-      'How absurd to swallow a bird!\n' +
-      'She swallowed the bird to catch the spider that wriggled and jiggled and tickled inside her.\n' +
-      'She swallowed the spider to catch the fly.\n' +
-      'I don\'t know why she swallowed the fly. Perhaps she\'ll die.\n';
+  test('bird', () => {
+    const expected = `I know an old lady who swallowed a bird.
+How absurd to swallow a bird!
+She swallowed the bird to catch the spider that wriggled and jiggled and tickled inside her.
+She swallowed the spider to catch the fly.
+I don't know why she swallowed the fly. Perhaps she'll die.
+`;
 
     expect(song.verse(3)).toEqual(expected);
   });
 
-  it('cat', () => {
-    const expected = 'I know an old lady who swallowed a cat.\n' +
-      'Imagine that, to swallow a cat!\n' +
-      'She swallowed the cat to catch the bird.\n' +
-      'She swallowed the bird to catch the spider that wriggled and jiggled and tickled inside her.\n' +
-      'She swallowed the spider to catch the fly.\n' +
-      'I don\'t know why she swallowed the fly. ' +
-      'Perhaps she\'ll die.\n';
+  test('cat', () => {
+    const expected = `I know an old lady who swallowed a cat.
+Imagine that, to swallow a cat!
+She swallowed the cat to catch the bird.
+She swallowed the bird to catch the spider that wriggled and jiggled and tickled inside her.
+She swallowed the spider to catch the fly.
+I don't know why she swallowed the fly. Perhaps she'll die.
+`;
 
     expect(song.verse(4)).toEqual(expected);
   });
 
-  it('dog', () => {
-    const expected = 'I know an old lady who swallowed a dog.\n' +
-      'What a hog, to swallow a dog!\n' +
-      'She swallowed the dog to catch the cat.\n' +
-      'She swallowed the cat to catch the bird.\n' +
-      'She swallowed the bird to catch the spider that wriggled and jiggled and tickled inside her.\n' +
-      'She swallowed the spider to catch the fly.\n' +
-      'I don\'t know why she swallowed the fly. ' +
-      'Perhaps she\'ll die.\n';
+  test('dog', () => {
+    const expected = `I know an old lady who swallowed a dog.
+What a hog, to swallow a dog!
+She swallowed the dog to catch the cat.
+She swallowed the cat to catch the bird.
+She swallowed the bird to catch the spider that wriggled and jiggled and tickled inside her.
+She swallowed the spider to catch the fly.
+I don't know why she swallowed the fly. Perhaps she'll die.
+`;
 
     expect(song.verse(5)).toEqual(expected);
   });
 
-  it('goat', () => {
-    const expected = 'I know an old lady who swallowed a goat.\n' +
-      'Just opened her throat and swallowed a goat!\n' +
-      'She swallowed the goat to catch the dog.\n' +
-      'She swallowed the dog to catch the cat.\n' +
-      'She swallowed the cat to catch the bird.\n' +
-      'She swallowed the bird to catch the spider that wriggled and jiggled and tickled inside her.\n' +
-      'She swallowed the spider to catch the fly.\n' +
-      'I don\'t know why she swallowed the fly. ' +
-      'Perhaps she\'ll die.\n';
+  test('goat', () => {
+    const expected = `I know an old lady who swallowed a goat.
+Just opened her throat and swallowed a goat!
+She swallowed the goat to catch the dog.
+She swallowed the dog to catch the cat.
+She swallowed the cat to catch the bird.
+She swallowed the bird to catch the spider that wriggled and jiggled and tickled inside her.
+She swallowed the spider to catch the fly.
+I don't know why she swallowed the fly. Perhaps she'll die.
+`;
 
     expect(song.verse(6)).toEqual(expected);
   });
 
-  it('cow', () => {
-    const expected = 'I know an old lady who swallowed a cow.\n' +
-      'I don\'t know how she swallowed a cow!\n' +
-      'She swallowed the cow to catch the goat.\n' +
-      'She swallowed the goat to catch the dog.\n' +
-      'She swallowed the dog to catch the cat.\n' +
-      'She swallowed the cat to catch the bird.\n' +
-      'She swallowed the bird to catch the spider that wriggled and jiggled and tickled inside her.\n' +
-      'She swallowed the spider to catch the fly.\n' +
-      'I don\'t know why she swallowed the fly. ' +
-      'Perhaps she\'ll die.\n';
+  test('cow', () => {
+    const expected = `I know an old lady who swallowed a cow.
+I don't know how she swallowed a cow!
+She swallowed the cow to catch the goat.
+She swallowed the goat to catch the dog.
+She swallowed the dog to catch the cat.
+She swallowed the cat to catch the bird.
+She swallowed the bird to catch the spider that wriggled and jiggled and tickled inside her.
+She swallowed the spider to catch the fly.
+I don't know why she swallowed the fly. Perhaps she'll die.
+`;
 
     expect(song.verse(7)).toEqual(expected);
   });
 
-  it('horse', () => {
-    const expected = 'I know an old lady who swallowed a horse.\n' + 'She\'s dead, of course!\n';
+  test('horse', () => {
+    const expected = `I know an old lady who swallowed a horse.
+She's dead, of course!
+`;
 
     expect(song.verse(8)).toEqual(expected);
   });
 
-  it('multiple verses', () => {
-    let expected = '';
+  test('multiple verses', () => {
+    const expected = `I know an old lady who swallowed a fly.
+I don't know why she swallowed the fly. Perhaps she'll die.
 
-    expected += 'I know an old lady who swallowed a fly.\nI don\'t know why she swallowed the fly. Perhaps she\'ll die.\n\n';
-    expected += 'I know an old lady who swallowed a spider.\nIt wriggled and jiggled and tickled inside her.\n' +
-      'She swallowed the spider to catch the fly.\n' +
-      'I don\'t know why she swallowed the fly. Perhaps she\'ll die.\n\n';
+I know an old lady who swallowed a spider.
+It wriggled and jiggled and tickled inside her.
+She swallowed the spider to catch the fly.
+I don't know why she swallowed the fly. Perhaps she'll die.
+
+`;
 
     expect(song.verses(1, 2)).toEqual(expected);
   });
 
-  it('the whole song', () => {
-    let expected = '';
+  test('the whole song', () => {
+    const expected = `I know an old lady who swallowed a fly.
+I don't know why she swallowed the fly. Perhaps she'll die.
 
-    expected += 'I know an old lady who swallowed a fly.\nI don\'t know why she swallowed the fly. Perhaps she\'ll die.\n\n';
-    expected += 'I know an old lady who swallowed a spider.\nIt wriggled and jiggled and tickled inside her.\n' +
-    'She swallowed the spider to catch the fly.\n' +
-    'I don\'t know why she swallowed the fly. Perhaps she\'ll die.\n\n';
-    expected += 'I know an old lady who swallowed a bird.\n' +
-    'How absurd to swallow a bird!\n' +
-    'She swallowed the bird to catch the spider that wriggled and jiggled and tickled inside her.\n' +
-    'She swallowed the spider to catch the fly.\n' +
-    'I don\'t know why she swallowed the fly. Perhaps she\'ll die.\n\n';
-    expected += 'I know an old lady who swallowed a cat.\n' +
-    'Imagine that, to swallow a cat!\n' +
-    'She swallowed the cat to catch the bird.\n' +
-    'She swallowed the bird to catch the spider that wriggled and jiggled and tickled inside her.\n' +
-    'She swallowed the spider to catch the fly.\n' +
-    'I don\'t know why she swallowed the fly. ' +
-    'Perhaps she\'ll die.\n\n';
-    expected += 'I know an old lady who swallowed a dog.\n' +
-    'What a hog, to swallow a dog!\n' +
-    'She swallowed the dog to catch the cat.\n' +
-    'She swallowed the cat to catch the bird.\n' +
-    'She swallowed the bird to catch the spider that wriggled and jiggled and tickled inside her.\n' +
-    'She swallowed the spider to catch the fly.\n' +
-    'I don\'t know why she swallowed the fly. ' +
-    'Perhaps she\'ll die.\n\n';
-    expected += 'I know an old lady who swallowed a goat.\n' +
-    'Just opened her throat and swallowed a goat!\n' +
-    'She swallowed the goat to catch the dog.\n' +
-    'She swallowed the dog to catch the cat.\n' +
-    'She swallowed the cat to catch the bird.\n' +
-    'She swallowed the bird to catch the spider that wriggled and jiggled and tickled inside her.\n' +
-    'She swallowed the spider to catch the fly.\n' +
-    'I don\'t know why she swallowed the fly. ' +
-    'Perhaps she\'ll die.\n\n';
-    expected += 'I know an old lady who swallowed a cow.\n' +
-    'I don\'t know how she swallowed a cow!\n' +
-    'She swallowed the cow to catch the goat.\n' +
-    'She swallowed the goat to catch the dog.\n' +
-    'She swallowed the dog to catch the cat.\n' +
-    'She swallowed the cat to catch the bird.\n' +
-    'She swallowed the bird to catch the spider that wriggled and jiggled and tickled inside her.\n' +
-    'She swallowed the spider to catch the fly.\n' +
-    'I don\'t know why she swallowed the fly. ' +
-    'Perhaps she\'ll die.\n\n';
-    expected += 'I know an old lady who swallowed a horse.\n' + 'She\'s dead, of course!\n\n';
+I know an old lady who swallowed a spider.
+It wriggled and jiggled and tickled inside her.
+She swallowed the spider to catch the fly.
+I don't know why she swallowed the fly. Perhaps she'll die.
+
+I know an old lady who swallowed a bird.
+How absurd to swallow a bird!
+She swallowed the bird to catch the spider that wriggled and jiggled and tickled inside her.
+She swallowed the spider to catch the fly.
+I don't know why she swallowed the fly. Perhaps she'll die.
+
+I know an old lady who swallowed a cat.
+Imagine that, to swallow a cat!
+She swallowed the cat to catch the bird.
+She swallowed the bird to catch the spider that wriggled and jiggled and tickled inside her.
+She swallowed the spider to catch the fly.
+I don't know why she swallowed the fly. Perhaps she'll die.
+
+I know an old lady who swallowed a dog.
+What a hog, to swallow a dog!
+She swallowed the dog to catch the cat.
+She swallowed the cat to catch the bird.
+She swallowed the bird to catch the spider that wriggled and jiggled and tickled inside her.
+She swallowed the spider to catch the fly.
+I don't know why she swallowed the fly. Perhaps she'll die.
+
+I know an old lady who swallowed a goat.
+Just opened her throat and swallowed a goat!
+She swallowed the goat to catch the dog.
+She swallowed the dog to catch the cat.
+She swallowed the cat to catch the bird.
+She swallowed the bird to catch the spider that wriggled and jiggled and tickled inside her.
+She swallowed the spider to catch the fly.
+I don't know why she swallowed the fly. Perhaps she'll die.
+
+I know an old lady who swallowed a cow.
+I don't know how she swallowed a cow!
+She swallowed the cow to catch the goat.
+She swallowed the goat to catch the dog.
+She swallowed the dog to catch the cat.
+She swallowed the cat to catch the bird.
+She swallowed the bird to catch the spider that wriggled and jiggled and tickled inside her.
+She swallowed the spider to catch the fly.
+I don't know why she swallowed the fly. Perhaps she'll die.
+
+I know an old lady who swallowed a horse.
+She's dead, of course!
+
+`;
 
     expect(song.verses(1, 8)).toEqual(expected);
   });
-
 });
-
