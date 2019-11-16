@@ -1,6 +1,9 @@
 extern crate chrono;
-use chrono::*;
+extern crate time;
 
-pub fn after(start_date: DateTime<UTC>) -> DateTime<UTC> {
+use chrono::prelude::*;
+use time::Duration;
+
+pub fn after(start_date: DateTime<Utc>) -> DateTime<Utc> {
     start_date + Duration::seconds(1_000_000_000)
 }
