@@ -2,45 +2,45 @@ export class Song {
   constructor() {
     this._verses = [
       {
-        type: 'fly',
+        end: ' Perhaps she\'ll die.\n',
         message: '',
-        end: " Perhaps she'll die.\n",
+        type: 'fly',
       },
       {
-        type: 'spider',
         catch: 'fly',
         message: 'It wriggled and jiggled and tickled inside her.\n',
+        type: 'spider',
       },
       {
-        type: 'bird',
         catch: 'spider that wriggled and jiggled and tickled inside her',
         message: 'How absurd to swallow a bird!\n',
+        type: 'bird',
       },
       {
-        type: 'cat',
         catch: 'bird',
         message: 'Imagine that, to swallow a cat!\n',
+        type: 'cat',
       },
       {
-        type: 'dog',
         catch: 'cat',
         message: 'What a hog, to swallow a dog!\n',
+        type: 'dog',
       },
       {
-        type: 'goat',
         catch: 'dog',
         message: 'Just opened her throat and swallowed a goat!\n',
+        type: 'goat',
       },
       {
-        type: 'cow',
         catch: 'goat',
-        message: "I don't know how she swallowed a cow!\n",
+        message: 'I don\'t know how she swallowed a cow!\n',
+        type: 'cow',
       },
       {
+        last: true,
+        message: 'She\'s dead, of course!\n',
         type: 'horse',
         why: 'catch',
-        message: "She's dead, of course!\n",
-        last: true,
       },
     ];
   }
