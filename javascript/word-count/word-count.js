@@ -5,7 +5,7 @@ export class Words {
       .toLowerCase()
       .split(/[\t\n ]+/)
       .reduce((result, word) => {
-        result[word] = result.hasOwnProperty(word) ? result[word] + 1 : 1;
+        result[word] = Object.prototype.hasOwnProperty.call(result, word) ? result[word] + 1 : 1;
         return result;
       }, {});
   }

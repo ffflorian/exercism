@@ -55,7 +55,7 @@ export class Song {
       verse += `${
         v.catch
           ? `She swallowed the ${v.type} to catch the ${v.catch}.\n`
-          : `I don\'t know why she swallowed the ${v.type}.`
+          : `I don't know why she swallowed the ${v.type}.`
       }${v.end ? v.end : ''}`;
     }
     return `${verse}`;
