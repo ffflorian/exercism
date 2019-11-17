@@ -1,6 +1,6 @@
 export class Song {
   constructor() {
-    this.verses = [
+    this._verses = [
       {
         type: 'fly',
         message: '',
@@ -46,9 +46,9 @@ export class Song {
   }
 
   verse(index) {
-    let verse = `I know an old lady who swallowed a ${verses[index - 1].type}.\n${verses[index - 1].message}`;
+    let verse = `I know an old lady who swallowed a ${this._verses[index - 1].type}.\n${this._verses[index - 1].message}`;
     for (let i = index - 1; i >= 0; i--) {
-      const v = verses[i];
+      const v = this._verses[i];
       if (v.last === true) {
         break;
       }

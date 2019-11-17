@@ -19,7 +19,7 @@ export const BeerSong = {
       num === 1
     )} ${bottle(num - 1, true)}.\n`;
   },
-  sing(begin, end = 0) {
+  sing(begin = 99, end = 0) {
     let verses = [];
     for (let i = begin; i >= end; i--) {
       verses.push(this.verse(i));

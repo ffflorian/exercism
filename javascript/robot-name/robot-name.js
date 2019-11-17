@@ -1,23 +1,32 @@
-const _usedNames = {};
+let _usedNames = {};
 
 export class Robot {
   constructor() {
-    reset()
+    this.reset();
   }
 
   _generateName() {
-    const str = () => String.fromCharCode(Math.floor(Math.random() * 25) + 65);
+    const randomString = () => String.fromCharCode(Math.floor(Math.random() * 25) + 65);
     const num = Math.floor(Math.random() * 899) + 100;
-    const name = str() + str() + num;
+    const name = `${randomString()}${randomString()}${num}`;
+
     if (typeof _usedNames[name] === 'undefined') {
       _usedNames[name] = true;
       return name;
-    } else {
-      return generateName();
     }
+
+    return this._generateName();
+  }
+
+  static releaseNames() {
+    _usedNames = {};
+  }
+
+  get name() {
+    return this._name;
   }
 
   reset() {
-    this.name = generateName();
+    this._name = this._generateName();
   }
 }

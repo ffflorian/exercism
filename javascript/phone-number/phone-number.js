@@ -1,22 +1,18 @@
 export class PhoneNumber {
-  constructor(_number) {
-    this._number = _number;
+  constructor(number = '') {
+    this.number = number;
   }
 
-  number() {
-    if (this._number.length === 11 && this._number.match(/^1/) !== null) {
-      return /^.([0-9]*)/.exec(this._number)[1];
-    } else if (this._number.match(/^[0-9]+$/) === null && (this._number.length > 9 || this._number.length <= 10)) {
-      return this._number.replace(/[^0-9]/g, '');
-    }
-    return '0000000000';
+  _number() {
+    const match = this.number.replace(/[^0-9]/g, '').match(/^1?([2-9]\d{2}[2-9]\d{6})$/);
+    return match ? match[1] : null;
   }
 
   areaCode() {
-    return /^([0-9]){3}/.exec(this._number)[0];
+    return /^(\d){3}/.exec(this.number)[0];
   }
 
   toString() {
-    return this._number.replace(/([0-9]{3})([0-9]{3})([0-9]{3})/, '($1) $2-$3');
+    return this.number.replace(/(\d{3})(\d{3})(\d{3})/, '($1) $2-$3');
   }
 }
