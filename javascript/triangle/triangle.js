@@ -1,19 +1,28 @@
-module.exports = class Triangle {
-  constructor(sideA, sideB, sideC) {
-    this.sideA = sideA;
-    this.sideB = sideB;
-    this.sideC = sideC;
+export class Triangle {
+  constructor(a, b, c) {
+    this.a = a;
+    this.b = b;
+    this.c = c;
   }
 
   kind() {
-    if ((this.sideA * this.sideB * this.sideC <= 0) || (this.sideC > this.sideA + this.sideB || this.sideA > this.sideB + this.sideC || this.sideB > this.sideA + this.sideC)) {
-      throw new Error('Invalid triangle');
-    } else if (this.sideA === this.sideB && this.sideB === this.sideC) {
-      return 'equilateral';
-    } else if (this.sideA !== this.sideB && this.sideB !== this.sideC && this.sideC !== this.sideA) {
-      return 'scalene';
-    } else {
-      return 'isosceles';
+    if (
+      this.a * this.b * this.c <= 0 ||
+      this.c > this.a + this.b ||
+      this.a > this.b + this.c ||
+      this.b > this.a + this.c
+    ) {
+      throw new Error('Degenerate triangle');
     }
+
+    if (this.a === this.b && this.b === this.c) {
+      return 'equilateral';
+    }
+
+    if (this.a !== this.b && this.b !== this.c && this.c !== this.a) {
+      return 'scalene';
+    }
+
+    return 'isosceles';
   }
-};
+}

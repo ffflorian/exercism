@@ -1,38 +1,79 @@
-const PhoneNumber = require('./phone-number');
+import { PhoneNumber } from './phone-number';
 
 describe('PhoneNumber()', () => {
-  it('cleans the number (123) 456-7890', () => {
-    const phone = new PhoneNumber('(123) 456-7890');
-    expect(phone.number()).toEqual('1234567890');
+  test('cleans the number', () => {
+    const phone = new PhoneNumber('(223) 456-7890');
+    expect(phone._number()).toEqual('2234567890');
   });
 
-  it('cleans numbers with dots', () => {
-    const phone = new PhoneNumber('123.456.7890');
-    expect(phone.number()).toEqual('1234567890');
+  test('cleans numbers with dots', () => {
+    const phone = new PhoneNumber('223.456.7890');
+    expect(phone._number()).toEqual('2234567890');
   });
 
-  it('valid when 11 digits and first digit is 1', () => {
-    const phone = new PhoneNumber('11234567890');
-    expect(phone.number()).toEqual('1234567890');
+  test('cleans numbers with multiple spaces', () => {
+    const phone = new PhoneNumber('223 456   7890   ');
+    expect(phone._number()).toEqual('2234567890');
   });
 
-  it('invalid when 11 digits', () => {
-    const phone = new PhoneNumber('21234567890');
-    expect(phone.number()).toEqual('0000000000');
+  test('invalid when 9 digits', () => {
+    const phone = new PhoneNumber('223456789');
+    expect(phone._number()).toEqual(null);
   });
 
-  it('invalid when 9 digits', () => {
-    const phone = new PhoneNumber('123456789');
-    expect(phone.number()).toEqual('0000000000');
+  test('invalid when 11 digits does not start with a 1', () => {
+    const phone = new PhoneNumber('22234567890');
+    expect(phone._number()).toEqual(null);
   });
 
-  it('has an area code', () => {
-    const phone = new PhoneNumber('1234567890');
-    expect(phone.areaCode()).toEqual('123');
+  test('valid when 11 digits and starting with 1', () => {
+    const phone = new PhoneNumber('12234567890');
+    expect(phone._number()).toEqual('2234567890');
   });
 
-  it('formats a number', () => {
-    const phone = new PhoneNumber('1234567890');
-    expect(phone.toString()).toEqual('(123) 456-7890');
+  test('valid when 11 digits and starting with 1 even with punctuation', () => {
+    const phone = new PhoneNumber('+1 (223) 456-7890');
+    expect(phone._number()).toEqual('2234567890');
+  });
+
+  test('invalid when 12 digits', () => {
+    const phone = new PhoneNumber('322234567890');
+    expect(phone._number()).toEqual(null);
+  });
+
+  test('invalid with letters', () => {
+    const phone = new PhoneNumber('223-abc-7890');
+    expect(phone._number()).toEqual(null);
+  });
+
+  test('invalid with punctuations', () => {
+    const phone = new PhoneNumber('223-@:!-7890');
+    expect(phone._number()).toEqual(null);
+  });
+
+  test('invalid if area code starts with 0 or 1', () => {
+    const phone1 = new PhoneNumber('(023) 456-7890');
+    const phone2 = new PhoneNumber('(123) 456-7890');
+    expect(phone1._number()).toEqual(null);
+    expect(phone2._number()).toEqual(null);
+  });
+
+  test('invalid if exchange code starts with 0 or 1', () => {
+    const phone1 = new PhoneNumber('(223) 056-7890');
+    const phone2 = new PhoneNumber('(223) 156-7890');
+    expect(phone1._number()).toEqual(null);
+    expect(phone2._number()).toEqual(null);
+  });
+
+  test('invalid when 11 digits starting with 1, '
+  + 'but invalid area/exchange code first digits', () => {
+    const phone1 = new PhoneNumber('1 (023) 456-7890');
+    const phone2 = new PhoneNumber('1 (123) 456-7890');
+    const phone3 = new PhoneNumber('1 (223) 056-7890');
+    const phone4 = new PhoneNumber('1 (223) 156-7890');
+    expect(phone1._number()).toEqual(null);
+    expect(phone2._number()).toEqual(null);
+    expect(phone3._number()).toEqual(null);
+    expect(phone4._number()).toEqual(null);
   });
 });

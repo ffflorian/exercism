@@ -4,6 +4,12 @@ javascript/**/*.log
 javascript/**/npm-debug.log*
 javascript/**/node_modules/
 javascript/**/package-lock.json
+javascript/**/package.json
+javascript/**/.eslintrc
+javascript/**/babel.config.js
+javascript/**/babel.config.js
+javascript/**/yarn.lock
+!javascript/babel.config.js
 
 # python
 python/**/__pycache__

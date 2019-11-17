@@ -14,7 +14,7 @@ The Romans wrote numbers using letters - I, V, X, L, C, D, M. (notice
 these letters have lots of straight lines and are hence easy to hack
 into stone tablets).
 
-```
+```text
  1  => I
 10  => X
  7  => VII
@@ -44,26 +44,37 @@ See also: http://www.novaroma.org/via_romana/numbers.html
 
 ## Setup
 
-Go through the setup instructions for JavaScript to
-install the necessary dependencies:
+Go through the setup instructions for Javascript to install the necessary
+dependencies:
 
-http://exercism.io/languages/javascript
+[https://exercism.io/tracks/javascript/installation](https://exercism.io/tracks/javascript/installation)
 
-## Making the Test Suite Pass
+## Requirements
+
+Install assignment dependencies:
+
+```bash
+$ npm install
+```
+
+## Making the test suite pass
 
 Execute the tests with:
 
-    jasmine .
+```bash
+$ npm test
+```
 
-In many test suites all but the first test have been skipped.
+In the test suites all tests but the first have been skipped.
 
-Once you get a test passing, you can unskip the next one by
-changing `xit` to `it`.
+Once you get a test passing, you can enable the next one by changing `xtest` to
+`test`.
 
 ## Source
 
 The Roman Numeral Kata [http://codingdojo.org/cgi-bin/index.pl?KataRomanNumerals](http://codingdojo.org/cgi-bin/index.pl?KataRomanNumerals)
 
-## Submitting Incomplete Problems
-It's possible to submit an incomplete solution so you can see how others have completed the exercise.
+## Submitting Incomplete Solutions
 
+It's possible to submit an incomplete solution so you can see how others have
+completed the exercise.

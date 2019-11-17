@@ -1,39 +1,47 @@
-const Hamming = require('./hamming');
+import { compute } from './hamming';
 
 describe('Hamming', () => {
-  const hamming = new Hamming();
-
-  it('no difference between identical strands', () => {
-    expect(hamming.compute('A', 'A')).toEqual(0);
+  test('empty strands', () => {
+    expect(compute('', '')).toEqual(0);
   });
 
-  it('complete hamming distance for single nucleotide strand', () => {
-    expect(hamming.compute('A', 'G')).toEqual(1);
+  test('single letter identical strands', () => {
+    expect(compute('A', 'A')).toEqual(0);
   });
 
-  it('complete hamming distance for small strand', () => {
-    expect(hamming.compute('AG', 'CT')).toEqual(2);
+  test('single letter different strands', () => {
+    expect(compute('G', 'T')).toEqual(1);
   });
 
-  it('small hamming distance', () => {
-    expect(hamming.compute('AT', 'CT')).toEqual(1);
+  test('long identical strands', () => {
+    expect(compute('GGACTGAAATCTG', 'GGACTGAAATCTG')).toEqual(0);
   });
 
-  it('small hamming distance in longer strand', () => {
-    expect(hamming.compute('GGACG', 'GGTCG')).toEqual(1);
+  test('long different strands', () => {
+    expect(compute('GGACGGATTCTG', 'AGGACGGATTCT')).toEqual(9);
   });
 
-  it('large hamming distance', () => {
-    expect(hamming.compute('GATACA', 'GCATAA')).toEqual(4);
+  test('disallow first strand longer', () => {
+    expect(() => compute('AATG', 'AAA')).toThrow(
+      new Error('left and right strands must be of equal length'),
+    );
   });
 
-  it('hamming distance in very long strand', () => {
-    expect(hamming.compute('GGACGGATTCTG', 'AGGACGGATTCT')).toEqual(9);
+  test('disallow second strand longer', () => {
+    expect(() => compute('ATA', 'AGTG')).toThrow(
+      new Error('left and right strands must be of equal length'),
+    );
   });
 
-  it('throws error when strands are not equal length', () => {
-    expect(() => { hamming.compute('GGACGGATTCTG', 'AGGAC'); }).toThrow(
-      new Error('DNA strands must be of equal length.')
+  test('disallow left empty strand', () => {
+    expect(() => compute('', 'G')).toThrow(
+      new Error('left strand must not be empty'),
+    );
+  });
+
+  test('disallow right empty strand', () => {
+    expect(() => compute('G', '')).toThrow(
+      new Error('right strand must not be empty'),
     );
   });
 });

@@ -1,14 +1,21 @@
-module.exports = class Hamming {
-  compute(strand1, strand2) {
-    if (strand1.length === strand2.length) {
-      let diff = 0;
-      for (let index = 0; index < strand1.length; index++) {
-        if (strand1[index] !== strand2[index]) {
-          diff++;
-        }
-      }
-      return diff;
-    }
-    throw new Error('DNA strands must be of equal length.');
+export function compute(strand1, strand2) {
+  if (!strand1 && strand2) {
+    throw new Error('left strand must not be empty');
   }
-};
+
+  if (strand1 && !strand2) {
+    throw new Error('right strand must not be empty');
+  }
+
+  if (strand1.length !== strand2.length) {
+    throw new Error('left and right strands must be of equal length');
+  }
+
+  let diff = 0;
+  for (let i = 0; i < strand1.length; i++) {
+    if (strand1[i] !== strand2[i]) {
+      diff++;
+    }
+  }
+  return diff;
+}

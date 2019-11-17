@@ -1,22 +1,32 @@
-const _usedNames = {};
+let _usedNames = {};
 
-module.exports = class RobotName {
+export class Robot {
   constructor() {
-    this.name = this.generateName();
+    this.reset();
   }
 
-  generateName() {
-    const str = () => String.fromCharCode(Math.floor(Math.random() * 25) + 65);
+  _generateName() {
+    const randomString = () => String.fromCharCode(Math.floor(Math.random() * 25) + 65);
     const num = Math.floor(Math.random() * 899) + 100;
-    const name = str() + str() + num;
+    const name = `${randomString()}${randomString()}${num}`;
+
     if (typeof _usedNames[name] === 'undefined') {
       _usedNames[name] = true;
       return name;
     }
-    return this.generateName();
-  };
+
+    return this._generateName();
+  }
+
+  static releaseNames() {
+    _usedNames = {};
+  }
+
+  get name() {
+    return this._name;
+  }
 
   reset() {
-    this.name = this.generateName();
+    this._name = this._generateName();
   }
-};
+}

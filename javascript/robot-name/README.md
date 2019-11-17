@@ -1,6 +1,6 @@
 # Robot Name
 
-Write a program that manages robot factory settings.
+Manage robot factory settings.
 
 When robots come off the factory floor, they have no name.
 
@@ -12,32 +12,42 @@ which means that their name gets wiped. The next time you ask, it will
 respond with a new random name.
 
 The names must be random: they should not follow a predictable sequence.
-Random names means a risk of collisions. Your solution should not allow
-the use of the same name twice when avoidable. In some exercism language
-tracks there are tests to ensure that the same name is never used twice.
+Random names means a risk of collisions. Your solution must ensure that
+every existing robot has a unique name.
 
 ## Setup
 
-Go through the setup instructions for JavaScript to
-install the necessary dependencies:
+Go through the setup instructions for Javascript to install the necessary
+dependencies:
 
-http://exercism.io/languages/javascript
+[https://exercism.io/tracks/javascript/installation](https://exercism.io/tracks/javascript/installation)
 
-## Making the Test Suite Pass
+## Requirements
+
+Install assignment dependencies:
+
+```bash
+$ npm install
+```
+
+## Making the test suite pass
 
 Execute the tests with:
 
-    jasmine-node .
+```bash
+$ npm test
+```
 
-In many test suites all but the first test have been skipped.
+In the test suites all tests but the first have been skipped.
 
-Once you get a test passing, you can unskip the next one by
-changing `xit` to `it`.
+Once you get a test passing, you can enable the next one by changing `xtest` to
+`test`.
 
 ## Source
 
 A debugging session with Paul Blackwell at gSchool. [http://gschool.it](http://gschool.it)
 
-## Submitting Incomplete Problems
-It's possible to submit an incomplete solution so you can see how others have completed the exercise.
+## Submitting Incomplete Solutions
 
+It's possible to submit an incomplete solution so you can see how others have
+completed the exercise.

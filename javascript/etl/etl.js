@@ -1,8 +1,6 @@
-module.exports = class ETL {
-  transform(oldSet) {
-    return Object.keys(oldSet).reduce((newSet, index) => {
-      oldSet[index].forEach(letter => newSet[letter.toLowerCase()] = parseInt(index));
-      return newSet;
-    }, {});
-  }
-};
+export function transform(oldSet) {
+  return Object.keys(oldSet).reduce((newSet, index) => {
+    oldSet[index].forEach(letter => (newSet[letter.toLowerCase()] = parseInt(index)));
+    return newSet;
+  }, {});
+}

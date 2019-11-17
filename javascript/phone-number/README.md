@@ -1,46 +1,66 @@
 # Phone Number
 
-Write a program that cleans up user-entered phone numbers so that they can be sent SMS messages.
+Clean up user-entered phone numbers so that they can be sent SMS messages.
 
-The rules are as follows:
+The **North American Numbering Plan (NANP)** is a telephone numbering system used by many countries in North America like the United States, Canada or Bermuda. All NANP-countries share the same international country code: `1`.
 
-- If the phone number is less than 10 digits assume that it is bad
-  number
-- If the phone number is 10 digits assume that it is good
-- If the phone number is 11 digits and the first number is 1, trim the 1
-  and use the last 10 digits
-- If the phone number is 11 digits and the first number is not 1, then
-  it is a bad number
-- If the phone number is more than 11 digits assume that it is a bad
-  number
+NANP numbers are ten-digit numbers consisting of a three-digit Numbering Plan Area code, commonly known as *area code*, followed by a seven-digit local number. The first three digits of the local number represent the *exchange code*, followed by the unique four-digit number which is the *subscriber number*.
 
-We've provided tests, now make them pass.
+The format is usually represented as
 
-Hint: Only make one test pass at a time. Disable the others, then flip
-each on in turn after you get the current failing one to pass.
+```text
+(NXX)-NXX-XXXX
+```
+
+where `N` is any digit from 2 through 9 and `X` is any digit from 0 through 9.
+
+Your task is to clean up differently formatted telephone numbers by removing punctuation and the country code (1) if present.
+
+For example, the inputs
+- `+1 (613)-995-0253`
+- `613-995-0253`
+- `1 613 995 0253`
+- `613.995.0253`
+
+should all produce the output
+
+`6139950253`
+
+**Note:** As this exercise only deals with telephone numbers used in NANP-countries, only 1 is considered a valid country code.
 
 ## Setup
 
-Go through the setup instructions for JavaScript to
-install the necessary dependencies:
+Go through the setup instructions for Javascript to install the necessary
+dependencies:
 
-http://exercism.io/languages/javascript
+[https://exercism.io/tracks/javascript/installation](https://exercism.io/tracks/javascript/installation)
 
-## Making the Test Suite Pass
+## Requirements
+
+Install assignment dependencies:
+
+```bash
+$ npm install
+```
+
+## Making the test suite pass
 
 Execute the tests with:
 
-    jasmine-node .
+```bash
+$ npm test
+```
 
-In many test suites all but the first test have been skipped.
+In the test suites all tests but the first have been skipped.
 
-Once you get a test passing, you can unskip the next one by
-changing `xit` to `it`.
+Once you get a test passing, you can enable the next one by changing `xtest` to
+`test`.
 
 ## Source
 
 Event Manager by JumpstartLab [http://tutorials.jumpstartlab.com/projects/eventmanager.html](http://tutorials.jumpstartlab.com/projects/eventmanager.html)
 
-## Submitting Incomplete Problems
-It's possible to submit an incomplete solution so you can see how others have completed the exercise.
+## Submitting Incomplete Solutions
 
+It's possible to submit an incomplete solution so you can see how others have
+completed the exercise.
