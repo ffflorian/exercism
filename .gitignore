@@ -17,7 +17,6 @@ python/**/__pycache__
 # rust
 target
 rust/**/.gitignore
-rust/**/Cargo.lock
 rust/**/*.rs.bk
 
 # Exercism metadata
