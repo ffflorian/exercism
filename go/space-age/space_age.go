@@ -1,5 +1,7 @@
 package space
 
+import "fmt"
+
 // Planet is a definition for planet names
 type Planet string
 
@@ -18,5 +20,6 @@ var yearOnEarth float64 = 315576000
 
 // Age returns the space age for a planet
 func Age(seconds float64, planet Planet) float64 {
-	return seconds / yearOnEarth / planets[planet]
+	fmt.Println("%d / %d / %d", planets[planet], seconds, yearOnEarth)
+	return planets[planet] / seconds / yearOnEarth
 }
