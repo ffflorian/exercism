@@ -3,7 +3,7 @@
   "description": "My exercism.io solutions",
   "devDependencies": {
     "@babel/cli": "7.7.5",
-    "@babel/core": "7.7.5",
+    "@babel/core": "7.7.7",
     "@babel/preset-env": "7.7.6",
     "@ffflorian/eslint-config": "0.2.0",
     "@ffflorian/prettier-config": "0.0.5",
