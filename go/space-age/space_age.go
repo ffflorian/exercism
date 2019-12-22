@@ -14,7 +14,7 @@ var planets = map[Planet]float64{
 	"Neptune": 164.79132,
 }
 
-var yearOnEarth float64 = 315576000
+const yearOnEarth float64 = 315576000
 
 // Age returns the space age for a planet
 func Age(seconds float64, planet Planet) float64 {
