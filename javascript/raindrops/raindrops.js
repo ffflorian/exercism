@@ -13,9 +13,5 @@ export const convert = input => {
     result += 'Plong';
   }
 
-  if (result === '') {
-    result = input.toString();
-  }
-
-  return result;
+  return result || input.toString();
 }
