@@ -18,7 +18,7 @@ export function score(word) {
     .reduce((result, letter) => {
       let points = 0;
       values.forEach(group => {
-        if (~group[0].indexOf(letter)) {
+        if (group[0].indexOf(letter) > -1) {
           points += group[1];
         }
       });
