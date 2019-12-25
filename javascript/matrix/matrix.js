@@ -9,7 +9,7 @@ export class Matrix {
   }
 
   _convertColumns(rows) {
-    return Object.keys(rows[0]).map(column => rows.map(row => row[column]));
+    return rows[0].map((_, columnIndex) => rows.map(row => row[columnIndex]));
   }
 
   get rows() {
