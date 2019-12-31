@@ -7,7 +7,7 @@ export function solve(x, y) {
     return null;
   }
 
-  const radius = Math.sqrt(x ** 2 + y ** 2);
+  const radius = Math.sqrt(Math.pow(x, 2) + Math.pow(y, 2));
 
   if (radius <= innerCircle) {
     return 10;
