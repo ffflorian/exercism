@@ -1,3 +1,5 @@
+/* eslint-disable no-unused-vars */
+
 const sequences = [
   [['AUG'], 'Methionine'],
   [['UUU', 'UUC'], 'Phenylalanine'],
@@ -10,22 +12,22 @@ const sequences = [
 
 const stop = ['UAA', 'UAG', 'UGA'];
 
-export const translate = sequence => {
+export const translate = inputSequence => {
   const proteins = [];
 
-  if (!sequence) {
+  if (!inputSequence) {
     return proteins;
   }
 
-  const sequenceParts = sequence.match(/.{1,3}/g);
-  for (let sequencePart of sequenceParts) {
+  const sequenceParts = inputSequence.match(/.{1,3}/g);
+  for (const sequencePart of sequenceParts) {
     if (stop.includes(sequencePart)) {
       return proteins;
     }
     if (sequencePart.length !== 3) {
       throw new Error('Invalid codon');
     }
-    for (let sequence of sequences) {
+    for (const sequence of sequences) {
       if (sequence[0].includes(sequencePart)) {
         proteins.push(sequence[1]);
       }
