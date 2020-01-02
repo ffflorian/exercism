@@ -8,6 +8,6 @@ export const transpose = lines => {
   return [...Array(longestLine).keys()].map(col =>
     trimTrailing(lines.map((_, row) => lines[row][col]))
       .map(char => char || ' ')
-      .join('')
+      .join(''),
   );
 };
