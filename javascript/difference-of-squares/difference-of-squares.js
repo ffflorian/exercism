@@ -1,22 +1,14 @@
 export class Squares {
   constructor(n) {
-    this._n = n;
+    this.n = n;
   }
 
   get sumOfSquares() {
-    let result = 0;
-    for (let i = 0; i <= this._n; i++) {
-      result += i * i;
-    }
-    return result;
+    return this.n * (this.n + 1) * (2 * this.n + 1) / 6
   }
 
   get squareOfSum() {
-    let result = 0;
-    for (let i = 0; i <= this._n; i++) {
-      result += i;
-    }
-    return result * result;
+    return (this.n * (this.n + 1) / 2) * (this.n * (this.n + 1) / 2)
   }
 
   get difference() {
