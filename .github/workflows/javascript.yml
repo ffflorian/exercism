@@ -4,6 +4,7 @@ on:
   push:
     paths:
       - 'javascript/**'
+      - '.github/workflows/javascript.yml'
 
 jobs:
   test_javascript:

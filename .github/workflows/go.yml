@@ -4,6 +4,7 @@ on:
   push:
     paths:
       - 'go/**'
+      - '.github/workflows/go.yml'
 
 jobs:
   test_go:
@@ -16,7 +17,7 @@ jobs:
         uses: actions/cache@v1
         with:
           path: ~/go/pkg/mod
-          key: ${{ runner.os }}-go-${{ hashFiles('**/go.sum') }}
+          key: ${{ runner.os }}-go-${{ hashFiles('go/**/go.sum') }}
           restore-keys: |
             ${{ runner.os }}-go-
       - name: Test Go projects
