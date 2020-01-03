@@ -1,0 +1,33 @@
+name: Update project numbers
+
+on:
+  push:
+    branches:
+      - 'master'
+
+jobs:
+  update_numbers:
+    name: Update project numbers
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v1
+      - name: Set up Node.js
+        uses: actions/setup-node@v1
+        with:
+          node-version: 12.x
+      - name: Get the numbers
+        run: |
+          GO_SOLUTIONS=$(cd go && ls | wc -l)
+          JS_SOLUTIONS=$(cd javascript && ls | wc -l)
+          PYTHON_SOLUTIONS=$(cd python && ls | wc -l)
+          RUST_SOLUTIONS=$(cd rust && ls | wc -l)
+          echo "GO_SOLUTIONS: $GO_SOLUTIONS"
+          echo "JS_SOLUTIONS: $JS_SOLUTIONS"
+          echo "PYTHON_SOLUTIONS: $PYTHON_SOLUTIONS"
+          echo "RUST_SOLUTIONS: $RUST_SOLUTIONS"
+          sed -i "s/\(.\/go)\).*/\1 (${GO_SOLUTIONS} solutions)/g" README.md
+          sed -i "s/\(.\/javascript)\).*/\1 (${JS_SOLUTIONS} solutions)/g" README.md
+          sed -i "s/\(.\/python)\).*/\1 (${PYTHON_SOLUTIONS} solutions)/g" README.md
+          sed -i "s/\(.\/rust)\).*/\1 (${RUST_SOLUTIONS} solutions)/g" README.md
+          cat README.md
