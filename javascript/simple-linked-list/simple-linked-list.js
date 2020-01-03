@@ -7,38 +7,36 @@ export class Element {
 
 export class List {
   constructor(values = []) {
-    this.elements = values.map(value => new Element(value));
-    this._updateElements();
+    this.head = null;
+    values.forEach(value => this.add(new Element(value)));
   }
 
-  _updateElements() {
-    for (let index = 0; index < this.elements.length; index++) {
-      this.elements[index].next = this.elements[index - 1] || null;
+  *[Symbol.iterator]() {
+    let pointer = this.head;
+    while (pointer) {
+      yield pointer;
+      pointer = pointer.next;
     }
-    this._head = this.elements[this.length - 1] || null;
   }
 
   add(element) {
-    this.elements.push(element);
-    this._updateElements();
+    if (this.head === null) {
+      this.head = element;
+    } else {
+      element.next = this.head;
+      this.head = element;
+    }
   }
 
   reverse() {
-    this.elements.reverse();
-    this._updateElements();
-    return this;
+    return new List(this.toArray());
   }
 
   toArray() {
-    // no idea why `toArray` should reverse the list but the tests want it that way
-    return [...this.elements].reverse().map(element => element.value);
-  }
-
-  get head() {
-    return this._head || null;
+    return Array.from(this).map(element => element.value);
   }
 
   get length() {
-    return this.elements.length;
+    return Array.from(this).length;
   }
 }
