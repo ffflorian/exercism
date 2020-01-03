@@ -686,10 +686,10 @@
     exec-sh "^0.3.2"
     minimist "^1.2.0"
 
-"@ffflorian/eslint-config@0.2.0":
-  version "0.2.0"
-  resolved "https://registry.npmjs.org/@ffflorian/eslint-config/-/eslint-config-0.2.0.tgz#27cabd227fe6df68c24df883fd1ca20d837af181"
-  integrity sha512-kXUADZSqOQ0L1veBI7FBsbqdiG5TrFoRz4+UedmMTFLn2Ls/7DF8om0FlTOfN09Exb7M0p2pLXb5fBpkJDQIxA==
+"@ffflorian/eslint-config@0.2.1":
+  version "0.2.1"
+  resolved "https://registry.npmjs.org/@ffflorian/eslint-config/-/eslint-config-0.2.1.tgz#02a7fe450950a044bb612755c2e39f22e2b39902"
+  integrity sha512-++AKWadJSNM0rdzegRLkG9mFR+thP84ka5h0Erdt8Xl0SdO8OSpOWWhQs0TdiwavzizDAj3fR/qUji2/OlWEEA==
 
 "@ffflorian/prettier-config@0.0.6":
   version "0.0.6"
