@@ -12,10 +12,6 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v1
-      - name: Set up Node.js
-        uses: actions/setup-node@v1
-        with:
-          node-version: 12.x
       - name: Get the numbers
         run: bin/update_readme.sh
         env:
