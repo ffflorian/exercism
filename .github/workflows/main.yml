@@ -1,9 +1,6 @@
 name: Update project numbers
 
-on:
-  push:
-    branches:
-      - 'master'
+on: push
 
 jobs:
   update_numbers:
@@ -31,3 +28,4 @@ jobs:
           sed -i "s/\(.\/python)\).*/\1 (${PYTHON_SOLUTIONS} solutions)/g" README.md
           sed -i "s/\(.\/rust)\).*/\1 (${RUST_SOLUTIONS} solutions)/g" README.md
           cat README.md
+          if git ls-files -m; then git add .; done
