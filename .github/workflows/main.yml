@@ -1,6 +1,9 @@
 name: Update project numbers
 
-on: push
+on:
+  push:
+    branches:
+      - master
 
 jobs:
   update_numbers:
