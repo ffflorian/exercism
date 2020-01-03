@@ -15,6 +15,7 @@ if [ ! -z "$(git status --porcelain)" ]; then
   git config --global "user.name" "${GIT_AUTHOR_NAME}"
   REPO_URL="$(git remote get-url origin | sed -n "s/https:\/\/github.com\//https:\/\/${GIT_AUTHOR_NAME}:${GH_TOKEN}@github.com\//p")"
   git remote set-url origin "${REPO_URL}"
+  git checkout master
   git add README.md
   git commit -m "chore(docs): Update readme\n\nskip-checks: true"
   git push
