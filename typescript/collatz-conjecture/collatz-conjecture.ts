@@ -8,6 +8,6 @@ export default class CollatzConjecture {
       return i;
     }
 
-    return n % 2 === 0 ? CollatzConjecture.steps(n / 2, ++i) : CollatzConjecture.steps(3 * n + 1, ++i);
+    return CollatzConjecture.steps(n % 2 === 0 ? n / 2 : 3 * n + 1, ++i);
   }
 }
