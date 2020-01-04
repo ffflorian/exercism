@@ -1,0 +1,45 @@
+{
+  "author": "Florian Keller <github@floriankeller.de>",
+  "description": "My exercism.io solutions",
+  "devDependencies": {
+    "@babel/cli": "7.7.7",
+    "@babel/core": "7.7.7",
+    "@babel/preset-env": "7.7.7",
+    "@ffflorian/eslint-config": "0.2.1",
+    "@ffflorian/prettier-config": "0.0.6",
+    "@ffflorian/tslint-config": "0.7.1",
+    "@types/jest": "24.0.18",
+    "@types/node": "12.7.12",
+    "@typescript-eslint/eslint-plugin": "2.3.3",
+    "@typescript-eslint/parser": "2.3.3",
+    "babel-eslint": "10.0.3",
+    "babel-jest": "24.9.0",
+    "babel-preset-env": "1.7.0",
+    "babel-register": "6.26.0",
+    "jest": "24.9.0",
+    "prettier": "1.19.1",
+    "ts-jest": "24.1.0",
+    "tslint": "5.20.1",
+    "tslint-config-prettier": "1.18.0",
+    "tslint-plugin-prettier": "2.1.0",
+    "typescript": "3.7.4"
+  },
+  "homepage": "https://github.com/ffflorian/exercism#readme",
+  "jest": {
+    "modulePathIgnorePatterns": [
+      "package.json"
+    ]
+  },
+  "license": "GPL-3.0",
+  "main": "index.js",
+  "name": "@ffflorian/exercism",
+  "prettier": "@ffflorian/prettier-config",
+  "private": true,
+  "repository": "https://github.com/ffflorian/exercism.git",
+  "scripts": {
+    "fix": "yarn lint --fix",
+    "lint": "tslint --project tsconfig.json",
+    "test": "yarn tsc --noEmit && jest --no-cache **/*.test.ts"
+  },
+  "version": "1.0.0"
+}
