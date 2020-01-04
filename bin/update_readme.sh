@@ -17,6 +17,6 @@ if [ ! -z "$(git status --porcelain)" ]; then
   git remote set-url origin "${REPO_URL}"
   git checkout master
   git add README.md
-  git commit -m "chore(docs): Update readme" -m "" -m "skip-checks: true"
+  git commit -m "chore(docs): Update readme [ci skip]"
   git push
 fi
