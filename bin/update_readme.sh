@@ -1,10 +1,10 @@
 #!/usr/bin/env bash
 
-GO_SOLUTIONS=$(cd go && ls | wc -l)
-JS_SOLUTIONS=$(cd javascript && ls | wc -l)
-TS_SOLUTIONS=$(cd typescript && ls | wc -l)
-PYTHON_SOLUTIONS=$(cd python && ls | wc -l)
-RUST_SOLUTIONS=$(cd rust && ls | wc -l)
+GO_SOLUTIONS=$(cd go && ls -d */ | wc -l)
+JS_SOLUTIONS=$(cd javascript && ls -d */ | wc -l)
+TS_SOLUTIONS=$(cd typescript && ls -d */ | wc -l)
+PYTHON_SOLUTIONS=$(cd python && ls -d */ | wc -l)
+RUST_SOLUTIONS=$(cd rust && ls -d */ | wc -l)
 
 sed -i "s/\(.\/go)\).*/\1 (${GO_SOLUTIONS} solutions)/g" README.md
 sed -i "s/\(.\/javascript)\).*/\1 (${JS_SOLUTIONS} solutions)/g" README.md
