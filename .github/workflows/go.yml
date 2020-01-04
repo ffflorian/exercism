@@ -1,4 +1,4 @@
-name: Test all projects
+name: Test Go projects
 
 on:
   push:
@@ -7,7 +7,8 @@ on:
       - '.github/workflows/go.yml'
 
 jobs:
-  prepare:
+  check_skip:
+    name: Check for skip
     runs-on: ubuntu-latest
     if: |
       ! contains(github.event.head_commit.message, '[ci skip]') &&
@@ -17,11 +18,11 @@ jobs:
   test_go:
     name: Test Go
     runs-on: ubuntu-latest
-    needs: prepare
+    needs: check_skip
     steps:
       - name: Checkout repository
         uses: actions/checkout@v1
-      - name: Test Go projects
+      - name: Run the tests
         run: |
           cd go
           ../bin/test_all.sh "*_test.go" "go test"
