@@ -9,6 +9,19 @@ typescript/*/*
 !typescript/*/*.md
 !typescript/*/*.ts
 
+#purescript
+purescript/bower_components/
+purescript/node_modules/
+purescript/.pulp-cache/
+purescript/output/
+purescript/generated-docs/
+purescript/.psc-package/
+purescript/.psc*
+purescript/.purs*
+purescript/.psa*
+purescript/.spago
+bower.json
+
 # python
 python/**/__pycache__
 

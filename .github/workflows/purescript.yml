@@ -1,0 +1,35 @@
+name: Test PureScript projects
+
+on:
+  push:
+    paths:
+      - 'purescript/**'
+      - '.github/workflows/purescript.yml'
+
+jobs:
+  check_skip:
+    name: Check for skip
+    runs-on: ubuntu-latest
+    if: |
+      ! contains(github.event.head_commit.message, '[ci skip]') &&
+      ! contains(github.event.head_commit.message, '[skip ci]')
+    steps:
+      - run: exit 0
+  test_purescript:
+    name: Test PureScript
+    runs-on: ubuntu-latest
+    needs: check_skip
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v1
+      - name: Set up Node.js
+        uses: actions/setup-node@v1
+        with:
+          node-version: 12.x
+      - name: Run the tests
+        run: |
+          npm i -g purescript pulp spago
+          cd purescript
+          spago install
+          spago build
+          spago test

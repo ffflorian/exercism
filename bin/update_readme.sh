@@ -3,12 +3,14 @@
 GO_SOLUTIONS=$(cd go && ls -d */ | wc -l)
 JS_SOLUTIONS=$(cd javascript && ls -d */ | wc -l)
 TS_SOLUTIONS=$(cd typescript && ls -d */ | wc -l)
+PS_SOLUTIONS=$(cd purescript && ls -d */ | wc -l)
 PYTHON_SOLUTIONS=$(cd python && ls -d */ | wc -l)
 RUST_SOLUTIONS=$(cd rust && ls -d */ | wc -l)
 
 sed -i "s/\(.\/go)\).*/\1 (${GO_SOLUTIONS} solutions)/g" README.md
 sed -i "s/\(.\/javascript)\).*/\1 (${JS_SOLUTIONS} solutions)/g" README.md
 sed -i "s/\(.\/typescript)\).*/\1 (${TS_SOLUTIONS} solutions)/g" README.md
+sed -i "s/\(.\/purescript)\).*/\1 (${PS_SOLUTIONS} solution)/g" README.md
 sed -i "s/\(.\/python)\).*/\1 (${PYTHON_SOLUTIONS} solutions)/g" README.md
 sed -i "s/\(.\/rust)\).*/\1 (${RUST_SOLUTIONS} solutions)/g" README.md
 
