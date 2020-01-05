@@ -1,4 +1,4 @@
-const sequences: [string[], string][] = [
+const sequences: Array<[string[], string]> = [
   [['AUG'], 'Methionine'],
   [['UUU', 'UUC'], 'Phenylalanine'],
   [['UUA', 'UUG'], 'Leucine'],
