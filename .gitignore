@@ -22,6 +22,14 @@ purescript/.psa*
 purescript/.spago
 bower.json
 
+# reasonml
+reasonml/*/*
+reasonml/node_modules/
+!reasonml/*/src/
+!reasonml/*/bsconfig.json
+!reasonml/*/__tests__
+!reasonml/*/*.md
+
 # python
 python/**/__pycache__
 

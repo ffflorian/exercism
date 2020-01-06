@@ -1,0 +1,20 @@
+{
+  "author": "Florian Keller <github@floriankeller.de>",
+  "description": "My exercism.io solutions",
+  "devDependencies": {
+    "@glennsl/bs-jest": "0.4.9",
+    "bs-platform": "7.0.1"
+  },
+  "homepage": "https://github.com/ffflorian/exercism#readme",
+  "license": "GPL-3.0",
+  "name": "@ffflorian/exercism",
+  "private": true,
+  "scripts": {
+    "build": "bsb -make-world",
+    "clean": "bsb -clean-world",
+    "start": "bsb -make-world -w",
+    "test": "jest --watchAll --env=node",
+    "test:ci": "jest --bail --no-cache --env=node"
+  },
+  "version": "1.0.0"
+}
