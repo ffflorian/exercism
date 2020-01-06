@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 main() {
-  if [ -z ${1+x} ] || [ ! -z "${@:2}" ]; then
+  if [ "$#" -ne 1 ]; then
     echo "Usage: ./error_handling <greetee>"
     exit 1
   fi
