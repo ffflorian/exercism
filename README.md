@@ -9,3 +9,4 @@ My [exercism.io](https://exercism.io) solutions.
 - [PureScript](./purescript) (1 solution)
 - [Python](./python) (2 solutions)
 - [Rust](./rust) (12 solutions)
+- [Bash](./bash) (2 solutions)

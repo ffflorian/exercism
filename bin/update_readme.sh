@@ -6,6 +6,7 @@ TS_SOLUTIONS=$(cd typescript && ls -d */ | wc -l)
 PS_SOLUTIONS=$(cd purescript && ls -d */ | wc -l)
 PYTHON_SOLUTIONS=$(cd python && ls -d */ | wc -l)
 RUST_SOLUTIONS=$(cd rust && ls -d */ | wc -l)
+BASH_SOLUTIONS=$(cd bash && ls -d */ | wc -l)
 
 sed -i "s/\(.\/go)\).*/\1 (${GO_SOLUTIONS} solutions)/g" README.md
 sed -i "s/\(.\/javascript)\).*/\1 (${JS_SOLUTIONS} solutions)/g" README.md
@@ -13,6 +14,7 @@ sed -i "s/\(.\/typescript)\).*/\1 (${TS_SOLUTIONS} solutions)/g" README.md
 sed -i "s/\(.\/purescript)\).*/\1 (${PS_SOLUTIONS} solution)/g" README.md
 sed -i "s/\(.\/python)\).*/\1 (${PYTHON_SOLUTIONS} solutions)/g" README.md
 sed -i "s/\(.\/rust)\).*/\1 (${RUST_SOLUTIONS} solutions)/g" README.md
+sed -i "s/\(.\/bash)\).*/\1 (${BASH_SOLUTIONS} solutions)/g" README.md
 
 if [ ! -z "$(git status --porcelain)" ]; then
   git config --global "user.email" "${GIT_AUTHOR_EMAIL}"
