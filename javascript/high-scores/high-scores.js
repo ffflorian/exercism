@@ -3,10 +3,6 @@ export class HighScores {
     this._scores = scores;
   }
 
-  _getSorted() {
-    return [...this._scores].sort((a, b) => b - a);
-  }
-
   get scores() {
     return this._scores;
   }
@@ -16,10 +12,10 @@ export class HighScores {
   }
 
   get personalBest() {
-    return this._getSorted().shift();
+    return Math.max(...this._scores);
   }
 
   get personalTopThree() {
-    return this._getSorted().slice(0, 3);
+    return [...this._scores].sort((a, b) => b - a).slice(0, 3);
   }
 }
