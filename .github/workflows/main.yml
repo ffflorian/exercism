@@ -13,7 +13,7 @@ jobs:
       ! contains(github.event.head_commit.message, '[ci skip]') &&
       ! contains(github.event.head_commit.message, '[skip ci]')
     steps:
-      - run: exit 0
+      - run: echo ""
   update_numbers:
     name: Update project numbers
     runs-on: ubuntu-latest
