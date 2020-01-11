@@ -7,21 +7,17 @@ on:
       - '.github/workflows/go.yml'
 
 jobs:
-  check_skip:
-    name: Check for skip
+  test_go:
+    name: Test Go
     runs-on: ubuntu-latest
     if: |
       ! contains(github.event.head_commit.message, '[ci skip]') &&
       ! contains(github.event.head_commit.message, '[skip ci]')
     steps:
-      - run: echo ""
-  test_go:
-    name: Test Go
-    runs-on: ubuntu-latest
-    needs: check_skip
-    steps:
       - name: Checkout repository
         uses: actions/checkout@v1
+        with:
+          fetch-depth: 1
       - name: Run the tests
         run: |
           cd go
