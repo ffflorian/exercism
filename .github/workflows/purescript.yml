@@ -1,4 +1,4 @@
-name: Test PureScript projects
+name: PureScript tests
 
 on:
   push:

@@ -1,4 +1,4 @@
-name: Test TypeScript projects
+name: TypeScript tests
 
 on:
   push:
