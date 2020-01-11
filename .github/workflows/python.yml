@@ -16,8 +16,6 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v1
-        with:
-          fetch-depth: 1
       - name: Run the tests
         run: |
           cd python
