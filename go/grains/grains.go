@@ -2,7 +2,6 @@ package grains
 
 import (
 	"errors"
-	"math"
 )
 
 // Square returns how many grains were on a given square
@@ -11,10 +10,10 @@ func Square(num int) (uint64, error) {
 		return 0, errors.New("Invalid input")
 	}
 
-	return uint64(math.Pow(2, float64(num-1))), nil
+	return uint64(1 << (num - 1)), nil
 }
 
 // Total returns the total number of grains on the chessboard
 func Total() uint64 {
-	return math.MaxUint64
+	return 1<<64 - 1
 }
