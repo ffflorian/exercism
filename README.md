@@ -3,7 +3,7 @@
 My [exercism.io](https://exercism.io) solutions.
 
 ### Languages
-- [Go](./go) (14 solutions) [![Test Status](https://github.com/ffflorian/exercism/workflows/Go%20tests/badge.svg)](https://github.com/ffflorian/exercism/actions/)
+- [Go](./go) (15 solutions) [![Test Status](https://github.com/ffflorian/exercism/workflows/Go%20tests/badge.svg)](https://github.com/ffflorian/exercism/actions/)
 - [JavaScript](./javascript) (52 solutions) [![Test Status](https://github.com/ffflorian/exercism/workflows/JavaScript%20tests/badge.svg)](https://github.com/ffflorian/exercism/actions/)
 - [TypeScript](./typescript) (44 solutions) [![Test Status](https://github.com/ffflorian/exercism/workflows/TypeScript%20tests/badge.svg)](https://github.com/ffflorian/exercism/actions/)
 - [PureScript](./purescript) (1 solution) [![Test Status](https://github.com/ffflorian/exercism/workflows/PureScript%20tests/badge.svg)](https://github.com/ffflorian/exercism/actions/)
