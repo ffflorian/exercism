@@ -1,7 +1,5 @@
 package strand
 
-import "strings"
-
 var rnaMap = map[string]string{
 	"G": "C",
 	"C": "G",
@@ -11,9 +9,9 @@ var rnaMap = map[string]string{
 
 // ToRNA returns the RNA complement of a DNA strand (per RNA transcription).
 func ToRNA(dna string) string {
-	rna := make([]string, len(dna))
-	for i, char := range dna {
-		rna[i] = rnaMap[string(char)]
+	result := ""
+	for _, char := range dna {
+		result += rnaMap[string(char)]
 	}
-	return strings.Join(rna, "")
+	return result
 }

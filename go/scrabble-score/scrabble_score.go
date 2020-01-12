@@ -21,10 +21,10 @@ var values = []scoresMap{
 func Score(input string) int {
 	score := 0
 
-	for _, letter := range strings.Split(strings.ToUpper(input), "") {
+	for _, letter := range strings.ToUpper(input) {
 		for _, scoreValue := range values {
 			for _, scoreLetter := range scoreValue.letters {
-				if scoreLetter == letter {
+				if scoreLetter == string(letter) {
 					score += scoreValue.score
 					break
 				}

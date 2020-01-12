@@ -2,10 +2,12 @@ package romannumerals
 
 import "errors"
 
-var romanNumeralDict = []struct {
+type dictMap struct {
 	arabicNumber int
 	romanNumber  string
-}{
+}
+
+var romanNumeralDict = []dictMap{
 	{1000, "M"},
 	{900, "CM"},
 	{500, "D"},
@@ -27,7 +29,7 @@ func ToRomanNumeral(num int) (string, error) {
 		return "", errors.New("Invalid number provided")
 	}
 
-	var result = ""
+	result := ""
 
 	for _, entry := range romanNumeralDict {
 		for num >= entry.arabicNumber {
