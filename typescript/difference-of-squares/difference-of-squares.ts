@@ -5,15 +5,15 @@ export default class Squares {
     this.n = n;
   }
 
-  get sumOfSquares(): number {
-    return (this.n * (this.n + 1) * (2 * this.n + 1)) / 6;
+  get difference(): number {
+    return this.squareOfSum - this.sumOfSquares;
   }
 
   get squareOfSum(): number {
     return ((this.n * (this.n + 1)) / 2) * ((this.n * (this.n + 1)) / 2);
   }
 
-  get difference(): number {
-    return this.squareOfSum - this.sumOfSquares;
+  get sumOfSquares(): number {
+    return (this.n * (this.n + 1) * (2 * this.n + 1)) / 6;
   }
 }

@@ -1,10 +1,6 @@
 let usedNames: Record<string, boolean> = {};
 
 export default class Robot {
-  get name(): string {
-    return this._name;
-  }
-
   static releaseNames(): void {
     usedNames = {};
   }
@@ -13,6 +9,9 @@ export default class Robot {
 
   constructor() {
     this.resetName();
+  }
+  get name(): string {
+    return this._name;
   }
 
   resetName(): void {
