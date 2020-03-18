@@ -5,6 +5,14 @@ export default class Triangle {
     this._rows = this._buildTriangle(length);
   }
 
+  get lastRow(): number[] | undefined {
+    return this.rows.pop();
+  }
+
+  get rows(): number[][] {
+    return this._rows;
+  }
+
   _buildTriangle(length: number): number[][] {
     const triangle: number[][] = [];
     for (let rowIndex = 0; rowIndex < length; rowIndex++) {
@@ -17,13 +25,5 @@ export default class Triangle {
       }
     }
     return triangle;
-  }
-
-  get lastRow(): number[] | undefined {
-    return this.rows.pop();
-  }
-
-  get rows(): number[][] {
-    return this._rows;
   }
 }

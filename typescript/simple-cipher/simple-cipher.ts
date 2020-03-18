@@ -1,10 +1,6 @@
 import * as crypto from 'crypto';
 
 export default class SimpleCipher {
-  get key(): string {
-    return this._key;
-  }
-
   private readonly _key: string;
   private readonly alphabet: string[];
   private readonly keyIndizes: any;
@@ -16,6 +12,10 @@ export default class SimpleCipher {
     this.alphabet = 'abcdefghijklmnopqrstuvwxyz'.split('');
     this._key = key || this._generateRandomKey(100);
     this.keyIndizes = this._key.split('').map(char => this.alphabet.indexOf(char));
+  }
+
+  get key(): string {
+    return this._key;
   }
 
   _generateRandomKey(length: number): string {

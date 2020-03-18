@@ -1,12 +1,11 @@
 export default class List<T = number> {
-  get values(): T[] {
-    return this.items;
-  }
-
   public items: T[];
 
   constructor(items?: T[]) {
     this.items = items || [];
+  }
+  get values(): T[] {
+    return this.items;
   }
 
   append(list: List<T>): List<T> {

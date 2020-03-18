@@ -1,18 +1,18 @@
 export default class Matrix {
-  get columns(): number[][] {
-    return this._columns;
-  }
-
-  get rows(): number[][] {
-    return this._rows;
-  }
-
   private readonly _columns: number[][];
   private readonly _rows: number[][];
 
   constructor(input: string) {
     this._rows = this._convertRows(input);
     this._columns = this._convertColumns(this._rows);
+  }
+
+  get columns(): number[][] {
+    return this._columns;
+  }
+
+  get rows(): number[][] {
+    return this._rows;
   }
 
   _convertColumns(rows: number[][]): number[][] {
