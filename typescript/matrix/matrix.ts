@@ -6,6 +6,7 @@ export default class Matrix {
     this._rows = this._convertRows(input);
     this._columns = this._convertColumns(this._rows);
   }
+
   get columns(): number[][] {
     return this._columns;
   }

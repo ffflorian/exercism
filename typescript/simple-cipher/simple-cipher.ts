@@ -13,6 +13,7 @@ export default class SimpleCipher {
     this._key = key || this._generateRandomKey(100);
     this.keyIndizes = this._key.split('').map(char => this.alphabet.indexOf(char));
   }
+
   get key(): string {
     return this._key;
   }

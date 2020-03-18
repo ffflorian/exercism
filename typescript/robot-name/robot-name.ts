@@ -10,6 +10,7 @@ export default class Robot {
   constructor() {
     this.resetName();
   }
+
   get name(): string {
     return this._name;
   }
