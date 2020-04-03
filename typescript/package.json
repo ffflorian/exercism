@@ -16,7 +16,7 @@
     "babel-jest": "25.2.6",
     "babel-preset-env": "1.7.0",
     "babel-register": "6.26.0",
-    "jest": "25.2.4",
+    "jest": "25.2.6",
     "prettier": "2.0.2",
     "ts-jest": "25.3.0",
     "tslint": "6.1.1",
