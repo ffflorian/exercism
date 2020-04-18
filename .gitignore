@@ -2,6 +2,7 @@
 javascript/*/*
 !javascript/*/*.md
 !javascript/*/*.js
+!javascript/grep/data
 javascript/*/babel.config.js
 
 # typescript
