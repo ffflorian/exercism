@@ -4,7 +4,7 @@ My [exercism.io](https://exercism.io) solutions.
 
 ### Languages
 - [JavaScript](./javascript) (58 solutions) [![Test Status](https://github.com/ffflorian/exercism/workflows/JavaScript%20tests/badge.svg)](https://github.com/ffflorian/exercism/actions/)
-- [TypeScript](./typescript) (49 solutions) [![Test Status](https://github.com/ffflorian/exercism/workflows/TypeScript%20tests/badge.svg)](https://github.com/ffflorian/exercism/actions/)
+- [TypeScript](./typescript) (50 solutions) [![Test Status](https://github.com/ffflorian/exercism/workflows/TypeScript%20tests/badge.svg)](https://github.com/ffflorian/exercism/actions/)
 - [Go](./go) (23 solutions) [![Test Status](https://github.com/ffflorian/exercism/workflows/Go%20tests/badge.svg)](https://github.com/ffflorian/exercism/actions/)
 - [Rust](./rust) (12 solutions) [![Test Status](https://github.com/ffflorian/exercism/workflows/Rust%20tests/badge.svg)](https://github.com/ffflorian/exercism/actions/)
 - [Bash](./bash) (2 solutions) [![Test Status](https://github.com/ffflorian/exercism/workflows/Bash%20tests/badge.svg)](https://github.com/ffflorian/exercism/actions/)
