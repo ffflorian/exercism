@@ -16,7 +16,7 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v1
       - name: Run the script
-        run: bin/update_readme.sh
+        run: node bin/update_readme.js
         env:
           GIT_AUTHOR_NAME: ffflobot
           GIT_AUTHOR_EMAIL: ffflobot@users.noreply.github.com
