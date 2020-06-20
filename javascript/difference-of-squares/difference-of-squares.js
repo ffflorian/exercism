@@ -1,4 +1,7 @@
 export class Squares {
+  /**
+   * @param {number} n
+   */
   constructor(n) {
     this.n = n;
   }

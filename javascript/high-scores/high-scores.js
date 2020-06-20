@@ -1,4 +1,7 @@
 export class HighScores {
+  /**
+   * @param {number[]} scores
+   */
   constructor(scores) {
     this._scores = scores;
   }

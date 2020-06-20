@@ -3,26 +3,37 @@ export class Triangle {
     this.a = a;
     this.b = b;
     this.c = c;
-  }
 
-  kind() {
     if (
       this.a * this.b * this.c <= 0 ||
       this.c > this.a + this.b ||
       this.a > this.b + this.c ||
       this.b > this.a + this.c
     ) {
-      throw new Error('Degenerate triangle');
-    }
-
-    if (this.a === this.b && this.b === this.c) {
-      return 'equilateral';
+      return
     }
 
     if (this.a !== this.b && this.b !== this.c && this.c !== this.a) {
-      return 'scalene';
+      this.scalene = true;
+      return
     }
 
-    return 'isosceles';
+    if (this.a === this.b && this.b === this.c) {
+      this.equilateral = true;
+    }
+
+    this.isosceles = true;
+  }
+
+  isScalene() {
+    return !!this.scalene;
+  }
+
+  isIsosceles() {
+    return !!this.isosceles;
+  }
+
+  isEquilateral() {
+    return !!this.equilateral;
   }
 }

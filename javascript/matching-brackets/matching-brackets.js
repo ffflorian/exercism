@@ -1,12 +1,13 @@
-/* eslint-disable no-unused-vars */
-
 const bracketPairs = [
   ['[', ']'],
   ['{', '}'],
   ['(', ')'],
 ];
 
-export const matchingBrackets = input => {
+/**
+ * @param {string} input
+ */
+export function isPaired(input) {
   const stack = [];
 
   for (const bracket of input.split('')) {
