@@ -23,17 +23,6 @@ export default class Robot {
     this.coordinates = [coordinateX || 0, coordinateY || 0];
   }
 
-  public orient(direction: string): void {
-    if (!Object.values(DIRECTION).includes(direction as DIRECTION)) {
-      throw new Error('Invalid Robot Bearing');
-    }
-    this.bearing = direction as DIRECTION;
-  }
-
-  public at(x: number, y: number): void {
-    this.coordinates = [x, y];
-  }
-
   public advance(): void {
     switch (this.bearing) {
       case DIRECTION.NORTH: {
@@ -53,6 +42,57 @@ export default class Robot {
         break;
       }
     }
+  }
+
+  public at(x: number, y: number): void {
+    this.coordinates = [x, y];
+  }
+
+  public evaluate(input: string): void {
+    const instructions = this.instructions(input);
+
+    for (const instruction of instructions) {
+      switch (instruction) {
+        case INSTRUCTION.ADVANCE: {
+          this.advance();
+          break;
+        }
+        case INSTRUCTION.TURN_LEFT: {
+          this.turnLeft();
+          break;
+        }
+        case INSTRUCTION.TURN_RIGHT: {
+          this.turnRight();
+          break;
+        }
+      }
+    }
+  }
+
+  public instructions(letters: string): INSTRUCTION[] {
+    return letters.split('').map(letter => {
+      switch (letter) {
+        case 'A': {
+          return INSTRUCTION.ADVANCE;
+        }
+        case 'L': {
+          return INSTRUCTION.TURN_LEFT;
+        }
+        case 'R': {
+          return INSTRUCTION.TURN_RIGHT;
+        }
+        default: {
+          throw new Error('Invalid direction');
+        }
+      }
+    });
+  }
+
+  public orient(direction: string): void {
+    if (!Object.values(DIRECTION).includes(direction as DIRECTION)) {
+      throw new Error('Invalid Robot Bearing');
+    }
+    this.bearing = direction as DIRECTION;
   }
 
   public turnLeft(): void {
@@ -93,46 +133,6 @@ export default class Robot {
       case DIRECTION.WEST: {
         this.bearing = DIRECTION.NORTH;
         break;
-      }
-    }
-  }
-
-  public instructions(letters: string): INSTRUCTION[] {
-    return letters.split('').map(letter => {
-      switch (letter) {
-        case 'A': {
-          return INSTRUCTION.ADVANCE;
-        }
-        case 'L': {
-          return INSTRUCTION.TURN_LEFT;
-        }
-        case 'R': {
-          return INSTRUCTION.TURN_RIGHT;
-        }
-        default: {
-          throw new Error('Invalid direction');
-        }
-      }
-    });
-  }
-
-  public evaluate(input: string): void {
-    const instructions = this.instructions(input);
-
-    for (const instruction of instructions) {
-      switch (instruction) {
-        case INSTRUCTION.ADVANCE: {
-          this.advance();
-          break;
-        }
-        case INSTRUCTION.TURN_LEFT: {
-          this.turnLeft();
-          break;
-        }
-        case INSTRUCTION.TURN_RIGHT: {
-          this.turnRight();
-          break;
-        }
       }
     }
   }
