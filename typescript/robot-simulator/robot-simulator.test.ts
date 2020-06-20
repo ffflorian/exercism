@@ -16,7 +16,7 @@ describe('Robot', () => {
     try {
       robot.orient('crood')
     } catch (exception) {
-      expect(exception).toEqual('Invalid Robot Bearing')
+      expect(exception).toEqual(new Error('Invalid Robot Bearing'))
     }
   })
 

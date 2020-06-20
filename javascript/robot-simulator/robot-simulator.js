@@ -1,52 +1,146 @@
-//
-// This is only a SKELETON file for the 'Robot Simulator' exercise. It's been provided as a
-// convenience to get you started writing code faster.
-//
+const DIRECTION = {
+  NORTH: 'north',
+  EAST: 'east',
+  SOUTH: 'south',
+  WEST: 'west',
+};
+
+const INSTRUCTION = {
+  ADVANCE: 'advance',
+  TURN_LEFT: 'turnLeft',
+  TURN_RIGHT: 'turnRight',
+};
 
 export class InvalidInputError extends Error {
   constructor() {
-    throw new Error("Remove this statement and implement this function");
+    super();
+    this.message = 'Invalid Robot Bearing';
   }
 }
 
 export class Robot {
-  orient() {
-    throw new Error("Remove this statement and implement this function");
+  constructor(coordinateX, coordinateY, direction = '') {
+    if (direction && !Object.values(DIRECTION).includes(direction)) {
+      throw new InvalidInputError();
+    }
+    this.place({x: coordinateX, y: coordinateY, direction});
   }
 
-  get bearing() {
-    throw new Error("Remove this statement and implement this function");
+  place(position) {
+    this.coordinates = [position.x || 0, position.y || 0];
+    this.bearing = position.direction || DIRECTION.NORTH;
   }
 
-  get coordinates() {
-    throw new Error("Remove this statement and implement this function");
+  orient(direction) {
+    if (!Object.values(DIRECTION).includes(direction)) {
+      throw new InvalidInputError();
+    }
+    this.bearing = direction;
   }
 
-  turnRight() {
-    throw new Error("Remove this statement and implement this function");
-  }
-
-  turnLeft() {
-    throw new Error("Remove this statement and implement this function");
-  }
-
-  at() {
-    throw new Error("Remove this statement and implement this function");
+  at(x, y) {
+    this.coordinates = [x, y];
   }
 
   advance() {
-    throw new Error("Remove this statement and implement this function");
+    switch (this.bearing) {
+      case DIRECTION.NORTH: {
+        this.coordinates[1]++;
+        break;
+      }
+      case DIRECTION.EAST: {
+        this.coordinates[0]++;
+        break;
+      }
+      case DIRECTION.SOUTH: {
+        this.coordinates[1]--;
+        break;
+      }
+      case DIRECTION.WEST: {
+        this.coordinates[0]--;
+        break;
+      }
+    }
   }
 
-  instructions() {
-    throw new Error("Remove this statement and implement this function");
+  turnLeft() {
+    switch (this.bearing) {
+      case DIRECTION.NORTH: {
+        this.bearing = DIRECTION.WEST;
+        break;
+      }
+      case DIRECTION.EAST: {
+        this.bearing = DIRECTION.NORTH;
+        break;
+      }
+      case DIRECTION.SOUTH: {
+        this.bearing = DIRECTION.EAST;
+        break;
+      }
+      case DIRECTION.WEST: {
+        this.bearing = DIRECTION.SOUTH;
+        break;
+      }
+    }
   }
 
-  place() {
-    throw new Error("Remove this statement and implement this function");
+  turnRight() {
+    switch (this.bearing) {
+      case DIRECTION.NORTH: {
+        this.bearing = DIRECTION.EAST;
+        break;
+      }
+      case DIRECTION.EAST: {
+        this.bearing = DIRECTION.SOUTH;
+        break;
+      }
+      case DIRECTION.SOUTH: {
+        this.bearing = DIRECTION.WEST;
+        break;
+      }
+      case DIRECTION.WEST: {
+        this.bearing = DIRECTION.NORTH;
+        break;
+      }
+    }
   }
 
-  evaluate() {
-    throw new Error("Remove this statement and implement this function");
+  static instructions(letters) {
+    return letters.split('').map(letter => {
+      switch (letter) {
+        case 'A': {
+          return INSTRUCTION.ADVANCE;
+        }
+        case 'L': {
+          return INSTRUCTION.TURN_LEFT;
+        }
+        case 'R': {
+          return INSTRUCTION.TURN_RIGHT;
+        }
+        default: {
+          throw new Error('Invalid direction');
+        }
+      }
+    });
+  }
+
+  evaluate(input) {
+    const instructions = Robot.instructions(input);
+    for (const instruction of instructions) {
+      switch (instruction) {
+        case INSTRUCTION.ADVANCE: {
+          this.advance();
+          break;
+        }
+        case INSTRUCTION.TURN_LEFT: {
+          this.turnLeft();
+          break;
+        }
+        case INSTRUCTION.TURN_RIGHT: {
+          this.turnRight();
+          break;
+        }
+      }
+    }
   }
 }

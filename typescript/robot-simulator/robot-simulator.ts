@@ -5,6 +5,12 @@ enum DIRECTION {
   WEST = 'west',
 }
 
+enum INSTRUCTION {
+  ADVANCE = 'advance',
+  TURN_LEFT = 'turnLeft',
+  TURN_RIGHT = 'turnRight',
+}
+
 export default class Robot {
   public bearing: DIRECTION;
   public coordinates: [number, number];
@@ -91,23 +97,43 @@ export default class Robot {
     }
   }
 
-  public instructions(letter: string): void {
-    switch (letter) {
-      case 'A': {
-        this.advance();
-        break;
+  public instructions(letters: string): INSTRUCTION[] {
+    return letters.split('').map(letter => {
+      switch (letter) {
+        case 'A': {
+          return INSTRUCTION.ADVANCE;
+        }
+        case 'L': {
+          return INSTRUCTION.TURN_LEFT;
+        }
+        case 'R': {
+          return INSTRUCTION.TURN_RIGHT;
+        }
+        default: {
+          throw new Error('Invalid direction');
+        }
       }
-      case 'L': {
-        this.turnLeft();
-        break;
-      }
-      case 'R': {
-        this.turnRight();
-      }
-    }
+    });
   }
 
-  public evaluate(instructions: string): void {
-    instructions.split('').forEach(letter => this.instructions(letter));
+  public evaluate(input: string): void {
+    const instructions = this.instructions(input);
+
+    for (const instruction of instructions) {
+      switch (instruction) {
+        case INSTRUCTION.ADVANCE: {
+          this.advance();
+          break;
+        }
+        case INSTRUCTION.TURN_LEFT: {
+          this.turnLeft();
+          break;
+        }
+        case INSTRUCTION.TURN_RIGHT: {
+          this.turnRight();
+          break;
+        }
+      }
+    }
   }
 }
