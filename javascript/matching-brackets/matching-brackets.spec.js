@@ -1,35 +1,75 @@
-import { matchingBrackets } from './matching-brackets';
+import { isPaired } from './matching-brackets';
 
-describe('bracket push', () => {
-  test('checks for appropriate bracketing in a set of brackets', () => {
-    expect(matchingBrackets('{}')).toEqual(true);
+describe('Matching Brackets', () => {
+  test('paired square brackets', () => {
+    expect(isPaired('[]')).toEqual(true);
   });
 
-  test('returns false for unclosed brackets', () => {
-    expect(matchingBrackets('{{')).toEqual(false);
+  test('empty string', () => {
+    expect(isPaired('')).toEqual(true);
   });
 
-  test('returns false if brackets are out of order', () => {
-    expect(matchingBrackets('}{')).toEqual(false);
+  test('unpaired brackets', () => {
+    expect(isPaired('[[')).toEqual(false);
   });
 
-  test('checks bracketing in more than one pair of brackets', () => {
-    expect(matchingBrackets('{}[]')).toEqual(true);
+  test('wrong ordered brackets', () => {
+    expect(isPaired('}{')).toEqual(false);
   });
 
-  test('checks bracketing in nested brackets', () => {
-    expect(matchingBrackets('{[]}')).toEqual(true);
+  test('wrong closing bracket', () => {
+    expect(isPaired('{]')).toEqual(false);
   });
 
-  test('rejects brackets that are properly balanced but improperly nested', () => {
-    expect(matchingBrackets('{[}]')).toEqual(false);
+  test('paired with whitespace', () => {
+    expect(isPaired('{ }')).toEqual(true);
   });
 
-  test('checks bracket closure with deeper nesting', () => {
-    expect(matchingBrackets('{[)][]}')).toEqual(false);
+  test('partially paired brackets', () => {
+    expect(isPaired('{[])')).toEqual(false);
   });
 
-  test('checks bracket closure in a long string of brackets', () => {
-    expect(matchingBrackets('{[]([()])}')).toEqual(true);
+  test('simple nested brackets', () => {
+    expect(isPaired('{[]}')).toEqual(true);
+  });
+
+  test('several paired brackets', () => {
+    expect(isPaired('{}[]')).toEqual(true);
+  });
+
+  test('paired and nested brackets', () => {
+    expect(isPaired('([{}({}[])])')).toEqual(true);
+  });
+
+  test('unopened closing brackets', () => {
+    expect(isPaired('{[)][]}')).toEqual(false);
+  });
+
+  test('unpaired and nested brackets', () => {
+    expect(isPaired('([{])')).toEqual(false);
+  });
+
+  test('paired and wrong nested brackets', () => {
+    expect(isPaired('[({]})')).toEqual(false);
+  });
+
+  test('paired and incomplete brackets', () => {
+    expect(isPaired('{}[')).toEqual(false);
+  });
+
+  test('too many closing brackets', () => {
+    expect(isPaired('[]]')).toEqual(false);
+  });
+
+  test('math expression', () => {
+    expect(isPaired('(((185 + 223.85) * 15) - 543)/2')).toEqual(true);
+  });
+
+  test('complex latex expression', () => {
+    expect(
+      isPaired(
+        '\\left(\\begin{array}{cc} \\frac{1}{3} & x\\\\ \\mathrm{e}^{x} &... x^2 \\end{array}\\right)'
+      )
+    ).toEqual(true);
   });
 });

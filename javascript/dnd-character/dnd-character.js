@@ -1,4 +1,7 @@
-export const abilityModifier = score => {
+/**
+ * @param {number} score
+ */
+export function abilityModifier(score) {
   if (score < 3) {
     throw new Error('Ability scores must be at least 3');
   }
@@ -8,7 +11,7 @@ export const abilityModifier = score => {
   }
 
   return Math.floor((score - 10) / 2);
-};
+}
 
 export class Character {
   constructor() {

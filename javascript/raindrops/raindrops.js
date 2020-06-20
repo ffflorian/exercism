@@ -1,4 +1,4 @@
-export const convert = input => {
+export function convert(input) {
   let result = '';
 
   if (input % 3 === 0) {

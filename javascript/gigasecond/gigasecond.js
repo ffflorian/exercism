@@ -1,1 +1,6 @@
-export const gigasecond = beginTime => new Date(beginTime.getTime() + 1e12);
+/**
+ * @param {Date} beginTime
+ */
+export function gigasecond(beginTime) {
+  return new Date(beginTime.getTime() + 1e12);
+}

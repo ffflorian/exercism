@@ -2,7 +2,11 @@ const outerCircle = 10;
 const middleCircle = 5;
 const innerCircle = 1;
 
-export function solve(x, y) {
+/**
+ * @param {number} x
+ * @param {number} y
+ */
+export function score(x, y) {
   if (typeof x !== 'number' || typeof y !== 'number') {
     return null;
   }

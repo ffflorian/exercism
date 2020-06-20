@@ -1,4 +1,4 @@
-export default class ResistorColor {
+export class ResistorColor {
   private readonly colorInputs: string[];
   private readonly colors: string[];
 
