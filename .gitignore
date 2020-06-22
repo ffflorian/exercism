@@ -4,6 +4,7 @@ javascript/*/*
 !javascript/*/*.js
 !javascript/grep/data
 javascript/*/babel.config.js
+node_modules
 
 # typescript
 typescript/*/*
