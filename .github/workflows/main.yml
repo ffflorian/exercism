@@ -3,7 +3,7 @@ name: Update project numbers
 on:
   push:
     branches:
-      - master
+      - main
 
 jobs:
   update_numbers:

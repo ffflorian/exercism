@@ -18,7 +18,7 @@ if [ -n "$(git status --porcelain)" ]; then
   git config "user.email" "${GIT_AUTHOR_EMAIL}"
   git config "user.name" "${GIT_AUTHOR_NAME}"
   git remote set-url origin "${REPO_URL}"
-  git checkout master
+  git checkout main
   git commit -m "chore(docs): Update readme [ci skip]" README.md
   git push
 fi
