@@ -836,10 +836,10 @@
   resolved "https://registry.npmjs.org/@ffflorian/eslint-config/-/eslint-config-0.2.1.tgz#02a7fe450950a044bb612755c2e39f22e2b39902"
   integrity sha512-++AKWadJSNM0rdzegRLkG9mFR+thP84ka5h0Erdt8Xl0SdO8OSpOWWhQs0TdiwavzizDAj3fR/qUji2/OlWEEA==
 
-"@ffflorian/prettier-config@0.1.0":
-  version "0.1.0"
-  resolved "https://registry.npmjs.org/@ffflorian/prettier-config/-/prettier-config-0.1.0.tgz#a0477aca8fba17f9eeb59da17f4667fae215ddfd"
-  integrity sha512-s55bVfNTEHmO+jdNIo6sMD7xdtiNFTWjmIjCFTnH31awMz9VGQ65cHQNKpjSufKpe/W4Kgm+LMEjvOM5WapKKQ==
+"@ffflorian/prettier-config@0.1.1":
+  version "0.1.1"
+  resolved "https://registry.npmjs.org/@ffflorian/prettier-config/-/prettier-config-0.1.1.tgz#ccaf7f9aaed7e0b37c2f612c35b3327c19ee9525"
+  integrity sha512-kqPJzPlJSWZNISCPmp5URbe57jDQN97o43y1fC3KPk0Lcj0CXWNWmg3EuT+D3d+Er8tSBmEe08fSJqTmkFibNg==
 
 "@istanbuljs/load-nyc-config@^1.0.0":
   version "1.0.0"
