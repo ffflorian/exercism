@@ -6,7 +6,7 @@
     "@babel/core": "7.11.1",
     "@babel/preset-env": "7.11.0",
     "@ffflorian/eslint-config": "0.2.1",
-    "@ffflorian/prettier-config": "0.1.1",
+    "@ffflorian/prettier-config": "0.1.2",
     "@ffflorian/tslint-config": "0.7.1",
     "@types/jest": "26.0.9",
     "@types/node": "~14",
