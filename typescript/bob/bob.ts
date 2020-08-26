@@ -8,7 +8,7 @@ export default class Bob {
 
     if (input === input.toUpperCase() && input.toUpperCase() !== input.toLowerCase()) {
       if (input.endsWith('?')) {
-        return 'Calm down, I know what I\'m doing!';
+        return "Calm down, I know what I'm doing!";
       }
       return 'Whoa, chill out!';
     }
