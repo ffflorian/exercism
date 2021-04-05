@@ -23,5 +23,4 @@ updates:
     ignore:
       - dependency-name: '@types/node'
         versions:
-          - '>= 13.a'
-          - '< 14'
+          - '> 14.x'
