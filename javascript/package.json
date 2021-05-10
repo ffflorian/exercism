@@ -2,21 +2,21 @@
   "author": "Florian Imdahl <git@ffflorian.de>",
   "description": "My exercism.io solutions",
   "devDependencies": {
-    "@babel/cli": "7.13.0",
-    "@babel/core": "7.13.8",
-    "@babel/preset-env": "7.13.9",
+    "@babel/cli": "7.13.16",
+    "@babel/core": "7.14.0",
+    "@babel/preset-env": "7.14.1",
     "@ffflorian/eslint-config": "0.2.1",
     "@ffflorian/prettier-config": "0.1.2",
     "babel-eslint": "10.1.0",
     "babel-jest": "26.6.3",
     "babel-preset-env": "1.7.0",
     "babel-register": "6.26.0",
-    "eslint": "7.21.0",
-    "eslint-config-prettier": "8.1.0",
+    "eslint": "7.26.0",
+    "eslint-config-prettier": "8.3.0",
     "eslint-plugin-import": "2.22.1",
-    "eslint-plugin-prettier": "3.3.1",
+    "eslint-plugin-prettier": "3.4.0",
     "jest": "26.6.3",
-    "prettier": "2.2.1"
+    "prettier": "2.3.0"
   },
   "homepage": "https://github.com/ffflorian/exercism#readme",
   "jest": {
