@@ -4,7 +4,7 @@
   "devDependencies": {
     "@babel/cli": "7.13.16",
     "@babel/core": "7.14.0",
-    "@babel/preset-env": "7.14.1",
+    "@babel/preset-env": "7.14.2",
     "@ffflorian/eslint-config": "0.8.1",
     "@ffflorian/prettier-config": "0.1.2",
     "@ffflorian/tslint-config": "0.7.1",
