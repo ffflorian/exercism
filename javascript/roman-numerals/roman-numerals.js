@@ -1,4 +1,3 @@
-// prettier-ignore
 const map = [
   1000, 'M',
   900, 'CM',
