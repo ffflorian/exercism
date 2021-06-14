@@ -2,7 +2,7 @@
   "author": "Florian Imdahl <git@ffflorian.de>",
   "description": "My exercism.io solutions",
   "devDependencies": {
-    "@babel/cli": "7.14.3",
+    "@babel/cli": "7.14.5",
     "@babel/core": "7.14.5",
     "@babel/preset-env": "7.14.4",
     "@ffflorian/eslint-config": "0.2.1",
