@@ -3,7 +3,8 @@
 update_line() {
   DIR="${1}"
   SOLUTIONS_COUNT=$(cd "${DIR}" && ls -d */ | wc -l)
-  sed -i "s/\(.\/${DIR})\).* \[/\1 (${SOLUTIONS_COUNT} solutions) \[/g" README.md
+  SOLUTION_WORD=$([ $SOLUTIONS_COUNT -eq 1 ] && echo "solution" || echo "solutions")
+  sed -i "s/\(.\/${DIR})\).* \[/\1 (${SOLUTIONS_COUNT} ${SOLUTION_WORD}) \[/g" README.md
 }
 
 update_line go
