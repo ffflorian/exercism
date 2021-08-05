@@ -1,39 +1,27 @@
 # Hamming
 
-Calculate the Hamming difference between two DNA strands.
+Calculate the Hamming Distance between two DNA strands.
 
-A mutation is simply a mistake that occurs during the creation or
-copying of a nucleic acid, in particular DNA. Because nucleic acids are
-vital to cellular functions, mutations tend to cause a ripple effect
-throughout the cell. Although mutations are technically mistakes, a very
-rare mutation may equip the cell with a beneficial attribute. In fact,
-the macro effects of evolution are attributable by the accumulated
-result of beneficial microscopic mutations over many generations.
+Your body is made up of cells that contain DNA. Those cells regularly wear out and need replacing, which they achieve by dividing into daughter cells. In fact, the average human body experiences about 10 quadrillion cell divisions in a lifetime!
 
-The simplest and most common type of nucleic acid mutation is a point
-mutation, which replaces one base with another at a single nucleotide.
+When cells divide, their DNA replicates too. Sometimes during this process mistakes happen and single pieces of DNA get encoded with the incorrect information. If we compare two strands of DNA and count the differences between them we can see how many mistakes occurred. This is known as the "Hamming Distance".
 
-By counting the number of differences between two homologous DNA strands
-taken from different genomes with a common ancestor, we get a measure of
-the minimum number of point mutations that could have occurred on the
-evolutionary path between the two strands.
-
-This is called the 'Hamming distance'.
-
-It is found by comparing two DNA strands and counting how many of the
-nucleotides are different from their equivalent in the other string.
+We read DNA using the letters C,A,G and T. Two strands might look like this:
 
     GAGCCTACTAACGGGAT
     CATCGTAATGACGGCCT
     ^ ^ ^  ^ ^    ^^
 
-The Hamming distance between these two DNA strands is 7.
+They have 7 differences, and therefore the Hamming Distance is 7.
+
+The Hamming Distance is useful for lots of things in science, not just biology, so it's a nice phrase to be familiar with :)
 
 # Implementation notes
 
-The Hamming distance is only defined for sequences of equal length. This means
-that based on the definition, each language could deal with getting sequences
-of equal length differently.
+The Hamming distance is only defined for sequences of equal length, so
+an attempt to calculate it between sequences of different lengths should
+not work. The general handling of this situation (e.g., raising an
+exception vs returning a special value) may differ between languages.
 
 ## Rust Installation
 
@@ -48,28 +36,69 @@ Execute the tests with:
 $ cargo test
 ```
 
-All but the first test have been ignored.  After you get the first test to
-pass, remove the ignore flag (`#[ignore]`) from the next test and get the tests
-to pass again.  The test file is located in the `tests` directory.   You can
-also remove the ignore flag from all the tests to get them to run all at once
-if you wish.
+All but the first test have been ignored. After you get the first test to
+pass, open the tests source file which is located in the `tests` directory
+and remove the `#[ignore]` flag from the next test and get the tests to pass
+again. Each separate test is a function with `#[test]` flag above it.
+Continue, until you pass every test.
 
-Make sure to read the [Crates and Modules](https://doc.rust-lang.org/stable/book/crates-and-modules.html) chapter if you
+If you wish to run all ignored tests without editing the tests source file, use:
+
+```bash
+$ cargo test -- --ignored
+```
+
+To run a specific test, for example `some_test`, you can use:
+
+```bash
+$ cargo test some_test
+```
+
+If the specific test is ignored use:
+
+```bash
+$ cargo test some_test -- --ignored
+```
+
+To learn more about Rust tests refer to the [online test documentation][rust-tests]
+
+Make sure to read the [Modules][modules] chapter if you
 haven't already, it will help you with organizing your files.
+
+## Further improvements
+
+After you have solved the exercise, please consider using the additional utilities, described in the [installation guide](https://exercism.io/tracks/rust/installation), to further refine your final solution.
+
+To format your solution, inside the solution directory use
+
+```bash
+cargo fmt
+```
+
+To see, if your solution contains some common ineffective use cases, inside the solution directory use
+
+```bash
+cargo clippy --all-targets
+```
+
+## Submitting the solution
+
+Generally you should submit all files in which you implemented your solution (`src/lib.rs` in most cases). If you are using any external crates, please consider submitting the `Cargo.toml` file. This will make the review process faster and clearer.
 
 ## Feedback, Issues, Pull Requests
 
-The [exercism/xrust](https://github.com/exercism/xrust) repository on GitHub is the home for all of the Rust exercises. If you have feedback about an exercise, or want to help implement new exercises, head over there and create an issue. Members of the [rust track team](https://github.com/orgs/exercism/teams/rust) are happy to help!
+The [exercism/rust](https://github.com/exercism/rust) repository on GitHub is the home for all of the Rust exercises. If you have feedback about an exercise, or want to help implement new exercises, head over there and create an issue. Members of the rust track team are happy to help!
 
-If you want to know more about Exercism, take a look at the [contribution guide](https://github.com/exercism/x-common/blob/master/CONTRIBUTING.md).
+If you want to know more about Exercism, take a look at the [contribution guide](https://github.com/exercism/docs/blob/main/contributing-to-language-tracks/README.md).
 
-[help-page]: http://exercism.io/languages/rust
-[crates-and-modules]: http://doc.rust-lang.org/stable/book/crates-and-modules.html
+[help-page]: https://exercism.io/tracks/rust/learning
+[modules]: https://doc.rust-lang.org/book/ch07-02-defining-modules-to-control-scope-and-privacy.html
+[cargo]: https://doc.rust-lang.org/book/ch14-00-more-about-cargo.html
+[rust-tests]: https://doc.rust-lang.org/book/ch11-02-running-tests.html
 
 ## Source
 
 The Calculating Point Mutations problem at Rosalind [http://rosalind.info/problems/hamm/](http://rosalind.info/problems/hamm/)
 
-## Submitting Incomplete Problems
+## Submitting Incomplete Solutions
 It's possible to submit an incomplete solution so you can see how others have completed the exercise.
-

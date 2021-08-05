@@ -36,10 +36,10 @@ pub fn verse(line: i16) -> String {
         "{} {}, {} {}.\n{}, {} {}.\n",
         count(line, false),
         bottle(line, true),
-        count(line, (line == 0)),
+        count(line, line == 0),
         bottle(line, false),
         take(line),
-        count(line - 1, (line == 1)),
+        count(line - 1, line == 1),
         bottle(line - 1, true)
     )
 }
