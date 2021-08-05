@@ -85,7 +85,7 @@ describe('Bank Account', () => {
     account.deposit(50);
     account.close();
     account.open();
-    expect(account.balance).toEqual(50);
+    expect(account.balance).toEqual(0);
   });
 
   test('cannot withdraw more than deposited', () => {
