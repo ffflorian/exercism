@@ -13,6 +13,7 @@ update_line purescript
 update_line python
 update_line rust
 update_line typescript
+update_line bash
 
 if [ -n "$(git status --porcelain)" ]; then
   REPO_URL="$(git remote get-url origin | sed -n "s/https:\/\/github.com\//https:\/\/${GIT_AUTHOR_NAME}:${GH_TOKEN}@github.com\//p")"
