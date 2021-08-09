@@ -1,5 +1,8 @@
+//@ts-check
+
 /**
  * @param {string} word
+ * @returns {string}
  */
 function sort(word) {
   return word.toLowerCase().split('').sort().join('');
@@ -8,6 +11,7 @@ function sort(word) {
 /**
  * @param {string} word
  * @param {string[]} matches
+ * @returns {string[]}
  */
 export function findAnagrams(word, matches) {
   return matches.reduce((/** @type string[] */ result, matchTest) => {

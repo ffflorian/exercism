@@ -1,3 +1,5 @@
+//@ts-check
+
 const outerCircle = 10;
 const middleCircle = 5;
 const innerCircle = 1;
@@ -5,6 +7,7 @@ const innerCircle = 1;
 /**
  * @param {number} x
  * @param {number} y
+ * @returns {number}
  */
 export function score(x, y) {
   if (typeof x !== 'number' || typeof y !== 'number') {

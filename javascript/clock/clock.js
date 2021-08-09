@@ -1,3 +1,5 @@
+//@ts-check
+
 export class Clock {
   constructor(hours = 0, minutes = 0) {
     hours = (hours + Math.floor(minutes / 60)) % 24;
@@ -9,6 +11,7 @@ export class Clock {
   /**
    * @param {number} hours
    * @param {number} minutes
+   * @returns {Clock}
    */
   static at(hours, minutes) {
     return new Clock(hours, minutes);
@@ -16,6 +19,7 @@ export class Clock {
 
   /**
    * @param {Clock} clock
+   * @returns {boolean}
    */
   equals(clock) {
     if (!(clock instanceof Clock)) {
@@ -26,6 +30,7 @@ export class Clock {
 
   /**
    * @param {number} minutes
+   * @returns {Clock}
    */
   minus(minutes = 0) {
     return Clock.at(this.hours, this.minutes - minutes);
@@ -33,6 +38,7 @@ export class Clock {
 
   /**
    * @param {number} minutes
+   * @returns {Clock}
    */
   plus(minutes = 0) {
     return Clock.at(this.hours, this.minutes + minutes);

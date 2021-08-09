@@ -1,3 +1,5 @@
+//@ts-check
+
 export class Song {
   constructor() {
     this._verses = [
@@ -45,6 +47,10 @@ export class Song {
     ];
   }
 
+  /**
+   * @param {number} index
+   * @returns {string}
+   */
   verse(index) {
     let verse = `I know an old lady who swallowed a ${this._verses[index - 1].type}.\n${this._verses[index - 1].message}`;
     for (let i = index - 1; i >= 0; i--) {
@@ -61,6 +67,11 @@ export class Song {
     return `${verse}`;
   }
 
+  /**
+   * @param {number} begin
+   * @param {number} end
+   * @returns {string}
+   */
   verses(begin, end) {
     let song = '';
 

@@ -1,4 +1,10 @@
+//@ts-check
+
 export class DiffieHellman {
+  /**
+   * @param {number} p
+   * @param {number} g
+   */
   constructor(p, g) {
     if (p + g >= 1000) {
       throw new Error('Arguments out of bounds');
@@ -10,6 +16,10 @@ export class DiffieHellman {
     this.g = g;
   }
 
+  /**
+   * @param {number} number
+   * @returns {boolean}
+   */
   _isPrime(number) {
     for (let primeIndex = 2; primeIndex <= Math.sqrt(number); primeIndex++) {
       if (number % primeIndex === 0) {
@@ -19,6 +29,10 @@ export class DiffieHellman {
     return number > 1;
   }
 
+  /**
+   * @param {number} privateKey
+   * @returns {number}
+   */
   getPublicKeyFromPrivateKey(privateKey) {
     if (privateKey < 2 || privateKey >= this.p) {
       throw new Error('Invalid private key');
@@ -26,6 +40,11 @@ export class DiffieHellman {
     return Math.pow(this.g, privateKey) % this.p;
   }
 
+  /**
+   * @param {number} privateKeyA
+   * @param {number} publicKeyB
+   * @returns {number}
+   */
   getSharedSecret(privateKeyA, publicKeyB) {
     return Math.pow(publicKeyB, privateKeyA) % this.p;
   }

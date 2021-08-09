@@ -1,3 +1,5 @@
+//@ts-check
+
 export class Squares {
   /**
    * @param {number} n

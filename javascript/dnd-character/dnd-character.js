@@ -1,5 +1,8 @@
+//@ts-check
+
 /**
  * @param {number} score
+ * @returns {number}
  */
 export function abilityModifier(score) {
   if (score < 3) {

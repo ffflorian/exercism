@@ -1,14 +1,18 @@
+//@ts-check
+
 /**
  * @param {number} num
  * @param {boolean} [lowercase]
+ * @returns {string}
  */
 function count(num, lowercase) {
-  return num === 0 ? (lowercase ? 'n' : 'N') + 'o more' : num === -1 ? '99' : num;
+  return num === 0 ? (lowercase ? 'n' : 'N') + 'o more' : num === -1 ? '99' : num.toString();
 }
 
 /**
  * @param {number} num
  * @param {boolean} [extended]
+ * @returns {string}
  */
 function bottle(num, extended) {
   return `bottle${num !== 1 ? 's' : ''} of beer${extended ? ' on the wall' : ''}`;
@@ -16,6 +20,7 @@ function bottle(num, extended) {
 
 /**
  * @param {number} num
+ * @returns {string}
  */
 function take(num) {
   return num === 0
@@ -25,6 +30,7 @@ function take(num) {
 
 /**
  * @param {number} num
+ * @returns {string[]}
  */
 function verse(num) {
   return [
@@ -37,6 +43,7 @@ function verse(num) {
 /**
  * @param {number} begin
  * @param {number} times
+ * @returns {string[]}
  */
 export function recite(begin = 99, times = 0) {
   /** @type {string[]} */

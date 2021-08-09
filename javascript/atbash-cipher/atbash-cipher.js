@@ -1,3 +1,9 @@
+//@ts-check
+
+/**
+ * @param {string} input
+ * @returns {string}
+ */
 export const decode = input => {
   return input
     .toLowerCase()
@@ -9,6 +15,10 @@ export const decode = input => {
     });
 };
 
+/**
+ * @param {string} input
+ * @returns {string}
+ */
 export const encode = input => {
   return decode(input)
     .match(/.{1,5}/g)

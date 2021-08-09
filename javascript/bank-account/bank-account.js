@@ -1,5 +1,9 @@
+//@ts-check
+
 export class BankAccount {
+  /** @type {boolean} */
   #isOpen;
+  /** @type {number} */
   #balance;
 
   constructor() {
@@ -21,6 +25,9 @@ export class BankAccount {
     this.#balance = 0;
   }
 
+  /**
+   * @param {number} value
+   */
   deposit(value) {
     if (!this.isOpen || value < 0) {
       throw new ValueError();
@@ -29,6 +36,9 @@ export class BankAccount {
     this.#balance += value;
   }
 
+  /**
+   * @param {number} value
+   */
   withdraw(value) {
     if (!this.isOpen || value > this.balance || value < 0) {
       throw new ValueError();

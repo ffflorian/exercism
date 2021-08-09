@@ -1,3 +1,9 @@
+//@ts-check
+
+/**
+ * @param {any[]} input
+ * @returns {any[]}
+ */
 export function flatten(input) {
   const output = [];
   for (const value of input) {

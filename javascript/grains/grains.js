@@ -1,7 +1,10 @@
+//@ts-check
+
 const BigInt = require('./lib/big-integer');
 
 /**
  * @param {number} num
+ * @returns {string}
  */
 export function square(num) {
   if (num < 1 || num > 64) {
@@ -13,6 +16,9 @@ export function square(num) {
     .toString();
 }
 
+/**
+ * @returns {string}
+ */
 export function total() {
   return BigInt(2).pow(64).prev().toString();
 }
