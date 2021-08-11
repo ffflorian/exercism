@@ -1,7 +1,22 @@
 //@ts-check
 
+/**
+ * @typedef {{
+ *   catch?: string
+ *   end?: string;
+ *   last?: true;
+ *   message: string;
+ *   type: string;
+ *   why?: string;
+ * }} Verse
+ */
+
 export class Song {
   constructor() {
+    /**
+     * @private
+     * @type {Verse[]}
+     */
     this._verses = [
       {
         end: ' Perhaps she\'ll die.\n',

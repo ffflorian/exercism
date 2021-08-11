@@ -1,3 +1,6 @@
+//@ts-check
+
+/** @type {Record<string, boolean>} */
 let _usedNames = {};
 
 export class Robot {
@@ -5,6 +8,10 @@ export class Robot {
     this.reset();
   }
 
+  /**
+   * @private
+   * @returns {string}
+   */
   _generateName() {
     const randomString = () => String.fromCharCode(Math.floor(Math.random() * 25) + 65);
     const num = Math.floor(Math.random() * 899) + 100;

@@ -4,7 +4,9 @@ export class Clock {
   constructor(hours = 0, minutes = 0) {
     hours = (hours + Math.floor(minutes / 60)) % 24;
     minutes = minutes % 60;
+    /** @type {number} */
     this.hours = hours < 0 ? 24 + hours : hours;
+    /** @type {number} */
     this.minutes = minutes < 0 ? 60 + minutes : minutes;
   }
 

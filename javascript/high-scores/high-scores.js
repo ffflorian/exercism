@@ -1,8 +1,14 @@
+//@ts-check
+
 export class HighScores {
   /**
    * @param {number[]} scores
    */
   constructor(scores) {
+    /**
+     * @private
+     * @type {number[]}
+     */
     this._scores = scores;
   }
 

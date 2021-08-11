@@ -1,3 +1,10 @@
+//@ts-check
+
+/**
+ * @param {number[]} strand1
+ * @param {number[]} strand2
+ * @returns {number}
+ */
 export function compute(strand1, strand2) {
   if (!strand1 && strand2) {
     throw new Error('left strand must not be empty');

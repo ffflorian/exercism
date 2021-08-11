@@ -12,11 +12,14 @@ export class DiffieHellman {
     if (!this._isPrime(p) || !this._isPrime(g)) {
       throw new Error('Arguments need to be prime numbers');
     }
+    /** @type {number} */
     this.p = p;
+    /** @type {number} */
     this.g = g;
   }
 
   /**
+   * @private
    * @param {number} number
    * @returns {boolean}
    */

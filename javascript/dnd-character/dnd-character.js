@@ -18,12 +18,19 @@ export function abilityModifier(score) {
 
 export class Character {
   constructor() {
+    /** @type {number} */
     this.strength = Character.rollAbility();
+    /** @type {number} */
     this.dexterity = Character.rollAbility();
+    /** @type {number} */
     this.constitution = Character.rollAbility();
+    /** @type {number} */
     this.intelligence = Character.rollAbility();
+    /** @type {number} */
     this.wisdom = Character.rollAbility();
+    /** @type {number} */
     this.charisma = Character.rollAbility();
+    /** @type {number} */
     this.hitpoints = abilityModifier(this.constitution) + 10;
   }
 

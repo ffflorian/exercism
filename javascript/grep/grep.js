@@ -1,9 +1,25 @@
 #!/usr/bin/env node
+//@ts-check
 
 const fs = require('fs');
 const path = require('path');
 const args = process.argv.slice(2);
 
+/**
+ * @typedef {{
+ *   caseInsensitive: boolean;
+ *   entireLines: boolean;
+ *   fileNamesOnly: boolean;
+ *   inputFiles: string[];
+ *   invertResults: boolean;
+ *   lineNumbers: boolean;
+ *   pattern: string;
+ * }} Options
+ */
+
+/**
+ * @type {Options}
+ */
 const options = {
   caseInsensitive: false,
   entireLines: false,
@@ -14,6 +30,10 @@ const options = {
   pattern: '',
 };
 
+/**
+ * @param {number} [exitCode]
+ * @returns {never}
+ */
 const printHelp = (exitCode = 0) => {
   console.log(`Usage: grep.js [OPTION]... PATTERNS [FILE]...
 Search for PATTERNS in each FILE.
@@ -88,6 +108,11 @@ if (options.entireLines) {
   options.pattern = `^${options.pattern}$`;
 }
 
+/**
+ * @param {string} fileName
+ * @param {string} fileContent
+ * @returns {string[]}
+ */
 const walkFileContent = (fileName, fileContent) => {
   const result = [];
   const regexPattern = new RegExp(options.pattern, options.caseInsensitive ? 'i' : '');

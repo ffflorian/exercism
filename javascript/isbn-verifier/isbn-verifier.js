@@ -1,3 +1,9 @@
+//@ts-check
+
+/**
+ * @param {string} input
+ * @returns {boolean}
+ */
 export const isValid = input => {
   const withoutDashes = input.replace(/-/g, '');
 

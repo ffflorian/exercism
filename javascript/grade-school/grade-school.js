@@ -2,7 +2,10 @@
 
 export class GradeSchool {
   constructor() {
-    /** @type {Record<number, string[]>} */
+    /**
+     * @private
+     * @type {Record<number, string[]>}
+     */
     this._roster = {};
   }
 

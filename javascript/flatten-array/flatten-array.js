@@ -1,8 +1,9 @@
 //@ts-check
 
 /**
- * @param {any[]} input
- * @returns {any[]}
+ * @template T
+ * @param {T[] | T[][] | T[][][] | T[][][][]} input
+ * @returns {T[]}
  */
 export function flatten(input) {
   const output = [];

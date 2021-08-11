@@ -1,15 +1,37 @@
+//@ts-check
+
 const crypto = require('crypto');
 
 export class Cipher {
+  /**
+   * @param {string} key
+   */
   constructor(key) {
     if (!/^[a-z]+$/.test(key)) {
       throw new Error('Bad key');
     }
+    /**
+     * @private
+     * @type {string[]}
+     */
     this._alphabet = 'abcdefghijklmnopqrstuvwxyz'.split('');
+    /**
+     * @private
+     * @type {string}
+     */
     this._key = key || this._generateRandomKey(100);
+    /**
+     * @private
+     * @type {number[]}
+     */
     this._keyIndizes = this._key.split('').map(char => this._alphabet.indexOf(char));
   }
 
+  /**
+   * @private
+   * @param {number} length
+   * @returns {string}
+   */
   _generateRandomKey(length) {
     const randomBytes = crypto.randomBytes(length);
     let key = '';
@@ -19,6 +41,10 @@ export class Cipher {
     return key;
   }
 
+  /**
+   * @param {string} clearText
+   * @returns {string}
+   */
   encode(clearText) {
     return clearText
       .split('')
@@ -29,6 +55,10 @@ export class Cipher {
       .join('');
   }
 
+  /**
+   * @param {string} encodedText
+   * @returns {string}
+   */
   decode(encodedText) {
     return encodedText
       .split('')

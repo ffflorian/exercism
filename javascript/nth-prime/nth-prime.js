@@ -1,3 +1,9 @@
+//@ts-check
+
+/**
+ * @param {number} candidate
+ * @returns {boolean}
+ */
 const isPrime = candidate => {
   for (let primeIndex = 2; primeIndex <= Math.sqrt(candidate); primeIndex++) {
     if (candidate % primeIndex === 0) {
@@ -7,6 +13,10 @@ const isPrime = candidate => {
   return candidate > 1;
 };
 
+/**
+ * @param {number} n
+ * @returns {number}
+ */
 export const prime = n => {
   if (n < 1) {
     throw new Error('there is no zeroth prime');

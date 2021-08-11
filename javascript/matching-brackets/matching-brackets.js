@@ -1,3 +1,5 @@
+//@ts-check
+
 const bracketPairs = [
   ['[', ']'],
   ['{', '}'],
@@ -6,6 +8,7 @@ const bracketPairs = [
 
 /**
  * @param {string} input
+ * @returns {boolean}
  */
 export function isPaired(input) {
   const stack = [];
