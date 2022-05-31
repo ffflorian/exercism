@@ -1,4 +1,4 @@
-export default class Squares {
+export class Squares {
   private readonly n: number;
 
   constructor(n: number) {

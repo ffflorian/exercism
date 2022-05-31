@@ -1,13 +1,12 @@
-export default class Grains {
-  static square(num: number): number {
-    if (num < 1 || num > 64) {
-      throw new Error('Invalid input');
-    }
-
-    return Math.pow(2, num - 1);
+export function square(num: number): bigint {
+  const bigNum = BigInt(num);
+  if (bigNum < 1n || bigNum > 64n) {
+    throw new Error('Invalid input');
   }
 
-  static total(): number {
-    return Math.pow(2, 64);
-  }
+  return 2n ** (bigNum - 1n);
+}
+
+export function total(): bigint {
+  return 2n ** 64n;
 }

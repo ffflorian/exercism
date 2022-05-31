@@ -1,4 +1,4 @@
-export default class Matrix {
+export class Matrix {
   private readonly _columns: number[][];
   private readonly _rows: number[][];
 
@@ -6,7 +6,6 @@ export default class Matrix {
     this._rows = this._convertRows(input);
     this._columns = this._convertColumns(this._rows);
   }
-
   get columns(): number[][] {
     return this._columns;
   }

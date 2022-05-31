@@ -1,4 +1,4 @@
-export default class LinkedList<T> {
+export class LinkedList<T> {
   private readonly elements: T[];
 
   constructor() {

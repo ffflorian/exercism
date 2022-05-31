@@ -1,4 +1,4 @@
-export default class Anagram {
+export class Anagram {
   public word: string;
 
   constructor(word: string) {

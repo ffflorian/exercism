@@ -1,30 +1,21 @@
-/* eslint-disable no-unused-vars */
+const bracketPairs = [
+  ['[', ']'],
+  ['{', '}'],
+  ['(', ')'],
+];
 
-export default class MatchingBrackets {
-  private readonly bracketPairs = [
-    ['[', ']'],
-    ['{', '}'],
-    ['(', ')'],
-  ];
-  private readonly input: string;
+export function isPaired(input: string): boolean {
+  const stack = [];
 
-  constructor(input: string) {
-    this.input = input;
-  }
-
-  isPaired(): boolean {
-    const stack = [];
-
-    for (const bracket of this.input.split('')) {
-      for (const [leftBracket, rightBracket] of this.bracketPairs) {
-        if (bracket === leftBracket) {
-          stack.push(leftBracket);
-        } else if (bracket === rightBracket && stack.pop() !== leftBracket) {
-          return false;
-        }
+  for (const bracket of input.split('')) {
+    for (const [leftBracket, rightBracket] of bracketPairs) {
+      if (bracket === leftBracket) {
+        stack.push(leftBracket);
+      } else if (bracket === rightBracket && stack.pop() !== leftBracket) {
+        return false;
       }
     }
-
-    return stack.length === 0;
   }
+
+  return stack.length === 0;
 }

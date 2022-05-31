@@ -1,4 +1,4 @@
-export default class Gigasecond {
+export class Gigasecond {
   private readonly beginTime: Date;
 
   constructor(beginTime: Date) {

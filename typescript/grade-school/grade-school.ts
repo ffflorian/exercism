@@ -1,27 +1,32 @@
-export default class GradeSchool {
-  private readonly roster: Map<string, string[]>;
+export class GradeSchool {
+  private readonly _roster: Record<number, string[]>;
 
   constructor() {
-    this.roster = new Map<string, string[]>();
+    this._roster = {};
   }
 
-  addStudent(name: string, grade: number): void {
-    const entries = this.roster.get(grade.toString()) || [];
+  add(name: string, grade: number): void {
+    for (const gradeIndex in this._roster) {
+      const nameIndex = this._roster[gradeIndex].findIndex(entry => entry === name);
+      if (nameIndex !== -1) {
+        this._roster[gradeIndex].splice(nameIndex);
+      }
+    }
+
+    const entries = this._roster[grade] || [];
     entries.push(name);
-    this.roster.set(grade.toString(), entries.sort());
+    this._roster[grade] = entries.sort();
   }
 
-  studentRoster(): Map<string, string[]> {
-    const map = new Map();
-    [...this.roster.keys()].forEach(value => map.set(value, this.studentsInGrade(parseInt(value, 10))));
-    return map;
-  }
-
-  studentsInGrade(grade: number): string[] {
-    const entry = this.roster.get(grade.toString());
+  grade(grade: number): string[] {
+    const entry = this._roster[grade];
     if (typeof entry === 'undefined') {
       return [];
     }
     return [...entry.sort()];
+  }
+
+  roster(): Record<number, string[]> {
+    return JSON.parse(JSON.stringify(this._roster));
   }
 }

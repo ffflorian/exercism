@@ -1,27 +1,19 @@
-export default class ISBN {
-  private readonly input: string;
+export function isValid(input: string): boolean {
+  const withoutDashes = input.replace(/-/g, '');
 
-  constructor(input: string) {
-    this.input = input;
+  if (!/^\d{0,9}[\dX]$/.test(withoutDashes)) {
+    return false;
   }
 
-  isValid(): boolean {
-    const withoutDashes = this.input.replace(/-/g, '');
+  const digits = withoutDashes.split('').map(digit => (digit === 'X' ? 10 : Number(digit)));
 
-    if (!/^\d{0,9}[\dX]$/.test(withoutDashes)) {
-      return false;
-    }
+  let remainder = 0;
+  let sum = 0;
 
-    const digits = withoutDashes.split('').map(digit => (digit === 'X' ? 10 : Number(digit)));
-
-    let remainder = 0;
-    let sum = 0;
-
-    for (let i = 0; i < 10; i++) {
-      remainder += digits[i];
-      sum += remainder;
-    }
-
-    return sum % 11 === 0;
+  for (let i = 0; i < 10; i++) {
+    remainder += digits[i];
+    sum += remainder;
   }
+
+  return sum % 11 === 0;
 }

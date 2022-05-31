@@ -1,4 +1,4 @@
-export default class DiffieHellman {
+export class DiffieHellman {
   private readonly g: number;
   private readonly p: number;
 
@@ -13,14 +13,14 @@ export default class DiffieHellman {
     this.g = g;
   }
 
-  getPublicKeyFromPrivateKey(privateKey: number): number {
+  getPublicKey(privateKey: number): number {
     if (privateKey < 2 || privateKey >= this.p) {
       throw new Error('Invalid private key');
     }
     return Math.pow(this.g, privateKey) % this.p;
   }
 
-  getSharedSecret(privateKeyA: number, publicKeyB: number): number {
+  getSecret(publicKeyB: number, privateKeyA: number): number {
     return Math.pow(publicKeyB, privateKeyA) % this.p;
   }
 

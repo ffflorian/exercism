@@ -1,15 +1,16 @@
 # javascript
-javascript/*/*
-!javascript/*/*.md
-!javascript/*/*.js
+javascript/**/*
+!javascript/**/*.md
+!javascript/**/*.js
 !javascript/grep/data
-javascript/*/babel.config.js
+javascript/**/babel.config.js
 node_modules
 
 # typescript
-typescript/*/*
-!typescript/*/*.md
-!typescript/*/*.ts
+typescript/**/*
+!typescript/**/*.md
+!typescript/**/*.ts
+typescript/**/HELP.md
 
 #purescript
 purescript/bower_components/

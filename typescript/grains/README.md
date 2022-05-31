@@ -1,5 +1,10 @@
 # Grains
 
+Welcome to Grains on Exercism's TypeScript Track.
+If you need help running the tests or submitting your code, check out `HELP.md`.
+
+## Instructions
+
 Calculate the number of grains of wheat on a chessboard given that the number
 on each square doubles.
 
@@ -9,12 +14,14 @@ king loved chess, the servant told the king he would like to have grains
 of wheat. One grain on the first square of a chess board, with the number
 of grains doubling on each successive square.
 
-There are 64 squares on a chessboard (where square 1 has one grain, square 2 has
-two grains, and so on).
+There are 64 squares on a chessboard (where square 1 has one grain, square 2 has two grains, and so on).
 
 Write code that shows:
+
 - how many grains were on a given square, and
 - the total number of grains on the chessboard
+
+You will need to use the [bigint](https://www.typescriptlang.org/docs/handbook/release-notes/typescript-3-2.html#bigint) type in this problem, as the usual `number` type loses precision when on big numbers, being a floating point based storage.
 
 ## For bonus points
 
@@ -27,39 +34,19 @@ are some additional things you could try:
 Then please share your thoughts in a comment on the submission. Did this
 experiment make the code better? Worse? Did you learn anything from it?
 
-## Setup
-
-Go through the setup instructions for TypeScript to install the necessary
-dependencies:
-
-[https://exercism.io/tracks/typescript/installation](https://exercism.io/tracks/typescript/installation)
-
-## Requirements
-
-Install assignment dependencies:
-
-```bash
-$ yarn install
-```
-
-## Making the test suite pass
-
-Execute the tests with:
-
-```bash
-$ yarn test
-```
-
-In the test suites all tests but the first have been skipped.
-
-Once you get a test passing, you can enable the next one by changing `xit` to
-`it`.
-
 ## Source
 
-JavaRanch Cattle Drive, exercise 6 [http://www.javaranch.com/grains.jsp](http://www.javaranch.com/grains.jsp)
+### Created by
 
-## Submitting Incomplete Solutions
+- @CRivasGomez
 
-It's possible to submit an incomplete solution so you can see how others have
-completed the exercise.
+### Contributed to by
+
+- @G-Rath
+- @masters3d
+- @SleeplessByte
+- @JoshiRaez
+
+### Based on
+
+JavaRanch Cattle Drive, exercise 6 - http://www.javaranch.com/grains.jsp

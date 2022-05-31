@@ -1,4 +1,4 @@
-export default class Clock {
+export class Clock {
   static at(hours: number, minutes: number): Clock {
     return new Clock(hours, minutes);
   }
