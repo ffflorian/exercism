@@ -1,10 +1,6 @@
-let usedNames: Record<string, boolean> = {};
+let usedNames: string[] = [];
 
-export default class Robot {
-  static releaseNames(): void {
-    usedNames = {};
-  }
-
+export class Robot {
   private _name!: string;
 
   constructor() {
@@ -15,20 +11,24 @@ export default class Robot {
     return this._name;
   }
 
-  resetName(): void {
-    this._name = this._generateName();
+  static releaseNames(): void {
+    usedNames = [];
   }
 
-  private _generateName(): string {
-    const randomString = () => String.fromCharCode(Math.floor(Math.random() * 25) + 65);
-    const num = Math.floor(Math.random() * 899) + 100;
-    const name = `${randomString()}${randomString()}${num}`;
+  resetName(): void {
+    this._name = this.generateName();
+  }
 
-    if (typeof usedNames[name] === 'undefined') {
-      usedNames[name] = true;
+  private generateName(): string {
+    const randomString = () => String.fromCharCode(Math.floor(Math.random() * 26) + 65);
+    const randomNumber = Math.floor(Math.random() * 899) + 100;
+    const name = `${randomString()}${randomString()}${randomNumber}`;
+
+    if (!usedNames.includes(name)) {
+      usedNames.push(name);
       return name;
     }
 
-    return this._generateName();
+    return this.generateName();
   }
 }
