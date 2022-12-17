@@ -4,11 +4,12 @@ node_modules
 /javascript/**/.npmrc
 /javascript/**/babel.config.js
 /javascript/**/HELP.md
+/javascript/**/package.json
 
 # typescript
 /typescript/**/.eslint*
 /typescript/**/*.cjs
-/typescript/**/tsconfig.json
+/javascript/**/*.json
 /typescript/**/HELP.md
 
 #purescript
