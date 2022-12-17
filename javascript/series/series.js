@@ -4,7 +4,7 @@ export class Series {
   }
 
   get digits() {
-    return this.series.split('').map(Number);
+    return [...this.series].map(Number);
   }
 
   slices(sliceSize) {

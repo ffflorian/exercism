@@ -19,7 +19,7 @@ describe('accumulate()', () => {
   });
 
   test('accumulate reversed strings', () => {
-    const accumulator = word => word.split('').reverse().join('');
+    const accumulator = word => [...word].reverse().join('');
     const result = accumulate('the quick brown fox etc'.split(/\s/), accumulator);
     expect(result).toEqual(['eht', 'kciuq', 'nworb', 'xof', 'cte']);
   });

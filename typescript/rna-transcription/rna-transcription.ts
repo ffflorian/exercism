@@ -7,8 +7,7 @@ export default class Transcriptor {
       T: 'A',
     };
 
-    return dnaInput
-      .split('')
+    return [...dnaInput]
       .map(letter => {
         const transcribed = map[letter as keyof typeof map];
         if (!transcribed) {

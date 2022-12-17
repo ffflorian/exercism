@@ -5,7 +5,7 @@
  * @returns {string}
  */
 function sort(word) {
-  return word.toLowerCase().split('').sort().join('');
+  return [...word.toLowerCase()].sort().join('');
 }
 
 /**

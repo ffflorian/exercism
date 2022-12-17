@@ -5,7 +5,7 @@ export function isValid(input: string): boolean {
     return false;
   }
 
-  const digits = withoutDashes.split('').map(digit => (digit === 'X' ? 10 : Number(digit)));
+  const digits = [...withoutDashes].map(digit => (digit === 'X' ? 10 : Number(digit)));
 
   let remainder = 0;
   let sum = 0;

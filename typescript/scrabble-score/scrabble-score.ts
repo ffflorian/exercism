@@ -12,16 +12,13 @@ export default function score(word: string): number {
   if (!word || /^\s*$/.test(word)) {
     return 0;
   }
-  return word
-    .toUpperCase()
-    .split('')
-    .reduce((result, letter) => {
-      let points = 0;
-      values.forEach(group => {
-        if (group[0].indexOf(letter) > -1) {
-          points += group[1];
-        }
-      });
-      return result + points;
-    }, 0);
+  return [...word.toUpperCase()].reduce((result, letter) => {
+    let points = 0;
+    values.forEach(group => {
+      if (group[0].indexOf(letter) > -1) {
+        points += group[1];
+      }
+    });
+    return result + points;
+  }, 0);
 }

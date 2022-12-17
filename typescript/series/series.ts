@@ -6,7 +6,7 @@ export default class Series {
   }
 
   get digits(): number[] {
-    return this.series.split('').map(Number);
+    return [...this.series].map(Number);
   }
 
   slices(sliceSize: number): number[][] {

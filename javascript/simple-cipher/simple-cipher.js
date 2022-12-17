@@ -14,7 +14,7 @@ export class Cipher {
      * @private
      * @type {string[]}
      */
-    this._alphabet = 'abcdefghijklmnopqrstuvwxyz'.split('');
+    this._alphabet = [...'abcdefghijklmnopqrstuvwxyz'];
     /**
      * @private
      * @type {string}
@@ -24,7 +24,7 @@ export class Cipher {
      * @private
      * @type {number[]}
      */
-    this._keyIndizes = this._key.split('').map(char => this._alphabet.indexOf(char));
+    this._keyIndizes = [...this._key].map(char => this._alphabet.indexOf(char));
   }
 
   /**
@@ -46,8 +46,7 @@ export class Cipher {
    * @returns {string}
    */
   encode(clearText) {
-    return clearText
-      .split('')
+    return [...clearText]
       .map((char, charIndex) => {
         const keyPosition = this._alphabet.indexOf(char) + this._keyIndizes[charIndex % this._keyIndizes.length];
         return this._alphabet[keyPosition % 26];
@@ -60,8 +59,7 @@ export class Cipher {
    * @returns {string}
    */
   decode(encodedText) {
-    return encodedText
-      .split('')
+    return [...encodedText]
       .map((char, charIndex) => {
         const keyPosition = this._alphabet.indexOf(char) - this._keyIndizes[charIndex % this._keyIndizes.length];
         return this._alphabet[(keyPosition + 26) % 26];

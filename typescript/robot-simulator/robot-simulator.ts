@@ -70,7 +70,7 @@ export default class Robot {
   }
 
   public instructions(letters: string): INSTRUCTION[] {
-    return letters.split('').map(letter => {
+    return [...letters].map(letter => {
       switch (letter) {
         case 'A': {
           return INSTRUCTION.ADVANCE;

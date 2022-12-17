@@ -15,6 +15,6 @@ export class Anagram {
   }
 
   private sort(word: string): string {
-    return word.toLowerCase().split('').sort().join('');
+    return [...word.toLowerCase()].sort().join('');
   }
 }
