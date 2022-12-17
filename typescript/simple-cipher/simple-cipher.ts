@@ -1,10 +1,4 @@
-import * as crypto from 'crypto';
-
 export class SimpleCipher {
-  get key(): string {
-    return this._key;
-  }
-
   private readonly _key: string;
   private readonly alphabet: string[];
   private readonly keyIndizes: any;
@@ -13,17 +7,22 @@ export class SimpleCipher {
     if (key && !/^[a-z]+$/.test(key)) {
       throw new Error('Bad key');
     }
-    this.alphabet = 'abcdefghijklmnopqrstuvwxyz'.split('');
+    this.alphabet = [...'abcdefghijklmnopqrstuvwxyz'];
     this._key = key || this._generateRandomKey(100);
     this.keyIndizes = this._key.split('').map(char => this.alphabet.indexOf(char));
   }
 
+  get key(): string {
+    return this._key;
+  }
+
   _generateRandomKey(length: number): string {
-    const randomBytes = crypto.randomBytes(length);
     let key = '';
-    for (let index = 0; index < length; index++) {
-      key += this.alphabet[Math.floor(randomBytes[index] / (256 / this.alphabet.length))];
+    const charactersLength = this.alphabet.length;
+    for (let i = 0; i < length; i++) {
+      key += this.alphabet[Math.floor(Math.random() * charactersLength)];
     }
+
     return key;
   }
 
