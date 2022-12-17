@@ -8,8 +8,20 @@ export class Series {
   }
 
   slices(sliceSize) {
+    if (!this.series) {
+      throw new Error('series cannot be empty');
+    }
+
+    if (sliceSize === 0) {
+      throw new Error('slice length cannot be zero');
+    }
+
+    if (sliceSize < 0) {
+      throw new Error('slice length cannot be negative');
+    }
+
     if (sliceSize > this.digits.length) {
-      throw new Error('Slice size is too big.');
+      throw new Error('slice length cannot be greater than series length');
     }
 
     return this.digits
