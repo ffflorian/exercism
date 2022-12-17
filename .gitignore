@@ -1,37 +1,36 @@
 # javascript
-javascript/**/*
-!javascript/**/*.md
-!javascript/**/*.js
-!javascript/grep/data
-javascript/**/babel.config.js
 node_modules
+/javascript/**/.eslintrc
+/javascript/**/.npmrc
+/javascript/**/babel.config.js
+/javascript/**/HELP.md
 
 # typescript
-typescript/**/*
-!typescript/**/*.md
-!typescript/**/*.ts
-typescript/**/HELP.md
+/typescript/**/.eslint*
+/typescript/**/*.cjs
+/typescript/**/tsconfig.json
+/typescript/**/HELP.md
 
 #purescript
-purescript/bower_components/
-purescript/node_modules/
-purescript/.pulp-cache/
-purescript/output/
-purescript/generated-docs/
-purescript/.psc-package/
-purescript/.psc*
-purescript/.purs*
-purescript/.psa*
-purescript/.spago
-bower.json
+/purescript/bower_components/
+/purescript/node_modules/
+/purescript/.pulp-cache/
+/purescript/output/
+/purescript/generated-docs/
+/purescript/.psc-package/
+/purescript/.psc*
+/purescript/.purs*
+/purescript/.psa*
+/purescript/.spago
+/bower.json
 
 # python
-python/**/__pycache__
+/python/**/__pycache__
 
 # rust
 target
-rust/**/.gitignore
-rust/**/*.rs.bk
+/rust/**/.gitignore
+/rust/**/*.rs.bk
 
 # Exercism metadata
 .exercism
