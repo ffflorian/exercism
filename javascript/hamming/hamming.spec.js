@@ -23,25 +23,25 @@ describe('Hamming', () => {
 
   test('disallow first strand longer', () => {
     expect(() => compute('AATG', 'AAA')).toThrow(
-      new Error('left and right strands must be of equal length'),
+      new Error('strands must be of equal length')
     );
   });
 
   test('disallow second strand longer', () => {
     expect(() => compute('ATA', 'AGTG')).toThrow(
-      new Error('left and right strands must be of equal length'),
+      new Error('strands must be of equal length')
     );
   });
 
-  test('disallow left empty strand', () => {
+  test('disallow empty first strand', () => {
     expect(() => compute('', 'G')).toThrow(
-      new Error('left strand must not be empty'),
+      new Error('strands must be of equal length')
     );
   });
 
-  test('disallow right empty strand', () => {
+  test('disallow empty second strand', () => {
     expect(() => compute('G', '')).toThrow(
-      new Error('right strand must not be empty'),
+      new Error('strands must be of equal length')
     );
   });
 });
