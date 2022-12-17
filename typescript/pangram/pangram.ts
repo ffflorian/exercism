@@ -1,11 +1,4 @@
-export default class Pangram {
-  private readonly sentence: string;
-
-  constructor(sentence: string) {
-    this.sentence = sentence.trim().toLowerCase();
-  }
-
-  isPangram(): boolean {
-    return 'abcdefghijklmnopqrstuvwxyz'.split('').filter(char => this.sentence.indexOf(char) === -1).length < 1;
-  }
+export function isPangram(sentence: string): boolean {
+  sentence = sentence.trim().toLowerCase();
+  return [...'abcdefghijklmnopqrstuvwxyz'].filter(char => sentence.indexOf(char) === -1).length < 1;
 }

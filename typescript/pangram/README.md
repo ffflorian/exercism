@@ -1,46 +1,32 @@
 # Pangram
 
+Welcome to Pangram on Exercism's TypeScript Track.
+If you need help running the tests or submitting your code, check out `HELP.md`.
+
+## Instructions
+
 Determine if a sentence is a pangram. A pangram (Greek: παν γράμμα, pan gramma,
 "every letter") is a sentence using every letter of the alphabet at least once.
 The best known English pangram is:
+
 > The quick brown fox jumps over the lazy dog.
 
 The alphabet used consists of ASCII letters `a` to `z`, inclusive, and is case
 insensitive. Input will not contain non-ASCII symbols.
 
-## Setup
-
-Go through the setup instructions for TypeScript to install the necessary
-dependencies:
-
-[https://exercism.io/tracks/typescript/installation](https://exercism.io/tracks/typescript/installation)
-
-## Requirements
-
-Install assignment dependencies:
-
-```bash
-$ yarn install
-```
-
-## Making the test suite pass
-
-Execute the tests with:
-
-```bash
-$ yarn test
-```
-
-In the test suites all tests but the first have been skipped.
-
-Once you get a test passing, you can enable the next one by changing `xit` to
-`it`.
-
 ## Source
 
-Wikipedia [https://en.wikipedia.org/wiki/Pangram](https://en.wikipedia.org/wiki/Pangram)
+### Created by
 
-## Submitting Incomplete Solutions
+- @masters3d
 
-It's possible to submit an incomplete solution so you can see how others have
-completed the exercise.
+### Contributed to by
+
+- @CRivasGomez
+- @DFXLuna
+- @lukaszklis
+- @SleeplessByte
+
+### Based on
+
+Wikipedia - https://en.wikipedia.org/wiki/Pangram
