@@ -9,7 +9,7 @@ node_modules
 # typescript
 /typescript/**/.eslint*
 /typescript/**/*.cjs
-/javascript/**/*.json
+/typescript/**/*.json
 /typescript/**/HELP.md
 
 #purescript
