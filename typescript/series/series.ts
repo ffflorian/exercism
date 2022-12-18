@@ -1,4 +1,4 @@
-export default class Series {
+export class Series {
   private readonly series: string;
 
   constructor(series: string) {
@@ -10,8 +10,20 @@ export default class Series {
   }
 
   slices(sliceSize: number): number[][] {
+    if (!this.series) {
+      throw new Error('series cannot be empty');
+    }
+
+    if (sliceSize === 0) {
+      throw new Error('slice length cannot be zero');
+    }
+
+    if (sliceSize < 0) {
+      throw new Error('slice length cannot be negative');
+    }
+
     if (sliceSize > this.digits.length) {
-      throw new Error('Slice size is too big.');
+      throw new Error('slice length cannot be greater than series length');
     }
 
     return this.digits

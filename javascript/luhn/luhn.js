@@ -9,10 +9,7 @@ export const valid = ccnumber => {
     return false;
   }
 
-  const result = ccnumber
-    .replace(/ /g, '')
-    .split('')
-    .map(digit => parseInt(digit, 10));
+  const result = [...ccnumber.replace(/ /g, '')].map(digit => parseInt(digit, 10));
 
   const digitsCount = result.length;
   const parity = digitsCount % 2;

@@ -3,10 +3,7 @@ export function valid(ccnumber: string): boolean {
     return false;
   }
 
-  const ccnumberArray = ccnumber
-    .replace(/ /g, '')
-    .split('')
-    .map(digit => parseInt(digit, 10));
+  const ccnumberArray = [...ccnumber.replace(/ /g, '')].map(digit => parseInt(digit, 10));
 
   const digitsCount = ccnumberArray.length;
   const parity = digitsCount % 2;

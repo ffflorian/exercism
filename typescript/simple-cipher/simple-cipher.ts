@@ -9,7 +9,7 @@ export class SimpleCipher {
     }
     this.alphabet = [...'abcdefghijklmnopqrstuvwxyz'];
     this._key = key || this._generateRandomKey(100);
-    this.keyIndizes = this._key.split('').map(char => this.alphabet.indexOf(char));
+    this.keyIndizes = [...this._key].map(char => this.alphabet.indexOf(char));
   }
 
   get key(): string {
@@ -27,8 +27,7 @@ export class SimpleCipher {
   }
 
   decode(encodedText: string): string {
-    return encodedText
-      .split('')
+    return [...encodedText]
       .map((char, charIndex) => {
         const keyPosition = this.alphabet.indexOf(char) - this.keyIndizes[charIndex % this.keyIndizes.length];
         return this.alphabet[(keyPosition + 26) % 26];
@@ -37,8 +36,7 @@ export class SimpleCipher {
   }
 
   encode(clearText: string): string {
-    return clearText
-      .split('')
+    return [...clearText]
       .map((char, charIndex) => {
         const keyPosition = this.alphabet.indexOf(char) + this.keyIndizes[charIndex % this.keyIndizes.length];
         return this.alphabet[keyPosition % 26];
