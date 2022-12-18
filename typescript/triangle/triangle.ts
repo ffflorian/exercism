@@ -1,4 +1,4 @@
-export default class Triangle {
+export class Triangle {
   private readonly a: number;
   private readonly b: number;
   private readonly c: number;
@@ -9,24 +9,29 @@ export default class Triangle {
     this.c = c;
   }
 
-  kind(): 'equilateral' | 'scalene' | 'isosceles' {
-    if (
-      this.a * this.b * this.c <= 0 ||
-      this.c > this.a + this.b ||
-      this.a > this.b + this.c ||
-      this.b > this.a + this.c
-    ) {
-      throw new Error('Degenerate triangle');
-    }
+  private get isTriangle(): boolean {
+    return (
+      this.a * this.b * this.c > 0 &&
+      this.a + this.b >= this.c &&
+      this.b + this.c >= this.a &&
+      this.a + this.c >= this.b &&
+      !this.isDegenerate
+    );
+  }
 
-    if (this.a === this.b && this.b === this.c) {
-      return 'equilateral';
-    }
+  private get isDegenerate(): boolean {
+    return this.a + this.b === this.c || this.b + this.c === this.a || this.a + this.c === this.b;
+  }
 
-    if (this.a !== this.b && this.b !== this.c && this.c !== this.a) {
-      return 'scalene';
-    }
+  get isEquilateral(): boolean {
+    return this.isTriangle && this.a === this.b && this.b === this.c;
+  }
 
-    return 'isosceles';
+  get isScalene(): boolean {
+    return this.isTriangle && this.a !== this.b && this.b !== this.c && this.c !== this.a;
+  }
+
+  get isIsosceles(): boolean {
+    return this.isTriangle && !this.isScalene;
   }
 }
