@@ -1,39 +1,67 @@
-import SumOfMultiples from './sum-of-multiples'
+import { sum } from './sum-of-multiples'
 
-describe('SumOfMultiples', () => {
-  it('to 1', () => {
-    expect(SumOfMultiples([3, 5]).to(1)).toBe(0)
+describe('Sum Of Multiples', () => {
+  it('no multiples within limit', () => {
+    expect(sum([3, 5], 1)).toEqual(0)
   })
 
-  it('to 3', () => {
-    expect(SumOfMultiples([3, 5]).to(4)).toBe(3)
+  it('one factor has multiples within limit', () => {
+    expect(sum([3, 5], 4)).toEqual(3)
   })
 
-  it('to 10', () => {
-    expect(SumOfMultiples([3, 5]).to(10)).toBe(23)
+  it('more than one multiple within limit', () => {
+    expect(sum([3], 7)).toEqual(9)
   })
 
-  it('to 100', () => {
-    expect(SumOfMultiples([3, 5]).to(100)).toBe(2318)
+  it('more than one factor with multiples within limit', () => {
+    expect(sum([3, 5], 10)).toEqual(23)
   })
 
-  it('to 1000', () => {
-    expect(SumOfMultiples([3, 5]).to(1000)).toBe(233168)
+  it('each multiple is only counted once', () => {
+    expect(sum([3, 5], 100)).toEqual(2318)
   })
 
-  it('[7, 13, 17] to 20', () => {
-    expect(SumOfMultiples([7, 13, 17]).to(20)).toBe(51)
+  it('a much larger limit', () => {
+    expect(sum([3, 5], 1000)).toEqual(233168)
   })
 
-  it('[4, 6] to 15', () => {
-    expect(SumOfMultiples([4, 6]).to(15)).toBe(30)
+  it('three factors', () => {
+    expect(sum([7, 13, 17], 20)).toEqual(51)
   })
 
-  it('[5, 6, 8] to 150', () => {
-    expect(SumOfMultiples([5, 6, 8]).to(150)).toBe(4419)
+  it('factors not relatively prime', () => {
+    expect(sum([4, 6], 15)).toEqual(30)
   })
 
-  it('[43, 47] to 10000', () => {
-    expect(SumOfMultiples([43, 47]).to(10000)).toBe(2203160)
+  it('some pairs of factors relatively prime and some not', () => {
+    expect(sum([5, 6, 8], 150)).toEqual(4419)
+  })
+
+  it('one factor is a multiple of another', () => {
+    expect(sum([5, 25], 51)).toEqual(275)
+  })
+
+  it('much larger factors', () => {
+    expect(sum([43, 47], 10000)).toEqual(2203160)
+  })
+
+  it('all numbers are multiples of 1', () => {
+    expect(sum([1], 100)).toEqual(4950)
+  })
+
+  it('no factors means an empty sum', () => {
+    expect(sum([], 10000)).toEqual(0)
+  })
+
+  it('the only multiple of 0 is 0', () => {
+    expect(sum([0], 1)).toEqual(0)
+  })
+
+  it('the factor 0 does not affect the sum of multiples of other factors', () => {
+    expect(sum([3, 0], 4)).toEqual(3)
+  })
+
+  it('solutions using include-exclude must extend to cardinality greater than 3', () => {
+    expect(sum([2, 3, 5, 7, 11], 10000)).toEqual(39614537)
   })
 })
