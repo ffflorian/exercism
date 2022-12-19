@@ -2,13 +2,14 @@
 node_modules
 /javascript/**/.eslintrc
 /javascript/**/.npmrc
-/javascript/**/babel.config.js
+/javascript/**/*.config.js
 /javascript/**/HELP.md
 /javascript/**/package.json
 
 # typescript
 /typescript/**/.eslint*
 /typescript/**/*.cjs
+/typescript/**/*.config.js
 /typescript/**/*.json
 /typescript/**/HELP.md
 

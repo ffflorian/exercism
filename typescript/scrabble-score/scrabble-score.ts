@@ -8,7 +8,7 @@ const values: Array<[string[], number]> = [
   [['Q', 'Z'], 10],
 ];
 
-export default function score(word: string): number {
+export function score(word?: string): number {
   if (!word || /^\s*$/.test(word)) {
     return 0;
   }

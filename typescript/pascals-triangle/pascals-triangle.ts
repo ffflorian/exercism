@@ -1,4 +1,4 @@
-export default class Triangle {
+export class Triangle {
   private readonly _rows: number[][];
 
   constructor(length: number) {

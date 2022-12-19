@@ -8,5 +8,5 @@ export function square(num: number): bigint {
 }
 
 export function total(): bigint {
-  return 2n ** 64n;
+  return 2n ** 64n - 1n;
 }

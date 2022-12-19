@@ -11,34 +11,43 @@ enum INSTRUCTION {
   TURN_RIGHT = 'turnRight',
 }
 
-export default class Robot {
-  public bearing: DIRECTION;
-  public coordinates: [number, number];
+interface Coordinates {
+  direction?: string;
+  x?: number;
+  y?: number;
+}
 
-  constructor(coordinateX?: number, coordinateY?: number, direction: string = '') {
-    if (direction && !Object.values(DIRECTION).includes(direction as DIRECTION)) {
-      throw new Error('Invalid Robot Bearing');
-    }
-    this.bearing = (direction as DIRECTION) || DIRECTION.NORTH;
-    this.coordinates = [coordinateX || 0, coordinateY || 0];
+export class InvalidInputError extends Error {
+  constructor() {
+    super();
+    this.message = 'Invalid Robot Bearing';
+  }
+}
+
+export class Robot {
+  public bearing?: DIRECTION;
+  public coordinates?: [number, number];
+
+  constructor() {
+    this.place();
   }
 
   public advance(): void {
     switch (this.bearing) {
       case DIRECTION.NORTH: {
-        this.coordinates[1]++;
+        this.coordinates && this.coordinates[1]++;
         break;
       }
       case DIRECTION.EAST: {
-        this.coordinates[0]++;
+        this.coordinates && this.coordinates[0]++;
         break;
       }
       case DIRECTION.SOUTH: {
-        this.coordinates[1]--;
+        this.coordinates && this.coordinates[1]--;
         break;
       }
       case DIRECTION.WEST: {
-        this.coordinates[0]--;
+        this.coordinates && this.coordinates[0]--;
         break;
       }
     }
@@ -93,6 +102,14 @@ export default class Robot {
       throw new Error('Invalid Robot Bearing');
     }
     this.bearing = direction as DIRECTION;
+  }
+
+  public place(coordinates?: Coordinates): void {
+    if (coordinates?.direction && !Object.values(DIRECTION).includes(coordinates?.direction as DIRECTION)) {
+      throw new InvalidInputError();
+    }
+    this.bearing = (coordinates?.direction as DIRECTION) || DIRECTION.NORTH;
+    this.coordinates = [coordinates?.x || 0, coordinates?.y || 0];
   }
 
   public turnLeft(): void {

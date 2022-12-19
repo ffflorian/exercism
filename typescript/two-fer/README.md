@@ -1,14 +1,19 @@
 # Two Fer
 
+Welcome to Two Fer on Exercism's TypeScript Track.
+If you need help running the tests or submitting your code, check out `HELP.md`.
+
+## Instructions
+
 `Two-fer` or `2-fer` is short for two for one. One for you and one for me.
 
 Given a name, return a string with the message:
 
 ```text
-One for X, one for me.
+One for name, one for me.
 ```
 
-Where X is the given name.
+Where "name" is the given name.
 
 However, if the name is missing, return the string:
 
@@ -18,46 +23,24 @@ One for you, one for me.
 
 Here are some examples:
 
-|Name    |String to return
-|:-------|:------------------
-|Alice   |One for Alice, one for me.
-|Bob     |One for Bob, one for me.
-|        |One for you, one for me.
-|Zaphod  |One for Zaphod, one for me.
-
-## Setup
-
-Go through the setup instructions for TypeScript to install the necessary
-dependencies:
-
-[https://exercism.io/tracks/typescript/installation](https://exercism.io/tracks/typescript/installation)
-
-## Requirements
-
-Install assignment dependencies:
-
-```bash
-$ yarn install
-```
-
-## Making the test suite pass
-
-Execute the tests with:
-
-```bash
-$ yarn test
-```
-
-In the test suites all tests but the first have been skipped.
-
-Once you get a test passing, you can enable the next one by changing `xit` to
-`it`.
+| Name   | String to return            |
+| :----- | :-------------------------- |
+| Alice  | One for Alice, one for me.  |
+| Bob    | One for Bob, one for me.    |
+|        | One for you, one for me.    |
+| Zaphod | One for Zaphod, one for me. |
 
 ## Source
 
-[https://github.com/exercism/problem-specifications/issues/757](https://github.com/exercism/problem-specifications/issues/757)
+### Created by
 
-## Submitting Incomplete Solutions
+- @CRivasGomez
 
-It's possible to submit an incomplete solution so you can see how others have
-completed the exercise.
+### Contributed to by
+
+- @masters3d
+- @SleeplessByte
+
+### Based on
+
+https://github.com/exercism/problem-specifications/issues/757

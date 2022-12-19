@@ -51,7 +51,7 @@ describe('returns the number of grains on the square', () => {
 
 describe('returns the total number of grains on the board', () => {
   it('total', () => {
-    const expected = 18446744073709551616n
+    const expected = 18446744073709551615n
     expect(total()).toEqual(expected)
   })
 })

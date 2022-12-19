@@ -1,4 +1,4 @@
-export default function Proverb(...words: string[]): string {
+export function proverb(...words: string[]): string {
   let result = '';
 
   for (let index = 0; index < words.length; index++) {

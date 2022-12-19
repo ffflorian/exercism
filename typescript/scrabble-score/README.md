@@ -1,6 +1,11 @@
 # Scrabble Score
 
-Given a word, compute the scrabble score for that word.
+Welcome to Scrabble Score on Exercism's TypeScript Track.
+If you need help running the tests or submitting your code, check out `HELP.md`.
+
+## Instructions
+
+Given a word, compute the Scrabble score for that word.
 
 ## Letter Values
 
@@ -39,39 +44,17 @@ And to total:
 - You can play a double or a triple letter.
 - You can play a double or a triple word.
 
-## Setup
-
-Go through the setup instructions for TypeScript to install the necessary
-dependencies:
-
-[https://exercism.io/tracks/typescript/installation](https://exercism.io/tracks/typescript/installation)
-
-## Requirements
-
-Install assignment dependencies:
-
-```bash
-$ yarn install
-```
-
-## Making the test suite pass
-
-Execute the tests with:
-
-```bash
-$ yarn test
-```
-
-In the test suites all tests but the first have been skipped.
-
-Once you get a test passing, you can enable the next one by changing `xit` to
-`it`.
-
 ## Source
 
-Inspired by the Extreme Startup game [https://github.com/rchatley/extreme_startup](https://github.com/rchatley/extreme_startup)
+### Created by
 
-## Submitting Incomplete Solutions
+- @zgavin1
 
-It's possible to submit an incomplete solution so you can see how others have
-completed the exercise.
+### Contributed to by
+
+- @masters3d
+- @SleeplessByte
+
+### Based on
+
+Inspired by the Extreme Startup game - https://github.com/rchatley/extreme_startup

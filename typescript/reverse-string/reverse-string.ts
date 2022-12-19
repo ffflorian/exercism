@@ -1,5 +1,3 @@
-export default class ReverseString {
-  static reverse(str: string): string {
-    return [...str].reverse().join('');
-  }
+export function reverse(str: string): string {
+  return [...str].reverse().join('');
 }
