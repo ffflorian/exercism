@@ -1,6 +1,9 @@
 let usedNames: string[] = [];
 
 export class Robot {
+  static releaseNames(): void {
+    usedNames = [];
+  }
   private _name!: string;
 
   constructor() {
@@ -9,10 +12,6 @@ export class Robot {
 
   get name(): string {
     return this._name;
-  }
-
-  static releaseNames(): void {
-    usedNames = [];
   }
 
   resetName(): void {

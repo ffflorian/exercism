@@ -1,4 +1,4 @@
-const translationMap: [number, string][] = [
+const translationMap: Array<[number, string]> = [
   [1000, 'M'],
   [900, 'CM'],
   [500, 'D'],

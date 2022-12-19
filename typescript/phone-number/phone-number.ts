@@ -9,8 +9,11 @@ export function clean(input: string): string | undefined {
     throw new Error('Punctuations not permitted');
   }
 
-  const {prefix = '', areaCode = '', exchangeCode = ''} =
-    /((?<prefix>\+?\d+)?\((?<areaCode>\d+)\)?)?(?<exchangeCode>\d+)/.exec(cleanInput)?.groups || {};
+  const {
+    prefix = '',
+    areaCode = '',
+    exchangeCode = '',
+  } = /((?<prefix>\+?\d+)?\((?<areaCode>\d+)\)?)?(?<exchangeCode>\d+)/.exec(cleanInput)?.groups || {};
 
   const cleanNumber = `${areaCode}${exchangeCode}`;
 
@@ -23,7 +26,7 @@ export function clean(input: string): string | undefined {
   }
 
   if (cleanNumber.length === 11 && !cleanNumber.startsWith('1')) {
-    throw new Error('11 digits must start with 1')
+    throw new Error('11 digits must start with 1');
   }
 
   if (/^(0|1)/.test(areaCode)) {
@@ -39,7 +42,7 @@ export function clean(input: string): string | undefined {
   }
 
   if (cleanNumber.length === 11) {
-    return cleanNumber.slice(1)
+    return cleanNumber.slice(1);
   }
 
   return cleanNumber;
