@@ -1,15 +1,13 @@
-export default class Transpose {
-  static transpose(lines: string[]): string[] {
-    return lines.reduce((result: string[], line, lineIndex) => {
-      [...line].map((value, key) => {
-        if (typeof result[key] === 'undefined') {
-          result[key] = new Array(lineIndex + 1).join(' ');
-        }
+function trimTrailing(array: string[]) {
+  const trailingUndefinedCount = [...array].reverse().findIndex(element => element !== undefined);
+  return array.slice(0, array.length - trailingUndefinedCount);
+}
 
-        result[key] += value;
-      });
-
-      return result;
-    }, []);
-  }
+export function transpose(lines: string[]): string[] {
+  const longestLine = Math.max(0, ...lines.map(line => line.length));
+  return [...Array(longestLine).keys()].map(col =>
+    trimTrailing(lines.map((_, row) => lines[row][col]))
+      .map(char => char || ' ')
+      .join('')
+  );
 }
