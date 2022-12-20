@@ -1,4 +1,4 @@
-function trimTrailing(array: string[]) {
+function trimTrailing(array: string[]): string[] {
   const trailingUndefinedCount = [...array].reverse().findIndex(element => element !== undefined);
   return array.slice(0, array.length - trailingUndefinedCount);
 }
