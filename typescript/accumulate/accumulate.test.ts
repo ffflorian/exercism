@@ -20,7 +20,7 @@ describe('accumulate()', () => {
 
   it('accumulate reversed strings', () => {
     const accumulator = (word: string): string =>
-      word.split('').reverse().join('')
+     [...word].reverse().join('')
     const result = accumulate(
       'the quick brown fox etc'.split(/\s/),
       accumulator

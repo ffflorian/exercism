@@ -36,7 +36,7 @@ export class DiffieHellman {
    * @param {number} privateKey
    * @returns {number}
    */
-  getPublicKeyFromPrivateKey(privateKey) {
+  getPublicKey(privateKey) {
     if (privateKey < 2 || privateKey >= this.p) {
       throw new Error('Invalid private key');
     }
@@ -44,11 +44,11 @@ export class DiffieHellman {
   }
 
   /**
-   * @param {number} privateKeyA
-   * @param {number} publicKeyB
+   * @param {number} privateKeyB
+   * @param {number} publicKeyA
    * @returns {number}
    */
-  getSharedSecret(privateKeyA, publicKeyB) {
-    return Math.pow(publicKeyB, privateKeyA) % this.p;
+  getSecret(publicKeyA, privateKeyB) {
+    return Math.pow(publicKeyA, privateKeyB) % this.p;
   }
 }

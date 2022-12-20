@@ -1,19 +1,11 @@
-//@ts-check
-
 export class GradeSchool {
   constructor() {
     /**
-     * @private
      * @type {Record<number, string[]>}
+     * @private
+     * @readonly
      */
     this._roster = {};
-  }
-
-  /**
-   * @returns {Record<number, string[]>}
-   */
-  roster() {
-    return JSON.parse(JSON.stringify(this._roster));
   }
 
   /**
@@ -21,16 +13,16 @@ export class GradeSchool {
    * @param {number} grade
    */
   add(name, grade) {
-    if (typeof name !== 'string' || typeof grade !== 'number') {
-      throw new Error('Invalid argument');
+    for (const gradeIndex in this._roster) {
+      const nameIndex = this._roster[gradeIndex].findIndex(entry => entry === name);
+      if (nameIndex !== -1) {
+        this._roster[gradeIndex].splice(nameIndex);
+      }
     }
-    let entry = this._roster[grade];
-    if (typeof entry === 'undefined') {
-      entry = [];
-    }
-    entry.push(name);
-    entry.sort();
-    this._roster[grade] = entry;
+
+    const entries = this._roster[grade] || [];
+    entries.push(name);
+    this._roster[grade] = entries.sort();
   }
 
   /**
@@ -38,13 +30,17 @@ export class GradeSchool {
    * @returns {string[]}
    */
   grade(grade) {
-    if (typeof grade !== 'number') {
-      throw new Error('Invalid argument');
-    }
     const entry = this._roster[grade];
     if (typeof entry === 'undefined') {
       return [];
     }
     return [...entry.sort()];
+  }
+
+  /**
+   * @returns {Record<number, string[]> }
+   */
+  roster() {
+    return JSON.parse(JSON.stringify(this._roster));
   }
 }

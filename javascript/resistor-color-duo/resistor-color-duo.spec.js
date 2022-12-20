@@ -1,4 +1,4 @@
-import { decodedValue } from './resistor-color-duo.js';
+import { decodedValue } from './resistor-color-duo';
 
 describe('Resistor Colors', () => {
   test('Brown and black', () => {
@@ -19,5 +19,5 @@ describe('Resistor Colors', () => {
 
   test('Ignore additional colors', () => {
     expect(decodedValue(['green', 'brown', 'orange'])).toEqual(51);
-  })
+  });
 });

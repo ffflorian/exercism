@@ -1,7 +1,7 @@
-import { isValid } from './isbn-verifier.js';
+import { isValid } from './isbn-verifier';
 
 describe('ISBN Verifier', () => {
-  test('valid isbn number', () => {
+  test('valid isbn', () => {
     expect(isValid('3-598-21508-8')).toEqual(true);
   });
 
