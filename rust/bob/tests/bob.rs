@@ -72,7 +72,6 @@ fn test_question_with_no_letters() {
 }
 
 #[test]
-#[ignore]
 /// no letters
 fn test_no_letters() {
     process_response_case("1, 2, 3", "Whatever.");

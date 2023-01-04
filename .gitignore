@@ -3,7 +3,6 @@ node_modules
 /javascript/**/.eslintrc
 /javascript/**/.npmrc
 /javascript/**/*.config.js
-/javascript/**/HELP.md
 /javascript/**/package.json
 
 # typescript
@@ -11,7 +10,6 @@ node_modules
 /typescript/**/*.cjs
 /typescript/**/*.config.js
 /typescript/**/*.json
-/typescript/**/HELP.md
 
 #purescript
 /purescript/bower_components/
@@ -30,9 +28,11 @@ node_modules
 /python/**/__pycache__
 
 # rust
-target
+/rust/**/target
 /rust/**/.gitignore
 /rust/**/*.rs.bk
 
 # Exercism metadata
 .exercism
+HELP.md
+GETTING_STARTED.md
