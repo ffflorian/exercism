@@ -1,6 +1,6 @@
 # exercism
 
-My [exercism.io](https://exercism.io) solutions.
+My [exercism.org](https://exercism.org) solutions.
 
 ### Languages
 - [JavaScript](./javascript) (66 solutions) [![Test Status](https://github.com/ffflorian/exercism/workflows/JavaScript%20tests/badge.svg)](https://github.com/ffflorian/exercism/actions/)
