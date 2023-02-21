@@ -11,5 +11,4 @@ const planets = {
 
 const yearOnEarth = 31557600;
 
-export const age = (planet, seconds) =>
-  parseFloat((seconds / yearOnEarth / planets[planet]).toFixed(2));
+export const age = (planet, seconds) => parseFloat((seconds / yearOnEarth / planets[planet]).toFixed(2));

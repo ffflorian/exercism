@@ -1,6 +1,6 @@
 {
   "author": "Florian Imdahl <git@ffflorian.de>",
-  "description": "My exercism.io solutions",
+  "description": "My exercism.org solutions",
   "devDependencies": {
     "@babel/eslint-parser": "7.19.1",
     "@ffflorian/eslint-config": "0.9.0",

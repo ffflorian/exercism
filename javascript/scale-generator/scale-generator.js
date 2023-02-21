@@ -4,7 +4,7 @@ const sharps = ['C', 'C#', 'D', 'D#', 'E', 'F', 'F#', 'G', 'G#', 'A', 'A#', 'B']
 const flats = ['F', 'Gb', 'G', 'Ab', 'A', 'Bb', 'B', 'C', 'Db', 'D', 'Eb', 'E'];
 const usesFlats = ['F', 'Bb', 'Eb', 'Ab', 'Db', 'Gb', 'd', 'g', 'c', 'f', 'bb', 'eb'];
 // eslint-disable-next-line sort-keys
-const steps = {m: 1, M: 2, A: 3};
+const steps = {A: 3, M: 2, m: 1};
 
 export class Scale {
   /**

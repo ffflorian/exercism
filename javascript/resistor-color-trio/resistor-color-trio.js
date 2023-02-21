@@ -1,15 +1,6 @@
-const colors = [
-  'Black',
-  'Brown',
-  'Red',
-  'Orange',
-  'Yellow',
-  'Green',
-  'Blue',
-  'Violet',
-  'Grey',
-  'White',
-].map(color => color.toLowerCase())
+const colors = ['Black', 'Brown', 'Red', 'Orange', 'Yellow', 'Green', 'Blue', 'Violet', 'Grey', 'White'].map(color =>
+  color.toLowerCase()
+);
 
 export class ResistorColorTrio {
   constructor(colorInputs) {

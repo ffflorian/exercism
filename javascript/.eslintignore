@@ -1,3 +1,4 @@
 node_modules
 grains/big-integer.js
 babel.config.js
+*.spec.js

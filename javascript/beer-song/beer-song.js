@@ -6,7 +6,7 @@
  * @returns {string}
  */
 function count(num, lowercase) {
-  return num === 0 ? (lowercase ? 'n' : 'N') + 'o more' : num === -1 ? '99' : num.toString();
+  return num === 0 ? `${lowercase ? 'n' : 'N'}o more` : num === -1 ? '99' : num.toString();
 }
 
 /**
@@ -23,9 +23,7 @@ function bottle(num, extended) {
  * @returns {string}
  */
 function take(num) {
-  return num === 0
-    ? 'Go to the store and buy some more'
-    : 'Take ' + (num === 1 ? 'it' : 'one') + ' down and pass it around';
+  return num === 0 ? 'Go to the store and buy some more' : `Take ${num === 1 ? 'it' : 'one'} down and pass it around`;
 }
 
 /**

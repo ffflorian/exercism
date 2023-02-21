@@ -10,11 +10,11 @@ export class Squares {
   }
 
   get sumOfSquares() {
-    return this.n * (this.n + 1) * (2 * this.n + 1) / 6
+    return (this.n * (this.n + 1) * (2 * this.n + 1)) / 6;
   }
 
   get squareOfSum() {
-    return (this.n * (this.n + 1) / 2) * (this.n * (this.n + 1) / 2)
+    return ((this.n * (this.n + 1)) / 2) * ((this.n * (this.n + 1)) / 2);
   }
 
   get difference() {

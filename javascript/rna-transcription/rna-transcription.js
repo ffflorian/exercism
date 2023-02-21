@@ -5,7 +5,5 @@ export function toRna(DNA) {
     G: 'C',
     T: 'A',
   };
-  return [...DNA]
-    .map(obj => map[obj])
-    .join('');
+  return [...DNA].map(obj => map[obj]).join('');
 }

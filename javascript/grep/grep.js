@@ -35,7 +35,7 @@ const options = {
  * @returns {never}
  */
 const printHelp = (exitCode = 0) => {
-  console.log(`Usage: grep.js [OPTION]... PATTERNS [FILE]...
+  console.info(`Usage: grep.js [OPTION]... PATTERNS [FILE]...
 Search for PATTERNS in each FILE.
 Example: grep.js -i 'hello world' menu.h main.c
 
@@ -51,52 +51,52 @@ Options:
 while (args.length) {
   const currentArgument = args[0];
   switch (currentArgument) {
-  case '-h':
-  case '--help': {
-    printHelp();
-    break;
-  }
-  case '-n':
-  case '--line-number': {
-    options.lineNumbers = true;
-    args.shift();
-    break;
-  }
-  case '-l':
-  case '--files-with-matches': {
-    options.fileNamesOnly = true;
-    args.shift();
-    break;
-  }
-  case '-i':
-  case '--ignore-case': {
-    options.caseInsensitive = true;
-    args.shift();
-    break;
-  }
-  case '-v':
-  case '--invert-match': {
-    options.invertResults = true;
-    args.shift();
-    break;
-  }
-  case '-x':
-  case '--line-regexp': {
-    options.entireLines = true;
-    args.shift();
-    break;
-  }
-  default: {
-    if (currentArgument.startsWith('-')) {
-      throw new Error(`Invalid flag "${currentArgument}"`);
-    } else if (!options.pattern) {
-      options.pattern = currentArgument;
-    } else {
-      options.inputFiles.push(currentArgument);
+    case '-h':
+    case '--help': {
+      printHelp();
+      break;
     }
-    args.shift();
-    break;
-  }
+    case '-n':
+    case '--line-number': {
+      options.lineNumbers = true;
+      args.shift();
+      break;
+    }
+    case '-l':
+    case '--files-with-matches': {
+      options.fileNamesOnly = true;
+      args.shift();
+      break;
+    }
+    case '-i':
+    case '--ignore-case': {
+      options.caseInsensitive = true;
+      args.shift();
+      break;
+    }
+    case '-v':
+    case '--invert-match': {
+      options.invertResults = true;
+      args.shift();
+      break;
+    }
+    case '-x':
+    case '--line-regexp': {
+      options.entireLines = true;
+      args.shift();
+      break;
+    }
+    default: {
+      if (currentArgument.startsWith('-')) {
+        throw new Error(`Invalid flag "${currentArgument}"`);
+      } else if (!options.pattern) {
+        options.pattern = currentArgument;
+      } else {
+        options.inputFiles.push(currentArgument);
+      }
+      args.shift();
+      break;
+    }
   }
 }
 
@@ -139,6 +139,6 @@ for (const inputFile of options.inputFiles) {
   const fileContent = fs.readFileSync(resolvedPath, 'utf-8');
   const results = walkFileContent(inputFile, fileContent);
   if (results.length > 0) {
-    console.log(options.fileNamesOnly ? inputFile : results.join('\n'));
+    console.info(options.fileNamesOnly ? inputFile : results.join('\n'));
   }
 }

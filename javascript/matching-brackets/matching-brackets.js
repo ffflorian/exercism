@@ -24,4 +24,4 @@ export function isPaired(input) {
   }
 
   return stack.length === 0;
-};
+}

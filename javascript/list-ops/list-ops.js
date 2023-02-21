@@ -30,7 +30,7 @@ export class List {
   append(list) {
     for (let appendIndex = 0, itemsIndex = this.items.length; appendIndex < list.items.length; appendIndex++) {
       this.items[itemsIndex] = list.items[appendIndex];
-      itemsIndex++
+      itemsIndex++;
     }
     return this;
   }

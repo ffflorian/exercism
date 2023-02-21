@@ -19,7 +19,7 @@ export class Song {
      */
     this._verses = [
       {
-        end: ' Perhaps she\'ll die.\n',
+        end: " Perhaps she'll die.\n",
         message: '',
         type: 'fly',
       },
@@ -50,12 +50,12 @@ export class Song {
       },
       {
         catch: 'goat',
-        message: 'I don\'t know how she swallowed a cow!\n',
+        message: "I don't know how she swallowed a cow!\n",
         type: 'cow',
       },
       {
         last: true,
-        message: 'She\'s dead, of course!\n',
+        message: "She's dead, of course!\n",
         type: 'horse',
         why: 'catch',
       },
@@ -67,7 +67,9 @@ export class Song {
    * @returns {string}
    */
   verse(index) {
-    let verse = `I know an old lady who swallowed a ${this._verses[index - 1].type}.\n${this._verses[index - 1].message}`;
+    let verse = `I know an old lady who swallowed a ${this._verses[index - 1].type}.\n${
+      this._verses[index - 1].message
+    }`;
     for (let i = index - 1; i >= 0; i--) {
       const v = this._verses[i];
       if (v.last === true) {

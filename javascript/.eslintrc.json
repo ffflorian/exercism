@@ -1,4 +1,60 @@
 {
+  "env": {
+    "browser": true,
+    "es6": true,
+    "node": true
+  },
+  "extends": ["prettier", "plugin:no-unsanitized/DOM"],
   "parser": "@babel/eslint-parser",
-  "extends": "@ffflorian/eslint-config"
+  "parserOptions": {
+    "ecmaVersion": 11,
+    "project": "tsconfig.json",
+    "sourceType": "module"
+  },
+  "plugins": ["no-unsanitized", "prettier", "sort-keys-fix", "unused-imports"],
+  "rules": {
+    "constructor-super": "error",
+    "curly": "error",
+    "id-length": "off",
+    "no-console": [
+      "error",
+      {
+        "allow": ["error", "info", "warn"]
+      }
+    ],
+    "no-const-assign": "error",
+    "no-duplicate-case": "error",
+    "no-else-return": "error",
+    "no-inner-declarations": "error",
+    "no-lonely-if": "error",
+    "no-magic-numbers": "off",
+    "no-return-await": "error",
+    "no-sequences": "error",
+    "no-sparse-arrays": "error",
+    "no-trailing-spaces": "error",
+    "no-undef": "error",
+    "no-unneeded-ternary": "error",
+    "no-unused-expressions": "error",
+    "no-useless-return": "error",
+    "no-var": "error",
+    "one-var": ["error", "never"],
+    "prefer-arrow-callback": "error",
+    "prefer-const": "error",
+    "prefer-object-spread": "error",
+    "prefer-promise-reject-errors": "error",
+    "prefer-spread": "error",
+    "prefer-template": "error",
+    "prettier/prettier": "error",
+    "quotes": [
+      "error",
+      "single",
+      {
+        "allowTemplateLiterals": true,
+        "avoidEscape": true
+      }
+    ],
+    "sort-keys-fix/sort-keys-fix": "error",
+    "sort-vars": "error",
+    "strict": ["error", "global"]
+  }
 }
