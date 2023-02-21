@@ -4,6 +4,7 @@ node_modules
 /javascript/**/.npmrc
 /javascript/**/*.config.js
 /javascript/**/package.json
+!/javascript/.npmrc
 
 # typescript
 /typescript/**/.eslint*
