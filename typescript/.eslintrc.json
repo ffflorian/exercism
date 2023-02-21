@@ -1,0 +1,16 @@
+{
+  "env": {
+    "jasmine": true
+  },
+  "extends": "@ffflorian/eslint-config",
+  "ignorePatterns": ["*.test.ts"],
+  "globals": {
+    "NodeJS": true
+  },
+  "rules": {
+    "@typescript-eslint/typedef": "off",
+    "id-length": "off",
+    "no-magic-numbers": "off",
+    "valid-jsdoc": "off"
+  }
+}

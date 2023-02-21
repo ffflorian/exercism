@@ -1,5 +1,7 @@
 module.exports = {
-  verbose: true,
+  modulePathIgnorePatterns: [
+    'package.json',
+  ],
   projects: [
     '<rootDir>'
   ],
@@ -18,4 +20,5 @@ module.exports = {
   transform: {
     '^.+\\.[jt]sx?$': 'ts-jest',
   },
+  verbose: true,
 };

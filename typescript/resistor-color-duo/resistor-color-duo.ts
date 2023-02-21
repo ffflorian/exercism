@@ -1,16 +1,5 @@
 // tslint:disable-next-line
-const colors = [
-  'black',
-  'brown',
-  'red',
-  'orange',
-  'yellow',
-  'green',
-  'blue',
-  'violet',
-  'grey',
-  'white',
-];
+const colors = ['black', 'brown', 'red', 'orange', 'yellow', 'green', 'blue', 'violet', 'grey', 'white'];
 
 export function decodedValue(colorInputs: string[]): number {
   if (colorInputs.length < 2) {

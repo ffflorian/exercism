@@ -10,6 +10,7 @@ node_modules
 /typescript/**/*.cjs
 /typescript/**/*.config.js
 /typescript/**/*.json
+!/typescript/.eslintrc.json
 
 #purescript
 /purescript/bower_components/

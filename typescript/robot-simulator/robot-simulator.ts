@@ -1,6 +1,6 @@
 enum DIRECTION {
-  NORTH = 'north',
   EAST = 'east',
+  NORTH = 'north',
   SOUTH = 'south',
   WEST = 'west',
 }
@@ -33,21 +33,25 @@ export class Robot {
   }
 
   public advance(): void {
+    if (typeof this.coordinates === 'undefined') {
+      return;
+    }
+
     switch (this.bearing) {
       case DIRECTION.NORTH: {
-        this.coordinates && this.coordinates[1]++;
+        this.coordinates[1]++;
         break;
       }
       case DIRECTION.EAST: {
-        this.coordinates && this.coordinates[0]++;
+        this.coordinates[0]++;
         break;
       }
       case DIRECTION.SOUTH: {
-        this.coordinates && this.coordinates[1]--;
+        this.coordinates[1]--;
         break;
       }
       case DIRECTION.WEST: {
-        this.coordinates && this.coordinates[0]--;
+        this.coordinates[0]--;
         break;
       }
     }

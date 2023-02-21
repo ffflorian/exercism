@@ -1,9 +1,0 @@
-{
-  "extends": ["@ffflorian/tslint-config"],
-  "rules": {
-    "no-default-export": false
-  },
-  "linterOptions": {
-    "exclude": ["dist/**", "node_modules/**"]
-  }
-}

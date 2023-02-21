@@ -13,7 +13,7 @@ export class List<T = number> {
   }
 
   append(list: List<any>): List<T> {
-    for (let itemsIndex = this.items.length, appendIndex = 0; appendIndex < list.items.length; appendIndex++) {
+    for (let appendIndex = 0, itemsIndex = this.items.length; appendIndex < list.items.length; appendIndex++) {
       this.items[itemsIndex] = list.items[appendIndex];
       itemsIndex++;
     }
@@ -32,7 +32,7 @@ export class List<T = number> {
 
   filter<V = T>(validateFn: (item: V) => boolean): List<T> {
     const filtered = [];
-    for (let itemsIndex = 0, filteredIndex = 0; itemsIndex < this.items.length; itemsIndex++) {
+    for (let filteredIndex = 0, itemsIndex = 0; itemsIndex < this.items.length; itemsIndex++) {
       if (validateFn(this.items[itemsIndex] as any)) {
         filtered[filteredIndex] = this.items[itemsIndex];
         filteredIndex++;
@@ -77,7 +77,7 @@ export class List<T = number> {
 
   reverse(): List<T> {
     const reversed = [];
-    for (let reversedIndex = 0, itemsIndex = this.items.length - 1; reversedIndex < this.items.length; itemsIndex--) {
+    for (let itemsIndex = this.items.length - 1, reversedIndex = 0; reversedIndex < this.items.length; itemsIndex--) {
       reversed[reversedIndex] = this.items[itemsIndex];
       reversedIndex++;
     }
