@@ -27,14 +27,14 @@ const prefixes = [
   },
 ];
 
-export function decodedResistorValue(colorInputs: string[]) {
+export function decodedResistorValue(colorInputs: string[]): string {
   const [firstColor, secondColor, thirdColor] = colorInputs;
 
   const zerosCount = colors.indexOf(thirdColor);
   let value = parseInt(`${colors.indexOf(firstColor)}${colors.indexOf(secondColor)}${'0'.repeat(zerosCount)}`, 10);
   let unit = 'ohms';
 
-  for (let prefix of prefixes) {
+  for (const prefix of prefixes) {
     if (value >= prefix.value) {
       value /= prefix.value;
       unit = `${prefix.unit}${unit}`;

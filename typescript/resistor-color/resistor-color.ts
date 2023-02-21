@@ -1,3 +1,4 @@
+// prettier-ignore
 const originalColors = [
   'Black',
   'Brown',
@@ -11,5 +12,5 @@ const originalColors = [
   'White',
 ]
 
-export const colorCode = (color: string) => COLORS.indexOf(color);
-export const COLORS = originalColors.map(colorName => colorName.toLowerCase())
+export const colorCode = (color: string): number => COLORS.indexOf(color);
+export const COLORS = originalColors.map(colorName => colorName.toLowerCase());
