@@ -383,10 +383,10 @@
     minimatch "^3.1.2"
     strip-json-comments "^3.1.1"
 
-"@ffflorian/eslint-config@0.9.0":
-  version "0.9.0"
-  resolved "https://registry.npmjs.org/@ffflorian/eslint-config/-/eslint-config-0.9.0.tgz#0ce547377cc26e61293629037fa5d00622814a07"
-  integrity sha512-MhoEollyrtxE5FiLzk1p5UMgJnABPID9E5rYD4RlJ4at6l2U+F1CF7y7TjIDTrtwCM+2qS9M44pdKGiRomE15A==
+"@ffflorian/eslint-config@0.9.1":
+  version "0.9.1"
+  resolved "https://registry.yarnpkg.com/@ffflorian/eslint-config/-/eslint-config-0.9.1.tgz#368321ea450bf19bad32d9427769a955c2936566"
+  integrity sha512-/LpiZwIe8q0+zIAPFoSjfPIwt7BFZwQJzQx5OombQliv4nIRioUTJoAavh5f+QJrFlu5qSE5OEuaD2ODRNgouA==
 
 "@ffflorian/prettier-config@0.2.1":
   version "0.2.1"
