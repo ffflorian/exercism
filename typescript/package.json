@@ -3,7 +3,7 @@
   "description": "My exercism.org solutions",
   "devDependencies": {
     "@babel/eslint-parser": "7.21.3",
-    "@ffflorian/eslint-config": "0.9.1",
+    "@ffflorian/eslint-config": "0.10.1",
     "@ffflorian/prettier-config": "0.3.1",
     "@types/jest": "29.5.0",
     "@types/node": "~16",
