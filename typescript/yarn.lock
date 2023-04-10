@@ -400,10 +400,10 @@
   resolved "https://registry.yarnpkg.com/@eslint/js/-/js-8.37.0.tgz#cf1b5fa24217fe007f6487a26d765274925efa7d"
   integrity sha512-x5vzdtOOGgFVDCUs81QRB2+liax8rFg3+7hqM+QhBG0/G3F1ZsoYl97UrqgHgQ9KKT7G6c4V+aTUCgu/n22v1A==
 
-"@ffflorian/eslint-config@0.9.1":
-  version "0.9.1"
-  resolved "https://registry.yarnpkg.com/@ffflorian/eslint-config/-/eslint-config-0.9.1.tgz#368321ea450bf19bad32d9427769a955c2936566"
-  integrity sha512-/LpiZwIe8q0+zIAPFoSjfPIwt7BFZwQJzQx5OombQliv4nIRioUTJoAavh5f+QJrFlu5qSE5OEuaD2ODRNgouA==
+"@ffflorian/eslint-config@0.10.0":
+  version "0.10.0"
+  resolved "https://registry.yarnpkg.com/@ffflorian/eslint-config/-/eslint-config-0.10.0.tgz#2d2d08c07b75ca05cc58963fb1a18ca28aff7283"
+  integrity sha512-zcxscBy9RBUg03kMbYJMKmwRPZU73s01C45TO+fA/aiSF7nC10QUKLRki717C9XcY3LvuIi4CkmyOClWlkEgqA==
 
 "@ffflorian/prettier-config@0.2.1":
   version "0.2.1"
