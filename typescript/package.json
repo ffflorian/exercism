@@ -25,10 +25,14 @@
     "ts-jest": "29.1.0",
     "typescript": "5.0.4"
   },
+  "engines": {
+    "node": ">= 14.10"
+  },
   "homepage": "https://github.com/ffflorian/exercism#readme",
   "license": "GPL-3.0",
   "main": "index.js",
   "name": "@ffflorian/exercism",
+  "packageManager": "yarn@3.5.0",
   "prettier": "@ffflorian/prettier-config",
   "private": true,
   "repository": "https://github.com/ffflorian/exercism.git",
