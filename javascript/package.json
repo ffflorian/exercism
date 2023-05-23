@@ -6,7 +6,7 @@
     "@babel/eslint-parser": "7.21.8",
     "@babel/preset-env": "7.21.5",
     "@ffflorian/prettier-config": "0.3.1",
-    "eslint": "8.40.0",
+    "eslint": "8.41.0",
     "eslint-config-prettier": "8.8.0",
     "eslint-plugin-disable": "2.0.3",
     "eslint-plugin-import": "2.27.5",
