@@ -3,9 +3,7 @@ updates:
   - package-ecosystem: npm
     directory: '/javascript'
     schedule:
-      interval: daily
-      time: '07:00'
-      timezone: 'Europe/Berlin'
+      interval: weekly
     open-pull-requests-limit: 99
     assignees:
       - ffflorian
@@ -13,9 +11,7 @@ updates:
   - package-ecosystem: npm
     directory: '/typescript'
     schedule:
-      interval: daily
-      time: '07:00'
-      timezone: 'Europe/Berlin'
+      interval: weekly
     open-pull-requests-limit: 99
     assignees:
       - ffflorian
@@ -27,7 +23,7 @@ updates:
   - package-ecosystem: 'github-actions'
     directory: '/'
     schedule:
-      interval: 'weekly'
+      interval: weekly
     open-pull-requests-limit: 99
     assignees:
       - ffflorian
