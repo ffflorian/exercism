@@ -35,6 +35,11 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-yarn-
 
+      - name: Setup yarn
+        run: |
+          corepack prepare yarn@stable --activate
+          yarn set version classic
+
       - name: Run the tests
         run: |
           cd typescript
