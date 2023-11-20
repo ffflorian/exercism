@@ -32,7 +32,6 @@
   "license": "GPL-3.0",
   "main": "index.js",
   "name": "@ffflorian/exercism",
-  "packageManager": "yarn@3.5.0",
   "prettier": "@ffflorian/prettier-config",
   "private": true,
   "repository": "https://github.com/ffflorian/exercism.git",
