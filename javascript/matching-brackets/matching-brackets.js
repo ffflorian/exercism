@@ -13,7 +13,7 @@ const bracketPairs = [
 export function isPaired(input) {
   const stack = [];
 
-  for (const bracket of [...input]) {
+  for (const bracket of input) {
     for (const [leftBracket, rightBracket] of bracketPairs) {
       if (bracket === leftBracket) {
         stack.push(leftBracket);

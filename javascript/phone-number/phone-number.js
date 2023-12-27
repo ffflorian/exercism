@@ -4,7 +4,7 @@
  * @returns string | undefined
  */
 export function clean(input) {
-  const cleanInput = input.replace(/[\.-]/g, '').replace(/ /g, '').replace(/^\+/, '');
+  const cleanInput = input.replace(/[.-]/g, '').replace(/ /g, '').replace(/^\+/, '');
 
   if (/[A-z]/.test(cleanInput.replace(/[()]/g, ''))) {
     throw new Error('Letters not permitted');

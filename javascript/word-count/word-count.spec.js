@@ -1,3 +1,4 @@
+/* eslint-disable */
 import { countWords } from './word-count';
 
 describe('countWords', () => {

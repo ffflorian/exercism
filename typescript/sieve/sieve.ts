@@ -1,5 +1,5 @@
 export function primes(limit: number): number[] {
-  const list = [...new Array(limit - 1)].map((_, i) => i + 2);
+  const list = [...Array(limit - 1)].map((_, i) => i + 2);
 
   for (let outerIndex = 0; outerIndex < list.length; outerIndex++) {
     const prime = list[outerIndex];
