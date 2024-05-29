@@ -354,10 +354,10 @@
   resolved "https://registry.npmjs.org/@eslint-community/regexpp/-/regexpp-4.10.0.tgz#548f6de556857c8bb73bbee70c35dc82a2e74d63"
   integrity sha512-Cu96Sd2By9mCNTx2iyKOmq10v22jUVQv0lQnlGNy16oE9589yE+QADPbrMGCkA51cKZSg3Pu/aTJVTGfL/qjUA==
 
-"@ffflorian/eslint-config@0.10.2":
-  version "0.10.2"
-  resolved "https://registry.npmjs.org/@ffflorian/eslint-config/-/eslint-config-0.10.2.tgz#2207a502e487d50cdee4c10e2fcffcbb7cc9dfb5"
-  integrity sha512-IjF0x62icGOFp0qejxlHQYRkR93eJ3qbv4hTHfjCm80mz3RrZQ5bYHusSwJyUP96/a7l+C1tPvZRgFemlG+WDQ==
+"@ffflorian/eslint-config@0.10.3":
+  version "0.10.3"
+  resolved "https://registry.npmjs.org/@ffflorian/eslint-config/-/eslint-config-0.10.3.tgz#27f9581d7158b802cc0959c2dd0a8bad7b91dc08"
+  integrity sha512-gf/vh8ePNuAiBb1pWsc6c//htmUN8XANw2Xo7PomCWBCeevvkZkA9ZH+mR4/sNrA2dbDWgd8gIBz9Yg9WX845Q==
 
 "@ffflorian/prettier-config@0.3.2":
   version "0.3.2"
