@@ -16,7 +16,12 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+      - name: Set up Python 3.x
+        uses: actions/setup-python@v5
+        with:
+          python-version: 3.x
       - name: Run the tests
         run: |
+          pip install pytest pytest-cov
           cd python
-          ../bin/test_all.sh "*_test.py" "python3 *_test.py"
+          ../bin/test_all.sh "*_test.py" "pytest *_test.py"
