@@ -1,71 +1,53 @@
 # Leap
 
-Given a year, report if it is a leap year.
+Welcome to Leap on Exercism's Python Track.
+If you need help running the tests or submitting your code, check out `HELP.md`.
 
-The tricky thing here is that a leap year in the Gregorian calendar occurs:
+## Introduction
 
-```text
-on every year that is evenly divisible by 4
-  except every year that is evenly divisible by 100
-    unless the year is also evenly divisible by 400
-```
+A leap year (in the Gregorian calendar) occurs:
 
-For example, 1997 is not a leap year, but 1996 is.  1900 is not a leap
-year, but 2000 is.
+- In every year that is evenly divisible by 4.
+- Unless the year is evenly divisible by 100, in which case it's only a leap year if the year is also evenly divisible by 400.
 
-## Notes
+Some examples:
 
-Though our exercise adopts some very simple rules, there is more to
-learn!
+- 1997 was not a leap year as it's not divisible by 4.
+- 1900 was not a leap year as it's not divisible by 400.
+- 2000 was a leap year!
 
-For a delightful, four minute explanation of the whole leap year
-phenomenon, go watch [this youtube video][video].
+~~~~exercism/note
+For a delightful, four-minute explanation of the whole phenomenon of leap years, check out [this YouTube video](https://www.youtube.com/watch?v=xX96xng7sAE).
+~~~~
 
-[video]: http://www.youtube.com/watch?v=xX96xng7sAE
+## Instructions
 
-
-## Exception messages
-
-Sometimes it is necessary to raise an exception. When you do this, you should include a meaningful error message to
-indicate what the source of the error is. This makes your code more readable and helps significantly with debugging. Not
-every exercise will require you to raise an exception, but for those that do, the tests will only pass if you include
-a message.
-
-To raise a message with an exception, just write it as an argument to the exception type. For example, instead of
-`raise Exception`, you should write:
-
-```python
-raise Exception("Meaningful message indicating the source of the error")
-```
-
-## Running the tests
-
-To run the tests, run `pytest leap_test.py`
-
-Alternatively, you can tell Python to run the pytest module:
-`python -m pytest leap_test.py`
-
-### Common `pytest` options
-
-- `-v` : enable verbose output
-- `-x` : stop running tests on first failure
-- `--ff` : run failures from previous test before running other test cases
-
-For other options, see `python -m pytest -h`
-
-## Submitting Exercises
-
-Note that, when trying to submit an exercise, make sure the solution is in the `$EXERCISM_WORKSPACE/python/leap` directory.
-
-You can find your Exercism workspace by running `exercism debug` and looking for the line that starts with `Workspace`.
-
-For more detailed information about running tests, code style and linting,
-please see [Running the Tests](http://exercism.io/tracks/python/tests).
+Your task is to determine whether a given year is a leap year.
 
 ## Source
 
-JavaRanch Cattle Drive, exercise 3 [http://www.javaranch.com/leap.jsp](http://www.javaranch.com/leap.jsp)
+### Contributed to by
 
-## Submitting Incomplete Solutions
+- @AnAccountForReportingBugs
+- @behrtam
+- @BethanyG
+- @betojulio
+- @cmccandless
+- @cruxicheiros
+- @Dog
+- @fluxusfrequency
+- @iandexter
+- @ikhadykin
+- @kytrinyx
+- @lowks
+- @N-Parsons
+- @olufotebig
+- @pheanex
+- @sambryant4
+- @sjakobi
+- @tqa236
+- @yawpitch
 
-It's possible to submit an incomplete solution so you can see how others have completed the exercise.
+### Based on
+
+CodeRanch Cattle Drive, Assignment 3 - https://coderanch.com/t/718816/Leap

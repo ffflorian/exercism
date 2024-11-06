@@ -1,8 +1,12 @@
+# These tests are auto-generated with test data from:
+# https://github.com/exercism/problem-specifications/tree/main/exercises/leap/canonical-data.json
+# File last updated on 2023-07-19
+
 import unittest
 
-from leap import leap_year
-
-# Tests adapted from `problem-specifications//canonical-data.json` @ v1.6.0
+from leap import (
+    leap_year,
+)
 
 
 class LeapTest(unittest.TestCase):
@@ -24,7 +28,7 @@ class LeapTest(unittest.TestCase):
     def test_year_divisible_by_100_but_not_by_3_is_still_not_a_leap_year(self):
         self.assertIs(leap_year(1900), False)
 
-    def test_year_divisible_by_400_in_leap_year(self):
+    def test_year_divisible_by_400_is_leap_year(self):
         self.assertIs(leap_year(2000), True)
 
     def test_year_divisible_by_400_but_not_by_125_is_still_a_leap_year(self):
@@ -32,7 +36,3 @@ class LeapTest(unittest.TestCase):
 
     def test_year_divisible_by_200_not_divisible_by_400_in_common_year(self):
         self.assertIs(leap_year(1800), False)
-
-
-if __name__ == "__main__":
-    unittest.main()
