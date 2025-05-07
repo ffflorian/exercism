@@ -4,7 +4,7 @@
   "devDependencies": {
     "@babel/core": "7.26.10",
     "@babel/eslint-parser": "7.27.0",
-    "@babel/preset-env": "7.26.9",
+    "@babel/preset-env": "7.27.1",
     "@ffflorian/prettier-config": "0.3.3",
     "eslint-config-prettier": "10.1.1",
     "eslint-plugin-disable": "2.0.3",
