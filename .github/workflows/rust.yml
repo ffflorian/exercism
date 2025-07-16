@@ -29,7 +29,28 @@ jobs:
         uses: swatinem/rust-cache@v2
         with:
           workspaces: |
-            ${{ steps.rust-projects.outputs.dirs }}
+            short-fibonacci
+            leap
+            beer-song
+            bob
+            hamming
+            resistor-color
+            hello-world
+            nth-prime
+            proverb
+            lucians-luscious-lasagna
+            health-statistics
+            sum-of-multiples
+            difference-of-squares
+            high-scores
+            semi-structured-logs
+            grains
+            armstrong-numbers
+            reverse-string
+            pascals-triangle
+            raindrops
+            assembly-line
+            gigasecond
       - name: Run the tests
         run: |
           cd rust
