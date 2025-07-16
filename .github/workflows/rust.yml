@@ -19,12 +19,12 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
-      - name: Get Rust projects
-        id: rust-projects
-        run: |
-          dirs=$(find rust -mindepth 1 -maxdepth 1 -type d -exec basename {} \;)
-          echo "Subdirectories found: $dirs"
-          echo $dirs >> $GITHUB_OUTPUT
+      # - name: Get Rust projects
+      #   id: rust-projects
+      #   run: |
+      #     dirs=$(find rust -mindepth 1 -maxdepth 1 -type d -exec basename {} \;)
+      #     echo "Subdirectories found: $dirs"
+      #     echo $dirs >> $GITHUB_OUTPUT
       - name: Cache Rust files
         uses: swatinem/rust-cache@v2
         with:
