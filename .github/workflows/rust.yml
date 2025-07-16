@@ -23,7 +23,9 @@ jobs:
         id: rust-projects
         run: |
           dirs=$(find rust -mindepth 1 -maxdepth 1 -type d)
+          echo "subdirs<<EOF" >> $GITHUB_OUTPUT
           echo "$dirs" >> $GITHUB_OUTPUT
+          echo "EOF" >> $GITHUB_OUTPUT
       - name: Cache Rust files
         uses: swatinem/rust-cache@v2
         with:
