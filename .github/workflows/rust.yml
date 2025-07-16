@@ -19,38 +19,18 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
-      # - name: Get Rust projects
-      #   id: rust-projects
-      #   run: |
-      #     dirs=$(find rust -mindepth 1 -maxdepth 1 -type d -exec basename {} \;)
-      #     echo "Subdirectories found: $dirs"
-      #     echo $dirs >> $GITHUB_OUTPUT
+      - name: Get Rust projects
+        id: rust-projects
+        run: |
+          dirs=$(find rust -mindepth 1 -maxdepth 1 -type d | sed 's|^|rust/|')
+          echo "Subdirectories found:"
+          echo "$dirs"
+          echo $dirs >> $GITHUB_OUTPUT
       - name: Cache Rust files
         uses: swatinem/rust-cache@v2
         with:
           workspaces: |
-            rust/short-fibonacci
-            rust/leap
-            rust/beer-song
-            rust/bob
-            rust/hamming
-            rust/resistor-color
-            rust/hello-world
-            rust/nth-prime
-            rust/proverb
-            rust/lucians-luscious-lasagna
-            rust/health-statistics
-            rust/sum-of-multiples
-            rust/difference-of-squares
-            rust/high-scores
-            rust/semi-structured-logs
-            rust/grains
-            rust/armstrong-numbers
-            rust/reverse-string
-            rust/pascals-triangle
-            rust/raindrops
-            rust/assembly-line
-            rust/gigasecond
+            ${{ steps.rust-projects.outputs.dirs }}
       - name: Run the tests
         run: |
           cd rust
