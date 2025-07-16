@@ -22,7 +22,7 @@ jobs:
       - name: Cache Rust files
         uses: swatinem/rust-cache@v2
         with:
-          workspaces: rust
+          workspaces: 'rust/**'
       - name: Run the tests
         run: |
           cd rust
