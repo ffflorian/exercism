@@ -22,7 +22,7 @@ jobs:
       - name: Get Rust projects
         id: rust-projects
         run: |
-          dirs=$(find rust -mindepth 1 -maxdepth 1 -type d | sed 's|^|rust/|')
+          dirs=$(find rust -mindepth 1 -maxdepth 1 -type d)
           echo "Subdirectories found:"
           echo "$dirs"
           # Output multiline string
