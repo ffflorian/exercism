@@ -25,7 +25,10 @@ jobs:
           dirs=$(find rust -mindepth 1 -maxdepth 1 -type d | sed 's|^|rust/|')
           echo "Subdirectories found:"
           echo "$dirs"
-          echo $dirs >> $GITHUB_OUTPUT
+          # Output multiline string
+          echo "subdirs<<EOF" >> $GITHUB_OUTPUT
+          echo "$dirs" >> $GITHUB_OUTPUT
+          echo "EOF" >> $GITHUB_OUTPUT
       - name: Cache Rust files
         uses: swatinem/rust-cache@v2
         with:
