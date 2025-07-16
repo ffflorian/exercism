@@ -28,7 +28,8 @@ jobs:
       - name: Cache Rust files
         uses: swatinem/rust-cache@v2
         with:
-          workspaces: ${{ steps.rust-projects.outputs.dirs }}
+          workspaces: |
+            ${{ steps.rust-projects.outputs.dirs }}
       - name: Run the tests
         run: |
           cd rust
