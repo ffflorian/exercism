@@ -19,10 +19,13 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+      - name: Get Rust projects
+        id: rust-projects
+        run: echo "dirs=$(ls rust)" >> $GITHUB_OUTPUT
       - name: Cache Rust files
         uses: swatinem/rust-cache@v2
         with:
-          workspaces: 'rust/**'
+          workspaces: ${{ steps.rust-projects.outputs.dirs }}
       - name: Run the tests
         run: |
           cd rust
