@@ -19,10 +19,10 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 16.x
+          node-version: 24.x
       - name: Run the tests
         run: |
-          npm i -g purescript@0.13.5 pulp spago
+          npm i -g purescript@latest spago
           cd purescript
           spago install
           spago build
