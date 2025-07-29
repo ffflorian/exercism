@@ -16,13 +16,13 @@ If everything goes well, you will be ready to fetch your first real exercise.
 
 ## Tips
 
-Purescript setup: `npm install -g purescript pulp bower`
+Purescript setup: `npm install -g purescript spago`
 
 Install project dependencies: `bower install` (inside the "hello-world" directory)
 
-Building: `pulp build` (gotta do this once before the PureScript editor plugins will work)
+Building: `spago build` (gotta do this once before the PureScript editor plugins will work)
 
-Running the test: `pulp test`
+Running the test: `spago test`
 
 Submitting: `exercism submit src/HelloWorld.purs`
 
