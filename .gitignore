@@ -9,6 +9,7 @@ node_modules
 # typescript
 /typescript/**/.eslint*
 /typescript/**/*.cjs
+!/typescript/.yarn/releases/*.cjs
 /typescript/**/*.config.js
 /typescript/**/*.json
 !/typescript/.eslintrc.json
