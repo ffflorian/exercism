@@ -40,5 +40,6 @@
     "lint": "oxlint --ignore-path ../.gitignore .",
     "test": "tsc --noEmit && jest --no-cache **/*.test.ts"
   },
-  "version": "1.0.0"
+  "version": "1.0.0",
+  "packageManager": "yarn@4.9.2"
 }

@@ -39,5 +39,6 @@
     "lint": "oxlint --ignore-path .eslintignore **/*.js",
     "test": "jest --no-cache ./**/*.spec.js"
   },
-  "version": "1.0.0"
+  "version": "1.0.0",
+  "packageManager": "yarn@4.9.2"
 }
