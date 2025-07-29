@@ -6,7 +6,7 @@
     "@ffflorian/eslint-config": "0.10.3",
     "@ffflorian/prettier-config": "0.3.3",
     "@types/jest": "29.5.14",
-    "@types/node": "~22",
+    "@types/node": "~24",
     "@typescript-eslint/eslint-plugin": "5.62.0",
     "@typescript-eslint/parser": "5.62.0",
     "eslint-config-prettier": "10.1.5",
