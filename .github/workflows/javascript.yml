@@ -24,12 +24,6 @@ jobs:
           cache: yarn
           cache-dependency-path: javascript/yarn.lock
 
-      - name: Setup yarn
-        run: |
-          cd javascript
-          corepack prepare yarn@stable --activate
-          yarn set version berry
-
       - name: Run the tests
         run: |
           cd javascript

@@ -24,12 +24,6 @@ jobs:
           cache: yarn
           cache-dependency-path: typescript/yarn.lock
 
-      - name: Setup yarn
-        run: |
-          cd typescript
-          corepack prepare yarn@stable --activate
-          yarn set version berry
-
       - name: Run the tests
         run: |
           cd typescript
