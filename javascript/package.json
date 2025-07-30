@@ -36,7 +36,7 @@
   "repository": "https://github.com/ffflorian/exercism.git",
   "scripts": {
     "fix": "yarn lint --fix",
-    "lint": "oxlint --ignore-path .eslintignore **/*.js",
+    "lint": "oxlint --ignore-path .eslintignore .",
     "test": "jest --no-cache ./**/*.spec.js"
   },
   "version": "1.0.0",
