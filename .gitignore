@@ -19,6 +19,7 @@ node_modules
 /typescript/**/*.cjs
 /typescript/**/*.config.js
 /typescript/**/*.json
+/typescript/**/.yarnrc.yml
 /typescript/.pnp.*
 /typescript/.yarn/*
 /typescript/**/.gitignore

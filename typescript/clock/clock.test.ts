@@ -1,4 +1,5 @@
-import { Clock } from './clock'
+import { describe, it, expect } from '@jest/globals'
+import { Clock } from './clock.ts'
 
 describe('Clock', () => {
   describe('Creating a new clock with an initial time', () => {

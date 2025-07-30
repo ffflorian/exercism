@@ -22,14 +22,14 @@ describe('Transcriptor', () => {
   })
 
   it('correctly handles invalid input', () => {
-    expect(() => toRna('U')).toThrowError('Invalid input DNA.')
+    expect(() => toRna('U')).toThrow('Invalid input DNA.')
   })
 
   it('correctly handles completely invalid input', () => {
-    expect(() => toRna('XXX')).toThrowError('Invalid input DNA.')
+    expect(() => toRna('XXX')).toThrow('Invalid input DNA.')
   })
 
   it('correctly handles partially invalid input', () => {
-    expect(() => toRna('ACGTXXXCTTAA')).toThrowError('Invalid input DNA.')
+    expect(() => toRna('ACGTXXXCTTAA')).toThrow('Invalid input DNA.')
   })
 })

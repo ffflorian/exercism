@@ -41,7 +41,7 @@
   "scripts": {
     "fix": "yarn lint --fix",
     "lint": "oxlint --ignore-path ../.gitignore .",
-    "test": "tsc --noEmit && jest --no-cache **/*.test.ts"
+    "test": "tsc --noEmit && jest --no-cache ."
   },
   "version": "1.0.0",
   "packageManager": "yarn@4.9.2"

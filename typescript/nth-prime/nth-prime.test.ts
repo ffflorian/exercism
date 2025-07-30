@@ -18,6 +18,6 @@ describe('Prime', () => {
   })
 
   it('weird case', () => {
-    expect(() => nth(0)).toThrowError('Prime is not possible')
+    expect(() => nth(0)).toThrow('Prime is not possible')
   })
 })

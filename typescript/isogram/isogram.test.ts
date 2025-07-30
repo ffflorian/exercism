@@ -1,4 +1,5 @@
-import { isIsogram } from './isogram'
+import { describe, it, expect } from '@jest/globals'
+import { isIsogram } from './isogram.ts'
 
 describe('Check if the given string is an isogram', () => {
   it('empty string', () => {

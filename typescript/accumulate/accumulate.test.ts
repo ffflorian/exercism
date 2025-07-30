@@ -1,4 +1,5 @@
-import { accumulate } from './accumulate'
+import { describe, it, expect } from '@jest/globals'
+import { accumulate } from './accumulate.ts'
 
 describe('accumulate()', () => {
   it('accumulation empty', () => {
@@ -20,7 +21,7 @@ describe('accumulate()', () => {
 
   it('accumulate reversed strings', () => {
     const accumulator = (word: string): string =>
-     [...word].reverse().join('')
+      word.split('').reverse().join('')
     const result = accumulate(
       'the quick brown fox etc'.split(/\s/),
       accumulator
