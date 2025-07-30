@@ -1,3 +1,4 @@
+import { describe, expect, test } from '@jest/globals';
 import { isArmstrongNumber } from './armstrong-numbers';
 
 describe('Armstrong Numbers', () => {

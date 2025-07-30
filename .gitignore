@@ -1,17 +1,33 @@
 # javascript
 node_modules
-/javascript/**/.eslintrc
+/javascript/**/eslint.*
 /javascript/**/.npmrc
 /javascript/**/*.config.js
 /javascript/**/package.json
+/javascript/**/.gitignore
+/javascript/.pnp.*
+/javascript/.yarn/*
+!/javascript/.yarn/patches
+!/javascript/.yarn/plugins
+!/javascript/.yarn/releases
+!/javascript/.yarn/sdks
+!/javascript/.yarn/versions
 !/javascript/.npmrc
 
 # typescript
-/typescript/**/.eslint*
+/typescript/**/eslint.*
 /typescript/**/*.cjs
-!/typescript/.yarn/releases/*.cjs
 /typescript/**/*.config.js
 /typescript/**/*.json
+/typescript/.pnp.*
+/typescript/.yarn/*
+/typescript/**/.gitignore
+!/typescript/.yarn/patches
+!/typescript/.yarn/plugins
+!/typescript/.yarn/releases
+!/typescript/.yarn/sdks
+!/typescript/.yarn/versions
+!/typescript/.yarn/releases/*.cjs
 !/typescript/.eslintrc.json
 
 #purescript

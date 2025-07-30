@@ -1,3 +1,4 @@
+import { describe, expect, test } from '@jest/globals';
 import { isPangram } from './pangram';
 
 describe('Pangram()', () => {
@@ -15,7 +16,7 @@ describe('Pangram()', () => {
 
   test("missing the letter 'x'", () => {
     expect(
-      isPangram('a quick movement of the enemy will jeopardize five gunboats')
+      isPangram('a quick movement of the enemy will jeopardize five gunboats'),
     ).toBe(false);
   });
 
@@ -29,13 +30,13 @@ describe('Pangram()', () => {
 
   test('with numbers', () => {
     expect(isPangram('the 1 quick brown fox jumps over the 2 lazy dogs')).toBe(
-      true
+      true,
     );
   });
 
   test('missing letters replaced by numbers', () => {
     expect(isPangram('7h3 qu1ck brown fox jumps ov3r 7h3 lazy dog')).toBe(
-      false
+      false,
     );
   });
 
@@ -43,9 +44,7 @@ describe('Pangram()', () => {
     expect(isPangram('"Five quacking Zephyrs jolt my wax bed."')).toBe(true);
   });
 
-  test('case insensitive', () => {
-    expect(isPangram('the quick brown fox jumps over with lazy FX')).toBe(
-      false
-    );
+  test('a-m and A-M are 26 different characters but not a pangram', () => {
+    expect(isPangram('abcdefghijklm ABCDEFGHIJKLM')).toBe(false);
   });
 });

@@ -1,3 +1,4 @@
+import { describe, expect, test } from '@jest/globals';
 import { accumulate } from './accumulate';
 
 describe('accumulate()', () => {
@@ -19,17 +20,17 @@ describe('accumulate()', () => {
   });
 
   test('accumulate reversed strings', () => {
-    const accumulator = (word) =>[... word].reverse().join('');
+    const accumulator = (word) => word.split('').reverse().join('');
     const result = accumulate(
       'the quick brown fox etc'.split(/\s/),
-      accumulator
+      accumulator,
     );
     expect(result).toEqual(['eht', 'kciuq', 'nworb', 'xof', 'cte']);
   });
 
   test('accumulate recursively', () => {
     const result = accumulate('a b c'.split(/\s/), (char) =>
-      accumulate('1 2 3'.split(/\s/), (digit) => char + digit)
+      accumulate('1 2 3'.split(/\s/), (digit) => char + digit),
     );
 
     expect(result).toEqual([
