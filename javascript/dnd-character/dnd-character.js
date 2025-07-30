@@ -35,7 +35,7 @@ export class Character {
   }
 
   static rollAbility() {
-    return new Array(4)
+    return Array.from({length: 4})
       .fill(null)
       .map(_ => Math.floor(Math.random() * 5) + 1)
       .sort()
