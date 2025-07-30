@@ -3,5 +3,5 @@ export function encode(input) {
 }
 
 export function decode(input) {
-  return input.replace(/(\d+)(\w|\s)/g, (_match, repeats, char) => new Array(parseInt(repeats, 10) + 1).join(char));
+  return input.replace(/(\d+)(\w|\s)/g, (_match, repeats, char) => Array.from({length: parseInt(repeats, 10) + 1}).join(char));
 }
