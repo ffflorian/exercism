@@ -1433,7 +1433,7 @@ __metadata:
     "@babel/eslint-parser": "npm:7.28.0"
     "@babel/preset-env": "npm:7.28.0"
     "@ffflorian/prettier-config": "npm:0.3.3"
-    eslint: "npm:8"
+    eslint: "npm:8.57.1"
     eslint-config-prettier: "npm:10.1.8"
     eslint-plugin-disable: "npm:2.0.3"
     eslint-plugin-import: "npm:2.32.0"
@@ -3764,7 +3764,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint@npm:8":
+"eslint@npm:8.57.1":
   version: 8.57.1
   resolution: "eslint@npm:8.57.1"
   dependencies:
