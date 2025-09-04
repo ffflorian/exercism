@@ -16,7 +16,7 @@
     "eslint-plugin-simple-import-sort": "12.1.1",
     "eslint-plugin-sort-keys-fix": "1.1.2",
     "eslint-plugin-unused-imports": "4.2.0",
-    "jest": "30.0.5",
+    "jest": "30.1.3",
     "oxlint": "1.14.0",
     "prettier": "3.6.2"
   },
