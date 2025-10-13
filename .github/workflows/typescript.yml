@@ -27,6 +27,6 @@ jobs:
       - name: Run the tests
         run: |
           cd typescript
-          yarn
+          yarn --immutable
           yarn lint
           yarn test
