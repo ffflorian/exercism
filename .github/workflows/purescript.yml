@@ -24,7 +24,7 @@ jobs:
           node-version: 16.x
       - name: Run the tests
         run: |
-          npm i -g purescript@0.13.5 pulp spago
+          npm i -g purescript@0.15.15 pulp spago
           cd purescript
           spago install
           spago build
