@@ -31,19 +31,6 @@ node_modules
 !/typescript/.yarn/releases/*.cjs
 !/typescript/.eslintrc.json
 
-#purescript
-/purescript/bower_components/
-/purescript/node_modules/
-/purescript/.pulp-cache/
-/purescript/output/
-/purescript/generated-docs/
-/purescript/.psc-package/
-/purescript/.psc*
-/purescript/.purs*
-/purescript/.psa*
-/purescript/.spago
-/bower.json
-
 # python
 /python/**/__pycache__
 

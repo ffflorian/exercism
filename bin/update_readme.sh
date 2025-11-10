@@ -9,7 +9,6 @@ update_line() {
 
 update_line go
 update_line javascript
-update_line purescript
 update_line python
 update_line rust
 update_line typescript
