@@ -1,4 +1,6 @@
 name: Bash tests
+permissions:
+  contents: read
 
 on:
   push:
