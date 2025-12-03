@@ -16,7 +16,7 @@ jobs:
       ! contains(github.event.head_commit.message, '[skip ci]')
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v5
+        uses: actions/checkout@v6
       - name: Run the script
         run: bin/update_readme.sh
         env:

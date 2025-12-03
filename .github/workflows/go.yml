@@ -17,7 +17,7 @@ jobs:
       ! contains(github.event.head_commit.message, '[skip ci]')
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v5
+        uses: actions/checkout@v6
       - name: Set up latest Go
         uses: actions/setup-go@v6
         with:
