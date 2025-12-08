@@ -29,7 +29,7 @@ jobs:
           echo "$dirs" >> $GITHUB_OUTPUT
           echo "EOF" >> $GITHUB_OUTPUT
       - name: Cache Rust files
-        uses: swatinem/rust-cache@v2
+        uses: swatinem/rust-cache@779680da715d629ac1d338a641029a2f4372abb5
         with:
           workspaces: |
             ${{ steps.rust-projects.outputs.dirs }}
