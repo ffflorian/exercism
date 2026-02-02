@@ -1631,7 +1631,7 @@ __metadata:
     "@babel/core": "npm:7.28.5"
     "@babel/eslint-parser": "npm:7.28.5"
     "@babel/preset-env": "npm:7.28.5"
-    "@ffflorian/prettier-config": "npm:0.3.3"
+    "@ffflorian/prettier-config": "npm:0.6.3"
     eslint: "npm:8.57.1"
     eslint-config-prettier: "npm:10.1.8"
     eslint-plugin-disable: "npm:2.0.3"
@@ -1648,12 +1648,12 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@ffflorian/prettier-config@npm:0.3.3":
-  version: 0.3.3
-  resolution: "@ffflorian/prettier-config@npm:0.3.3"
+"@ffflorian/prettier-config@npm:0.6.3":
+  version: 0.6.3
+  resolution: "@ffflorian/prettier-config@npm:0.6.3"
   peerDependencies:
     prettier: ">= 1.17.0"
-  checksum: 10c0/89106bfe86e449063ac37517b7f75673131796f457c40da564acca0d56513fd5b17a2d496360b18684def227f79e902c6507a9741c8ec45b6e66cc1e0da832c8
+  checksum: 10c0/66912483efdc117fb52ff99acc99a52366f870ed9a7a9978ebf844e8ad52123e24d5f14500729a3ecb7b48b504cedefe2b615d05b09f0a19e93c986976a9e214
   languageName: node
   linkType: hard
 
