@@ -12,6 +12,8 @@ updates:
       - dependency-name: 'eslint'
         versions:
           - '> 8.x'
+    cooldown:
+      default-days: 5
   - package-ecosystem: npm
     directory: '/typescript'
     schedule:
@@ -27,6 +29,8 @@ updates:
       - dependency-name: 'eslint'
         versions:
           - '> 8.x'
+    cooldown:
+      default-days: 5
   - package-ecosystem: 'github-actions'
     directory: '/'
     schedule:
@@ -34,3 +38,5 @@ updates:
     open-pull-requests-limit: 99
     assignees:
       - ffflorian
+    cooldown:
+      default-days: 5
