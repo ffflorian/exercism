@@ -1,14 +1,14 @@
 name: Update project numbers
-permissions:
-  contents: write
-
 on:
   push:
     branches:
       - main
 
+permissions: {}
 jobs:
   update_numbers:
+    permissions:
+      contents: read
     name: Update project numbers
     runs-on: ubuntu-latest
     if: |

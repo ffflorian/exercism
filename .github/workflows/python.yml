@@ -1,15 +1,15 @@
 name: Python tests
-permissions:
-  contents: read
-
 on:
   push:
     paths:
       - 'python/**'
       - '.github/workflows/python.yml'
 
+permissions: {}
 jobs:
   test_python:
+    permissions:
+      contents: read
     name: Test Python
     runs-on: ubuntu-latest
     if: |

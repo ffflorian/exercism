@@ -1,15 +1,15 @@
 name: TypeScript tests
-permissions:
-  contents: read
-
 on:
   push:
     paths:
       - 'typescript/**'
       - '.github/workflows/typescript.yml'
 
+permissions: {}
 jobs:
   test_typescript:
+    permissions:
+      contents: read
     name: Test TypeScript
     runs-on: ubuntu-latest
     if: |
