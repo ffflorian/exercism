@@ -1,11 +1,13 @@
 name: Python tests
+
+permissions: {}
+
 on:
   push:
     paths:
       - 'python/**'
       - '.github/workflows/python.yml'
 
-permissions: {}
 jobs:
   test_python:
     permissions:

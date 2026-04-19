@@ -1,11 +1,13 @@
 name: Rust tests
+
+permissions: {}
+
 on:
   push:
     paths:
       - 'rust/**'
       - '.github/workflows/rust.yml'
 
-permissions: {}
 env:
   CARGO_TERM_COLOR: always
 
