@@ -1,6 +1,6 @@
 name: TypeScript tests
-permissions:
-  contents: read
+
+permissions: {}
 
 on:
   push:
@@ -10,6 +10,8 @@ on:
 
 jobs:
   test_typescript:
+    permissions:
+      contents: read
     name: Test TypeScript
     runs-on: ubuntu-latest
     if: |

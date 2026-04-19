@@ -1,6 +1,6 @@
 name: Bash tests
-permissions:
-  contents: read
+
+permissions: {}
 
 on:
   push:
@@ -10,6 +10,8 @@ on:
 
 jobs:
   test_bash:
+    permissions:
+      contents: read
     name: Test Bash
     runs-on: ubuntu-latest
     if: |

@@ -1,6 +1,6 @@
 name: Go tests
-permissions:
-  contents: read
+
+permissions: {}
 
 on:
   push:
@@ -10,6 +10,8 @@ on:
 
 jobs:
   test_go:
+    permissions:
+      contents: read
     name: Test Go
     runs-on: ubuntu-latest
     if: |

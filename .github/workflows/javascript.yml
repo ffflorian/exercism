@@ -1,6 +1,6 @@
 name: JavaScript tests
-permissions:
-  contents: read
+
+permissions: {}
 
 on:
   push:
@@ -10,6 +10,8 @@ on:
 
 jobs:
   test_javascript:
+    permissions:
+      contents: read
     name: Test JavaScript
     runs-on: ubuntu-latest
     if: |

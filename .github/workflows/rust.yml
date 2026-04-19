@@ -1,6 +1,6 @@
 name: Rust tests
-permissions:
-  contents: read
+
+permissions: {}
 
 on:
   push:
@@ -13,6 +13,8 @@ env:
 
 jobs:
   test_rust:
+    permissions:
+      contents: read
     name: Test Rust
     runs-on: ubuntu-latest
     if: |
