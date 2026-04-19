@@ -1,11 +1,13 @@
 name: Bash tests
+
+permissions: {}
+
 on:
   push:
     paths:
       - 'bash/**'
       - '.github/workflows/bash.yml'
 
-permissions: {}
 jobs:
   test_bash:
     permissions:

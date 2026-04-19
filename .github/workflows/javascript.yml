@@ -1,11 +1,13 @@
 name: JavaScript tests
+
+permissions: {}
+
 on:
   push:
     paths:
       - 'javascript/**'
       - '.github/workflows/javascript.yml'
 
-permissions: {}
 jobs:
   test_javascript:
     permissions:
