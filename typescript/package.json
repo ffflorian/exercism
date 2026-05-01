@@ -26,7 +26,7 @@
     "oxlint": "1.61.0",
     "prettier": "3.8.2",
     "ts-jest": "29.4.9",
-    "typescript": "6.0.2"
+    "typescript": "6.0.3"
   },
   "engines": {
     "node": ">= 14.10"
