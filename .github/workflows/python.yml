@@ -24,8 +24,10 @@ jobs:
         uses: actions/setup-python@a309ff8b426b58ec0e2a45f0f869d46889d02405
         with:
           python-version: 3.x
-      - name: Run the tests
+      - name: Install dependencies
         run: |
           pip install pytest pytest-cov
-          cd python
+      - name: Run the tests
+        working-directory: python
+        run: |
           ../bin/test_all.sh "*_test.py" "pytest *_test.py"

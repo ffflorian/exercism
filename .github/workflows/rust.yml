@@ -36,6 +36,6 @@ jobs:
           workspaces: |
             ${{ steps.rust-projects.outputs.dirs }}
       - name: Run the tests
+        working-directory: rust
         run: |
-          cd rust
           ../bin/test_all.sh "Cargo.toml" "cargo test"

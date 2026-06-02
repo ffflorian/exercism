@@ -29,8 +29,8 @@ jobs:
           cache-dependency-path: javascript/yarn.lock
 
       - name: Run the tests
+        working-directory: javascript
         run: |
-          cd javascript
           yarn --immutable
           yarn lint
           yarn test

@@ -29,8 +29,8 @@ jobs:
           cache-dependency-path: typescript/yarn.lock
 
       - name: Run the tests
+        working-directory: typescript
         run: |
-          cd typescript
           yarn --immutable
           yarn lint
           yarn test

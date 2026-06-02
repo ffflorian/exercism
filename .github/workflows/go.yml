@@ -25,6 +25,6 @@ jobs:
         with:
           go-version: ^1
       - name: Run the tests
+        working-directory: go
         run: |
-          cd go
           ../bin/test_all.sh "*_test.go" "go test"

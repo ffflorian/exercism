@@ -24,6 +24,6 @@ jobs:
         run: |
           sudo apt install bats
       - name: Run the tests
+        working-directory: bash
         run: |
-          cd bash
           ../bin/test_all.sh "*.sh" "bats *_test.sh"
