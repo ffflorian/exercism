@@ -14,9 +14,6 @@ jobs:
       contents: read
     name: Test JavaScript
     runs-on: ubuntu-latest
-    if: |
-      ! contains(github.event.head_commit.message, '[ci skip]') &&
-      ! contains(github.event.head_commit.message, '[skip ci]')
     steps:
       - name: Checkout repository
         uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd
