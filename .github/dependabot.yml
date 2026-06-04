@@ -10,6 +10,13 @@ updates:
     assignees:
       - ffflorian
     versioning-strategy: increase
+    groups:
+      babel:
+        patterns:
+          - '@babel/*'
+      typescript-eslint:
+        patterns:
+          - '@typescript-eslint/*'
     ignore:
       - dependency-name: '@types/node'
         versions:
