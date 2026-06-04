@@ -1,23 +1,9 @@
 version: 2
 updates:
   - package-ecosystem: npm
-    directory: '/javascript'
-    schedule:
-      interval: weekly
-    open-pull-requests-limit: 99
-    assignees:
-      - ffflorian
-    versioning-strategy: increase
-    ignore:
-      - dependency-name: 'eslint'
-        versions:
-          - '> 8'
-    cooldown:
-      default-days: 5
-      exclude:
-        - '@ffflorian/*'
-  - package-ecosystem: npm
-    directory: '/typescript'
+    directories:
+      - '/javascript'
+      - '/typescript'
     schedule:
       interval: weekly
     open-pull-requests-limit: 99
