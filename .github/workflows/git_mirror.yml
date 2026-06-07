@@ -5,18 +5,20 @@ permissions: {}
 on:
   push:
     branches: [main]
+  workflow_dispatch:
 
 jobs:
   mirror:
+    name: Mirror to Codeberg and GitLab
     permissions:
       contents: read
     runs-on: ubuntu-latest
     steps:
-      - uses: ffflorian/actions/git-mirror@0e923e3b523cf45d86089fc365ab9414bb609e20
+      - uses: ffflorian/actions/git-mirror@abeafb743ac9afb2adefc0fc15b207029d1bc633
         with:
-          GITLAB_REMOTE: 'git@gitlab.com:ffflorian/exercism.git'
+          GITLAB_REMOTE: 'git@gitlab.com:${{ github.repository }}.git'
           GITLAB_SECRET: ${{ secrets.GITLAB_SECRET }}
           GITLAB_PUSH_ALL_REFS: 'false'
-          CODEBERG_REMOTE: 'git@codeberg.org:ffflorian/exercism.git'
+          CODEBERG_REMOTE: 'git@codeberg.org:${{ github.repository }}.git'
           CODEBERG_SECRET: ${{ secrets.CODEBERG_SECRET }}
           CODEBERG_PUSH_ALL_REFS: 'false'
