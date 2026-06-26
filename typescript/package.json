@@ -4,7 +4,7 @@
   "devDependencies": {
     "@babel/core": "8.0.1",
     "@babel/eslint-parser": "8.0.1",
-    "@ffflorian/eslint-config": "0.14.2",
+    "@ffflorian/eslint-config": "1.0.1",
     "@ffflorian/prettier-config": "1.0.0",
     "@types/babel__core": "^7",
     "@types/jest": "30.0.0",
