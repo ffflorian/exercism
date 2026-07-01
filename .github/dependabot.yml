@@ -1,9 +1,6 @@
 updates:
   - assignees:
       - ffflorian
-    commit-message:
-      prefix: fix(deps)
-      prefix-development: chore(deps-dev)
     cooldown:
       default-days: 5
       exclude:
@@ -32,8 +29,6 @@ updates:
     versioning-strategy: increase
   - assignees:
       - ffflorian
-    commit-message:
-      prefix: ci(deps)
     cooldown:
       default-days: 5
       exclude:
