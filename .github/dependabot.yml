@@ -9,6 +9,8 @@ updates:
       - /javascript
       - /typescript
     groups:
+      cross-directory-deps:
+        group-by: dependency-name
       babel:
         patterns:
           - '@babel/*'
@@ -25,7 +27,7 @@ updates:
     open-pull-requests-limit: 99
     package-ecosystem: npm
     schedule:
-      interval: weekly
+      interval: monthly
     versioning-strategy: increase
   - assignees:
       - ffflorian
