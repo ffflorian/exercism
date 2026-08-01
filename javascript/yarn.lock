@@ -1602,7 +1602,7 @@ __metadata:
     eslint-plugin-unused-imports: "npm:4.4.1"
     jest: "npm:30.4.2"
     oxlint: "npm:1.75.0"
-    prettier: "npm:3.9.5"
+    prettier: "npm:3.9.6"
   languageName: unknown
   linkType: soft
 
