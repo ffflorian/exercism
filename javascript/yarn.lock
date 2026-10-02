@@ -115,17 +115,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/eslint-parser@npm:8.0.1":
-  version: 8.0.1
-  resolution: "@babel/eslint-parser@npm:8.0.1"
+"@babel/eslint-parser@npm:8.0.6":
+  version: 8.0.6
+  resolution: "@babel/eslint-parser@npm:8.0.6"
   dependencies:
     eslint-scope: "npm:^9.1.0"
     eslint-visitor-keys: "npm:^5.0.0"
-    semver: "npm:^7.7.3"
+    verkit: "npm:^0.3.2"
   peerDependencies:
     "@babel/core": ^8.0.0
     eslint: ^9.0.0 || ^10.0.0
-  checksum: 10c0/dc8b848a11918069c112be60ba8f42dd963581bcd9664edbda184393b9a1a5a8424596e9b17b6691ac2f7d223a01dd300f5a574e58a46fa13dac6ade6d77b272
+  checksum: 10c0/43f5e7a4688dabf2949fb8905fb31029ccd8436a2b65eb965bb092857ecbfd7ad4790f21c7a625bda933bcaf863c4f451a865e627e59c450a1a496f048004088
   languageName: node
   linkType: hard
 
@@ -1688,7 +1688,7 @@ __metadata:
   resolution: "@ffflorian/exercism@workspace:."
   dependencies:
     "@babel/core": "npm:8.0.6"
-    "@babel/eslint-parser": "npm:8.0.1"
+    "@babel/eslint-parser": "npm:8.0.6"
     "@babel/preset-env": "npm:8.0.2"
     "@ffflorian/prettier-config": "npm:1.0.3"
     eslint: "npm:8.57.1"
