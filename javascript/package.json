@@ -3,7 +3,7 @@
   "description": "My exercism.org solutions",
   "devDependencies": {
     "@babel/core": "8.0.6",
-    "@babel/eslint-parser": "8.0.1",
+    "@babel/eslint-parser": "8.0.6",
     "@babel/preset-env": "8.0.2",
     "@ffflorian/prettier-config": "1.0.3",
     "eslint": "8.57.1",
