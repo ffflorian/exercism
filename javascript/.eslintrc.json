@@ -4,14 +4,14 @@
     "es6": true,
     "node": true
   },
-  "extends": ["prettier", "plugin:no-unsanitized/DOM"],
+  "extends": ["plugin:no-unsanitized/DOM"],
   "parser": "@babel/eslint-parser",
   "parserOptions": {
     "ecmaVersion": 11,
     "project": "tsconfig.json",
     "sourceType": "module"
   },
-  "plugins": ["no-unsanitized", "prettier", "sort-keys-fix", "unused-imports"],
+  "plugins": ["no-unsanitized", "sort-keys-fix", "unused-imports"],
   "rules": {
     "constructor-super": "error",
     "curly": "error",
@@ -44,7 +44,6 @@
     "prefer-promise-reject-errors": "error",
     "prefer-spread": "error",
     "prefer-template": "error",
-    "prettier/prettier": "error",
     "quotes": [
       "error",
       "single",
