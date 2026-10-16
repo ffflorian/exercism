@@ -6,7 +6,7 @@ workflows:
     '.github/workflows/bash.yml':
         - 'actions/checkout@v7.0.1'
     '.github/workflows/git_mirror.yml':
-        - 'ffflorian/actions@v1.30.11'
+        - 'ffflorian/actions@v1.30.12'
     '.github/workflows/go.yml':
         - 'actions/checkout@v7.0.1'
         - 'actions/setup-go@v7.0.0'
@@ -26,9 +26,9 @@ workflows:
         - 'actions/setup-node@v7.0.0'
     '.github/workflows/yarn_update.yml':
         - 'actions/checkout@v7.0.1'
-        - 'ffflorian/actions@v1.30.11'
+        - 'ffflorian/actions@v1.30.12'
 dependencies:
-    'actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd':
+    'actions/checkout@v6.0.2':
         ref: 'v6.0.2'
         commit: 'sha1-de0fac2e4500dabe0009e67214ff5f5447ce83dd'
         owner_id: 44036562
@@ -53,19 +53,19 @@ dependencies:
         commit: 'sha1-5fda3b95a4ea91299a34e894583c3862153e4b97'
         owner_id: 44036562
         repo_id: 192625525
-    'cynicsketch/mirror-action@b1e3c960aead673763e5ccb22007129401a15917':
+    'cynicsketch/mirror-action@v0.0.1':
         ref: 'v0.0.1'
         commit: 'sha1-b1e3c960aead673763e5ccb22007129401a15917'
         owner_id: 101476009
         repo_id: 1083427764
-    'ffflorian/actions@v1.30.11':
-        ref: 'v1.30.11'
-        commit: 'sha1-8b90b42e4d82d2d73c873e8cb10d04beb8647fde'
+    'ffflorian/actions@v1.30.12':
+        ref: 'v1.30.12'
+        commit: 'sha1-f8070e5f9170b13093aca954db7070e8e241355a'
         owner_id: 5497598
         repo_id: 1197109163
         uses:
-            - 'actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd'
-            - 'cynicsketch/mirror-action@b1e3c960aead673763e5ccb22007129401a15917'
+            - 'actions/checkout@v6.0.2'
+            - 'cynicsketch/mirror-action@v0.0.1'
     'swatinem/rust-cache@v2.9.2':
         ref: 'v2.9.2'
         commit: 'sha1-6323deb102c322ba6fcbdcafc7e3dddab59af2b6'
