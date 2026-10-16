@@ -12,7 +12,7 @@ workflows:
         - 'actions/setup-go@v7.0.0'
     '.github/workflows/javascript.yml':
         - 'actions/checkout@v7.0.1'
-        - 'actions/setup-node@v7.0.0'
+        - 'actions/setup-node@v7.1.0'
     '.github/workflows/main.yml':
         - 'actions/checkout@v7.0.1'
     '.github/workflows/python.yml':
@@ -23,7 +23,7 @@ workflows:
         - 'swatinem/rust-cache@v2.9.2'
     '.github/workflows/typescript.yml':
         - 'actions/checkout@v7.0.1'
-        - 'actions/setup-node@v7.0.0'
+        - 'actions/setup-node@v7.1.0'
     '.github/workflows/yarn_update.yml':
         - 'actions/checkout@v7.0.1'
         - 'ffflorian/actions@v1.30.12'
@@ -43,9 +43,9 @@ dependencies:
         commit: 'sha1-b7ad1dad31e06c5925ef5d2fc7ad053ef454303e'
         owner_id: 44036562
         repo_id: 192624594
-    'actions/setup-node@v7.0.0':
-        ref: 'v7.0.0'
-        commit: 'sha1-820762786026740c76f36085b0efc47a31fe5020'
+    'actions/setup-node@v7.1.0':
+        ref: 'v7.1.0'
+        commit: 'sha1-949feb2413d6458794dcd2491c4babbbce0c15c1'
         owner_id: 44036562
         repo_id: 189476904
     'actions/setup-python@v7.0.0':
