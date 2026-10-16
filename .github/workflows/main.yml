@@ -10,7 +10,7 @@ on:
 jobs:
   update_numbers:
     permissions:
-      contents: read
+      contents: write
     name: Update project numbers
     runs-on: ubuntu-latest
     steps:
