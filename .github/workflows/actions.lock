@@ -20,7 +20,7 @@ workflows:
         - 'actions/setup-python@v7.0.0'
     '.github/workflows/rust.yml':
         - 'actions/checkout@v7.0.1'
-        - 'swatinem/rust-cache@v2.9.2'
+        - 'swatinem/rust-cache@v2.9.3'
     '.github/workflows/typescript.yml':
         - 'actions/checkout@v7.0.1'
         - 'actions/setup-node@v7.1.0'
@@ -66,8 +66,8 @@ dependencies:
         uses:
             - 'actions/checkout@v6.0.2'
             - 'cynicsketch/mirror-action@v0.0.1'
-    'swatinem/rust-cache@v2.9.2':
-        ref: 'v2.9.2'
-        commit: 'sha1-6323deb102c322ba6fcbdcafc7e3dddab59af2b6'
+    'swatinem/rust-cache@v2.9.3':
+        ref: 'v2.9.3'
+        commit: 'sha1-d1527c8f67ef9af357290475d4af4b0fab8f12e0'
         owner_id: 580492
         repo_id: 298565987
