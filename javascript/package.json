@@ -4,7 +4,7 @@
   "devDependencies": {
     "@babel/core": "8.0.6",
     "@babel/eslint-parser": "8.0.6",
-    "@babel/preset-env": "8.0.6",
+    "@babel/preset-env": "8.0.7",
     "@ffflorian/oxfmt-config": "1.3.0",
     "eslint": "8.57.1",
     "eslint-plugin-disable": "2.0.3",
