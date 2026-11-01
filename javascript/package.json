@@ -16,7 +16,7 @@
     "eslint-plugin-unused-imports": "4.4.1",
     "jest": "30.5.2",
     "oxfmt": "0.75.0",
-    "oxlint": "1.85.0"
+    "oxlint": "1.90.0"
   },
   "engines": {
     "node": ">= 14.10"
