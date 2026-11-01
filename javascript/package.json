@@ -15,7 +15,7 @@
     "eslint-plugin-sort-keys-fix": "1.1.2",
     "eslint-plugin-unused-imports": "4.4.1",
     "jest": "30.5.2",
-    "oxfmt": "0.72.0",
+    "oxfmt": "0.75.0",
     "oxlint": "1.85.0"
   },
   "engines": {
